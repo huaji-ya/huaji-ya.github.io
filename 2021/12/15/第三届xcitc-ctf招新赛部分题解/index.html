@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第三届xcitc-ctf招新赛部分题解 | HUAJI</title><meta name="keywords" content="ctf,xcitc"><meta name="author" content="HUAJI"><meta name="copyright" content="HUAJI"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="write upreverseEz_ezEz_ez然后找ida64打开这个helloELF这个文件搜索ida工具使用教程然后按了f5答案就出来了 ez_asmez_asm 打开发现里面有H，H在计算机中表示16进制，让后尝试16进制转换为10进制让后换算出来ASCII 依次类推转换完就是pflag{Hello_Assembly} welcome_loginwelcome_login下载发现是一个可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第三届xcitc-ctf招新赛部分题解">
+<meta property="og:url" content="https://huajien.gitee.io/2021/12/15/%E7%AC%AC%E4%B8%89%E5%B1%8Axcitc-ctf%E6%8B%9B%E6%96%B0%E8%B5%9B%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/index.html">
+<meta property="og:site_name" content="HUAJI">
+<meta property="og:description" content="write upreverseEz_ezEz_ez然后找ida64打开这个helloELF这个文件搜索ida工具使用教程然后按了f5答案就出来了 ez_asmez_asm 打开发现里面有H，H在计算机中表示16进制，让后尝试16进制转换为10进制让后换算出来ASCII 依次类推转换完就是pflag{Hello_Assembly} welcome_loginwelcome_login下载发现是一个可">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://b.zhutix.com/bizhi/ysdmnh/08.jpg">
+<meta property="article:published_time" content="2021-12-15T02:11:10.006Z">
+<meta property="article:modified_time" content="2021-12-15T05:16:29.512Z">
+<meta property="article:author" content="HUAJI">
+<meta property="article:tag" content="ctf">
+<meta property="article:tag" content="xcitc">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://b.zhutix.com/bizhi/ysdmnh/08.jpg"><link rel="shortcut icon" href="https://gitee.com/huaji_admin/picgo/raw/master/img/1.png"><link rel="canonical" href="https://huajien.gitee.io/2021/12/15/%E7%AC%AC%E4%B8%89%E5%B1%8Axcitc-ctf%E6%8B%9B%E6%96%B0%E8%B5%9B%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '第三届xcitc-ctf招新赛部分题解',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-12-15 13:16:29'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.helloimg.com/images/2021/08/10/Ct2WNr.jpg" onerror="onerror=null;src='https://s4.ax1x.com/2021/12/15/ozqJfg.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://b.zhutix.com/bizhi/ysdmnh/08.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">HUAJI</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">第三届xcitc-ctf招新赛部分题解</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-12-15T02:11:10.006Z" title="发表于 2021-12-15 10:11:10">2021-12-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-15T05:16:29.512Z" title="更新于 2021-12-15 13:16:29">2021-12-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/xcitc-ctf/">xcitc ctf</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="第三届xcitc-ctf招新赛部分题解"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="write-up"><a href="#write-up" class="headerlink" title="write up"></a>write up</h1><h2 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h2><h3 id="Ez-ez"><a href="#Ez-ez" class="headerlink" title="Ez_ez"></a>Ez_ez</h3><p>Ez_ez然后找ida64打开这个helloELF这个文件搜索ida工具使用教程然后按了f5答案就出来了</p>
+<h3 id="ez-asm"><a href="#ez-asm" class="headerlink" title="ez_asm"></a>ez_asm</h3><p>ez_asm 打开发现里面有H，H在计算机中表示16进制，让后尝试16进制转换为10进制让后换算出来ASCII</p>
+<p>依次类推转换完就是pflag{Hello_Assembly}</p>
+<h3 id="welcome-login"><a href="#welcome-login" class="headerlink" title="welcome_login"></a>welcome_login</h3><p>welcome_login下载发现是一个可执行文件然后使用ida64打开发现没有然后使用ida32位打开选中几个字段然后跳转到地址然后上下找发现分成三段然后一个一个复制让后就出来了答案</p>
+<h2 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h2><h3 id="欢迎欢迎"><a href="#欢迎欢迎" class="headerlink" title="欢迎欢迎"></a>欢迎欢迎</h3><p>欢迎欢迎题首先打开里面的连接，习惯性的按f12查看内存中的源代码发现里面又一行注释falg.txt让后在端口后面/flag.txt发现flag{welcome_to_xcitc_21}</p>
+<h3 id="easyphp"><a href="#easyphp" class="headerlink" title="easyphp"></a>easyphp</h3><p>easyphp进入先看if 条件 发现是get传参数flag如果等于0就输出结果</p>
+<p>让后就开始做题端口后面加/?flag[]=0 结果就出来了flag{f97c5d29941bfb1b2fdab0874906ab82}</p>
+<h3 id="还不能相同？"><a href="#还不能相同？" class="headerlink" title="还不能相同？"></a>还不能相同？</h3><p>还不能相同？进入先看单行多if 条件 发现是get传参数username和password让后条件是</p>
+<p>username和password两个不能相同让后我们就在端口后面加/?username[]=huaji&amp;password[]=zhien</p>
+<p>结果就出来了Flag: flag{1bc29b36f623ba82aaf6724fd3b16718}</p>
+<h3 id="大飞机，呼呼呼"><a href="#大飞机，呼呼呼" class="headerlink" title="大飞机，呼呼呼"></a>大飞机，呼呼呼</h3><p>大飞机，呼呼呼这个就不一样了一开始以为是账号密码破解试了好久不对，让后就闲着没事打开kali使用burp suite扫一下这个地址不扫不知道发现里面有flag: Wm14aFozdG9kSFJ3WDJobFlXUmxjbDlvYUdoOQ==，看到后面有两个==直接幻想base64</p>
+<p>然后网上搜索在线base64解密使用发现还是密文ZmxhZ3todHRwX2hlYWRlcl9oaGh9就在次复制上次解密一次的base64继续解密发现了flag让后结果就出来了flag{http_header_hhh}</p>
+<h2 id="一起打篮球吧。。。。"><a href="#一起打篮球吧。。。。" class="headerlink" title="一起打篮球吧。。。。"></a>一起打篮球吧。。。。</h2><p>一起打篮球吧。。。。打开题按f12查看内存中的源代码发现里面又一行注释robots.txt 让后/robots.txt</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Disallow: /admin/</span><br><span class="line">Disallow: /admin/shell/</span><br><span class="line">Disallow: /admin/shell/flag.php</span><br></pre></td></tr></table></figure>
+
+<p>发现/admin/shell/flag.php 访问发现啥也没有让后思考思考想不出来</p>
+<p>让后的有一个点击获取flag，点击之后发现/?file=hint.html 让后靠我的百度搜</p>
+<p>php有file漏洞</p>
+<p>就按照百度方法改改/?file=php://filter/read=convert.base64-encode/resource=admin/shell/flag.php</p>
+<p>让后发现是密文PD9waHAKJGZsYWcgPSAnZmxhZ3tMRklfMXNfZjRufSc7Ci8vIGVjaG8gJGZsYWc7Cj8+Cg==</p>
+<p>让后找在线base64解密</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$flag</span> = <span class="string">&#x27;flag&#123;LFI_1s_f4n&#125;&#x27;</span>;</span><br><span class="line"><span class="comment">// echo $flag;</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后结果就出来了flag{LFI_1s_f4n}</p>
+<h2 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h2><h3 id="NC之光"><a href="#NC之光" class="headerlink" title="NC之光"></a>NC之光</h3><p>NC之光我先用kali 终端命令行输入nc 121.40.134.251:10000 让后提示地址不存在，让后进群划水得知去掉”:”让后nc 121.40.134.251 10000进入了发现有flag.txt 让后cat flag.txt</p>
+<p>让后结果就出来了flag{f3857b88-c92c-4426-89a6-ee94e4eac938}</p>
+<h2 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h2><h3 id="crypto-1"><a href="#crypto-1" class="headerlink" title="crypto"></a>crypto</h3><p>前十个都是浏览器搜索名称让后就出结果了等等等。。。。。。</p>
+<h3 id="asc"><a href="#asc" class="headerlink" title="asc"></a>asc</h3><p>asc打开是ASCII偏移根据提示偏移-4然后根据提示的ord和cha</p>
+<p>python写出如下脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">keys=<span class="string">&#x27;Iew&#125;cewgchigshi%%%&#x27;</span></span><br><span class="line">flag=<span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> keys:</span><br><span class="line">    flag+=<span class="built_in">chr</span>(<span class="built_in">ord</span>(i)-<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(flag)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Ez-xor"><a href="#Ez-xor" class="headerlink" title="Ez_xor"></a>Ez_xor</h3><p>看百度加谷歌加哔哩哔哩同时做出的题</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">keys=<span class="string">&#x27;Qtwjqf~Tof3hfZwj\Wf6qlw\]4Wf\sf7zZFdp|\]3W&quot;$&quot;x&#x27;</span></span><br><span class="line">flag=<span class="string">&quot;&quot;</span></span><br><span class="line">ii = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> keys: </span><br><span class="line">  <span class="keyword">if</span> ii == <span class="number">0</span> :</span><br><span class="line">​    flag+=<span class="built_in">chr</span>(<span class="built_in">ord</span>(i)^<span class="number">3</span>)</span><br><span class="line">​    ii=ii+<span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">​    flag+=<span class="built_in">chr</span>(<span class="built_in">ord</span>(i)^<span class="number">5</span>)</span><br><span class="line">​    ii=ii-<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(flag)</span><br></pre></td></tr></table></figure>
+
+<h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="flag好像要扫一扫"><a href="#flag好像要扫一扫" class="headerlink" title="flag好像要扫一扫"></a>flag好像要扫一扫</h3><p>flag好像要扫一扫打开压缩包提示密码使用PassperforZIP_v3.6.0.1工具按照题提示走的密码直接出密码为1234</p>
+<p>打开尽然是个微信二维码好友加好友就给我flag让后结果忘记了</p>
+<h3 id="大吉"><a href="#大吉" class="headerlink" title="大吉"></a>大吉</h3><p>大吉是一个pdf百度得知pdf在ctf中直接转换为word就可以弄出让后使用网页在线pdf转换word</p>
+<p>转换之后打开文件把照片移走就是答案了</p>
+<h3 id="乌贼乌贼"><a href="#乌贼乌贼" class="headerlink" title="乌贼乌贼"></a>乌贼乌贼</h3><p>乌贼乌贼是一个图片百度得知图片在ctf中用16进制打开就是答案让后我下载了hex工具打开之后从下往上在最后面看到flag让后就出来了</p>
+<h3 id="奇怪的压缩包"><a href="#奇怪的压缩包" class="headerlink" title="奇怪的压缩包"></a>奇怪的压缩包</h3><p>奇怪的压缩包直接打开压缩包让后打开里面word文件里面就是答案</p>
+<h3 id="Ez-png"><a href="#Ez-png" class="headerlink" title="Ez_png"></a>Ez_png</h3><p>Ez_png是一个压缩包里面有一个图片让后打开是一个500*500的图片让后百度搜索ctf图片隐写然后尝试使用010editor工具按照百度上面的改宽度高度都是600发现打不开然后改成1000还是打不开然后陷入思考在看题提示然后就尝试单独改高度改成600发现下面又flag然后就出来答案了</p>
+<h3 id="你知道GIF嘛"><a href="#你知道GIF嘛" class="headerlink" title="你知道GIF嘛"></a>你知道GIF嘛</h3><p>你知道GIF嘛是一个压缩包里面一个jpg图片然后一直找不到思路让后在群里面别人在了在了聊java环境和stegsolve然后我就在想这是那个题让后发现你知道GIF嘛这个题提示看到stegsolve然后在网上弄了工具打开然后一直切换颜色发现一直不出答案然后就靠百度搜索搜索stegsolve用法发现有analyse下面的frame browse 发现有三个图片然后切换发现答案</p>
+<h3 id="正经的jpg？"><a href="#正经的jpg？" class="headerlink" title="正经的jpg？"></a>正经的jpg？</h3><p>正经的jpg？根据Ez_png的那一题百度知道使用kali终端binwalk 命令</p>
+<p>然后binwalk cover.jpg</p>
+<p>└─$ binwalk cover.jpg</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION                                            </span><br><span class="line">--------------------------------------------------------------------------------                                         </span><br><span class="line">0             0x0             JPEG image data, JFIF standard 1.01                                          </span><br><span class="line">58499         0xE483          JPEG image data, EXIF standard</span><br><span class="line">58511         0xE48F          TIFF image data, big-endian, offset of first image directory: 8</span><br></pre></td></tr></table></figure>
+
+<p>里面是两个文件让后尝试进入Windows把图片后缀改成zip然后打不开然后就继续百度使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dd if=cover.jpg of=2.jpg skip=58499 bs=1 </span><br><span class="line">记录了882232+0 的读入                                     记录了882232+0 的写出                                     882232字节（882 kB，862 KiB）已复制，1.30735 s，675 kB/s </span><br></pre></td></tr></table></figure>
+
+<p>然后提示写入一个文件我让后在kali里面双击进入发现打不开然后陷入思考想不出来就把他拖拉到Windows里面想着备份然后拖拉过来之后发现可以打开然后就出来答案了</p>
+<h3 id="flag为flag-号码进行一次md5加密"><a href="#flag为flag-号码进行一次md5加密" class="headerlink" title="flag为flag{号码进行一次md5加密}"></a>flag为flag{号码进行一次md5加密}</h3><p>flag为flag{号码进行一次md5加密}打开发现是一个zip里面一个wav音频格式让后播放发现是声音还能播放然后百度得知可以使用工具audacity然后弄了很久还是没有弄出来可能是不会使用这个工具让后尝试使用手机的按键声音和ctf中的声音对比发现啥也听不过来让后在次使用百度搜索拨号码提取工具让后在GitHub中找到一款手机上面的一款DTMFdecodeer让后电脑播放音乐手机使用这个软件听出是783083491然后在百度中搜索md5加密让后转换提交发现不对然后看了还有其他的加密选项64位大写小写32位等然后一个一个尝试发现64位小数还是大写忘记了然后答案出来了</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">HUAJI</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://huajien.gitee.io/2021/12/15/%E7%AC%AC%E4%B8%89%E5%B1%8Axcitc-ctf%E6%8B%9B%E6%96%B0%E8%B5%9B%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/">https://huajien.gitee.io/2021/12/15/%E7%AC%AC%E4%B8%89%E5%B1%8Axcitc-ctf%E6%8B%9B%E6%96%B0%E8%B5%9B%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://huajien.gitee.io" target="_blank">HUAJI</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ctf/">ctf</a><a class="post-meta__tags" href="/tags/xcitc/">xcitc</a></div><div class="post_share"><div class="social-share" data-image="https://b.zhutix.com/bizhi/ysdmnh/08.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/12/13/hello-world/"><img class="next-cover" src="https://b.zhutix.com/bizhi/ysdmnh/05.jpg" onerror="onerror=null;src='https://s4.ax1x.com/2021/12/15/ozqEFO.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">你好HEXO</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.helloimg.com/images/2021/08/10/Ct2WNr.jpg" onerror="this.onerror=null;this.src='https://s4.ax1x.com/2021/12/15/ozqJfg.gif'" alt="avatar"/></div><div class="author-info__name">HUAJI</div><div class="author-info__description">滑稽的Blog,欢迎访问</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="http://huajinet.cc/"><i class="fab fa-github"></i><span>联系我们</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/huaji-ya" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:3514825663@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到滑稽博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#write-up"><span class="toc-text">write up</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#reverse"><span class="toc-text">reverse</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ez-ez"><span class="toc-text">Ez_ez</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ez-asm"><span class="toc-text">ez_asm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#welcome-login"><span class="toc-text">welcome_login</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB"><span class="toc-text">WEB</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AC%A2%E8%BF%8E%E6%AC%A2%E8%BF%8E"><span class="toc-text">欢迎欢迎</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#easyphp"><span class="toc-text">easyphp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%98%E4%B8%8D%E8%83%BD%E7%9B%B8%E5%90%8C%EF%BC%9F"><span class="toc-text">还不能相同？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E9%A3%9E%E6%9C%BA%EF%BC%8C%E5%91%BC%E5%91%BC%E5%91%BC"><span class="toc-text">大飞机，呼呼呼</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E8%B5%B7%E6%89%93%E7%AF%AE%E7%90%83%E5%90%A7%E3%80%82%E3%80%82%E3%80%82%E3%80%82"><span class="toc-text">一起打篮球吧。。。。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pwn"><span class="toc-text">Pwn</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NC%E4%B9%8B%E5%85%89"><span class="toc-text">NC之光</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#crypto"><span class="toc-text">crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#crypto-1"><span class="toc-text">crypto</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#asc"><span class="toc-text">asc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ez-xor"><span class="toc-text">Ez_xor</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MISC"><span class="toc-text">MISC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#flag%E5%A5%BD%E5%83%8F%E8%A6%81%E6%89%AB%E4%B8%80%E6%89%AB"><span class="toc-text">flag好像要扫一扫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E5%90%89"><span class="toc-text">大吉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%8C%E8%B4%BC%E4%B9%8C%E8%B4%BC"><span class="toc-text">乌贼乌贼</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%87%E6%80%AA%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%8C%85"><span class="toc-text">奇怪的压缩包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ez-png"><span class="toc-text">Ez_png</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%A0%E7%9F%A5%E9%81%93GIF%E5%98%9B"><span class="toc-text">你知道GIF嘛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E7%BB%8F%E7%9A%84jpg%EF%BC%9F"><span class="toc-text">正经的jpg？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flag%E4%B8%BAflag-%E5%8F%B7%E7%A0%81%E8%BF%9B%E8%A1%8C%E4%B8%80%E6%AC%A1md5%E5%8A%A0%E5%AF%86"><span class="toc-text">flag为flag{号码进行一次md5加密}</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/12/15/%E7%AC%AC%E4%B8%89%E5%B1%8Axcitc-ctf%E6%8B%9B%E6%96%B0%E8%B5%9B%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/" title="第三届xcitc-ctf招新赛部分题解"><img src="https://b.zhutix.com/bizhi/ysdmnh/08.jpg" onerror="this.onerror=null;this.src='https://s4.ax1x.com/2021/12/15/ozqEFO.jpg'" alt="第三届xcitc-ctf招新赛部分题解"/></a><div class="content"><a class="title" href="/2021/12/15/%E7%AC%AC%E4%B8%89%E5%B1%8Axcitc-ctf%E6%8B%9B%E6%96%B0%E8%B5%9B%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/" title="第三届xcitc-ctf招新赛部分题解">第三届xcitc-ctf招新赛部分题解</a><time datetime="2021-12-15T02:11:10.006Z" title="发表于 2021-12-15 10:11:10">2021-12-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/13/hello-world/" title="你好HEXO"><img src="https://b.zhutix.com/bizhi/ysdmnh/05.jpg" onerror="this.onerror=null;this.src='https://s4.ax1x.com/2021/12/15/ozqEFO.jpg'" alt="你好HEXO"/></a><div class="content"><a class="title" href="/2021/12/13/hello-world/" title="你好HEXO">你好HEXO</a><time datetime="2021-12-13T12:26:33.078Z" title="发表于 2021-12-13 20:26:33">2021-12-13</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://b.zhutix.com/bizhi/ysdmnh/08.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By HUAJI</div><div class="footer_custom_text">滑稽🤪</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'PV4cFjLDqRP85BMmqrxzifKk-gzGzoHsz',
+      appKey: 'nWF1CLMPaB4wcVwSVWqY4EQs',
+      placeholder: '欢迎留言~',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
