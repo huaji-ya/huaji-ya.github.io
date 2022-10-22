@@ -4,6 +4,86 @@
   
     
     <entry>
+      <title>汇编 JCC指令表</title>
+      <link href="/2022/08/02/%E6%B1%87%E7%BC%96%20JCC%E6%8C%87%E4%BB%A4%E8%A1%A8/"/>
+      <url>/2022/08/02/%E6%B1%87%E7%BC%96%20JCC%E6%8C%87%E4%BB%A4%E8%A1%A8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="汇编-JCC指令表"><a href="#汇编-JCC指令表" class="headerlink" title="汇编 JCC指令表"></a>汇编 JCC指令表</h1><h3 id="JCC指条件跳转指令，CC就是指条件码。"><a href="#JCC指条件跳转指令，CC就是指条件码。" class="headerlink" title="JCC指条件跳转指令，CC就是指条件码。"></a>JCC指条件跳转指令，CC就是指条件码。</h3><table><thead><tr><th>JCC指令</th><th>中文含义</th><th>英文原意</th><th>检查符号位</th><th>典型c应用</th></tr></thead><tbody><tr><td>JZ&#x2F;JE</td><td>若为0则跳转；若相等则跳转</td><td>jump if zero;jump if equal</td><td>ZF&#x3D;1</td><td>if (i &#x3D;&#x3D; j);if (i &#x3D;&#x3D; 0);</td></tr><tr><td>JNZ&#x2F;JNE</td><td>若不为0则跳转；若不相等则跳转</td><td>jump if not zero;jump if not equal</td><td>ZF&#x3D;0</td><td>if (i !&#x3D; j);if (i !&#x3D; 0);</td></tr><tr><td>JS</td><td>若为负则跳转</td><td>jump if sign</td><td>SF&#x3D;1</td><td>if (i &lt; 0);</td></tr><tr><td>JNS</td><td>若为正则跳转</td><td>jump if not sign</td><td>SF&#x3D;0</td><td>if (i &gt; 0);</td></tr><tr><td>JP&#x2F;JPE</td><td>若1出现次数为偶数则跳转</td><td>jump if Parity (Even)</td><td>PF&#x3D;1</td><td>(null)</td></tr><tr><td>JNP&#x2F;JPO</td><td>若1出现次数为奇数则跳转</td><td>jump if not parity (odd)</td><td>PF&#x3D;0</td><td>(null)</td></tr><tr><td>JO</td><td>若溢出则跳转</td><td>jump if overflow</td><td>OF&#x3D;1</td><td>(null)</td></tr><tr><td>JNO</td><td>若无溢出则跳转</td><td>jump if not overflow</td><td>OF&#x3D;0</td><td>(null)</td></tr><tr><td>JC&#x2F;JB&#x2F;JNAE</td><td>若进位则跳转；若低于则跳转；若不高于等于则跳转</td><td>jump if carry;jump if below;jump if not above equal</td><td>CF&#x3D;1</td><td>if (i &lt; j);</td></tr><tr><td>JNC&#x2F;JNB&#x2F;JAE</td><td>若无进位则跳转；若不低于则跳转；若高于等于则跳转</td><td>jump if not carry;jump if not below;jump if above equal</td><td>CF&#x3D;0</td><td>if (i &gt;&#x3D; j);</td></tr><tr><td>JBE&#x2F;JNA</td><td>若低于等于则跳转；若不高于则跳转</td><td>jump if below equal;jump if not above</td><td>ZF&#x3D;1或CF&#x3D;1</td><td>if (i &lt;&#x3D; j);</td></tr><tr><td>JNBE&#x2F;JA</td><td>若不低于等于则跳转；若高于则跳转</td><td>jump if not below equal;jump if above</td><td>ZF&#x3D;0或CF&#x3D;0</td><td>if (i &gt; j);</td></tr><tr><td>JL&#x2F;JNGE</td><td>若小于则跳转；若不大于等于则跳转</td><td>jump if less;jump if not greater equal</td><td>SF !&#x3D; OF</td><td>if (si &lt; sj);</td></tr><tr><td>JNL&#x2F;JGE</td><td>若不小于则跳转；若大于等于则跳转</td><td>jump if not less;jump if greater equal</td><td>SF&#x3D;OF</td><td>if (si &gt;&#x3D; sj);</td></tr><tr><td>JLE&#x2F;JNG</td><td>若小于等于则跳转；若不大于则跳转</td><td>jump if less equal;jump if not greater</td><td>ZF !&#x3D; OF 或 ZF&#x3D;1</td><td>if (si &lt;&#x3D; sj);</td></tr><tr><td>JNLE&#x2F;JG</td><td>若不小于等于则跳转；若大于则跳转</td><td>jump if not less equal;jump if greater</td><td>SF&#x3D;OF 且 ZF&#x3D;0</td><td>if(si&gt;sj)</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 32位汇编 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 汇编跳转 </tag>
+            
+            <tag> 跳转指令 </tag>
+            
+            <tag> jcc </tag>
+            
+            <tag> je </tag>
+            
+            <tag> jc </tag>
+            
+            <tag> jb </tag>
+            
+            <tag> ja </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>汇编语言中的标志位</title>
+      <link href="/2022/04/05/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%A0%87%E5%BF%97%E4%BD%8D/"/>
+      <url>/2022/04/05/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%A0%87%E5%BF%97%E4%BD%8D/</url>
+      
+        <content type="html"><![CDATA[<h2 id="汇编中的：CF、PF、AF、ZF、SF、TF、IF、DF、OF标志位"><a href="#汇编中的：CF、PF、AF、ZF、SF、TF、IF、DF、OF标志位" class="headerlink" title="汇编中的：CF、PF、AF、ZF、SF、TF、IF、DF、OF标志位"></a>汇编中的：CF、PF、AF、ZF、SF、TF、IF、DF、OF标志位</h2><h3 id="CF-进位标志位"><a href="#CF-进位标志位" class="headerlink" title="CF:进位标志位"></a><strong>CF</strong>:进位标志位</h3><p>在无符号运算时，记录了运算结果的最高有效位向更高位的进位值或从更高位借位，产生进位或借位时CF&#x3D;1，否则CF&#x3D;0；</p><h3 id="PF-奇偶标志位"><a href="#PF-奇偶标志位" class="headerlink" title="PF:奇偶标志位"></a><strong>PF</strong>:奇偶标志位</h3><p>相关指令执行后结果所有bit中1的个数为偶数，那么PF&#x3D;1，1的个数为奇数则PF&#x3D;0；</p><h3 id="AF-辅助进位标志位"><a href="#AF-辅助进位标志位" class="headerlink" title="AF:辅助进位标志位"></a><strong>AF</strong>:辅助进位标志位</h3><p>运算过程中看最后四位，不论长度为多少。最后四位向前有进位或者借位，AF&#x3D;1,否则AF&#x3D;0;</p><h3 id="ZF-零标志位"><a href="#ZF-零标志位" class="headerlink" title="ZF:零标志位"></a><strong>ZF</strong>:零标志位</h3><p>相关指令执行后结果为0那么ZF&#x3D;1,结果不为0则ZF&#x3D;0；</p><h3 id="SF-符号标志位"><a href="#SF-符号标志位" class="headerlink" title="SF:符号标志位"></a><strong>SF</strong>:符号标志位</h3><p>相关指令执行后结果为负那么SF&#x3D;1，结果非负数则SF&#x3D;0；</p><h3 id="TF-调试标志位"><a href="#TF-调试标志位" class="headerlink" title="TF:调试标志位"></a><strong>TF</strong>:调试标志位</h3><p>当TF&#x3D;1时，处理器每次只执行一条指令，即单步执行;</p><h3 id="IF-中断允许标志位"><a href="#IF-中断允许标志位" class="headerlink" title="IF:中断允许标志位"></a><strong>IF</strong>:中断允许标志位</h3><p>它用来控制8086是否允许接收外部中断请求。若IF&#x3D;1，8086能响应外部中断，反之则屏蔽外部中断;</p><h3 id="DF-方向标志位"><a href="#DF-方向标志位" class="headerlink" title="DF:方向标志位"></a><strong>DF</strong>:方向标志位</h3><p>在串处理指令中，每次操作后，如果DF&#x3D;0，si、di递增，如果DF&#x3D;1，si、di递减；注意此处DF的值是由程序员进行设定的 cld命令是将DF设置为0，std命令是将DF设置为1；</p><h3 id="OF-溢出标志位"><a href="#OF-溢出标志位" class="headerlink" title="OF:溢出标志位"></a><strong>OF</strong>:溢出标志位</h3><p>记录了有符号运算的结果是否发生了溢出，如果发生溢出OF&#x3D;1,如果没有OF&#x3D;0；</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 32位汇编 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 汇编标志位 </tag>
+            
+            <tag> CF </tag>
+            
+            <tag> PF </tag>
+            
+            <tag> AF </tag>
+            
+            <tag> ZF </tag>
+            
+            <tag> SF </tag>
+            
+            <tag> TF </tag>
+            
+            <tag> IF </tag>
+            
+            <tag> DF </tag>
+            
+            <tag> OF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第三届xcitc-ctf招新赛部分题解</title>
       <link href="/2021/12/15/%E7%AC%AC%E4%B8%89%E5%B1%8Axcitc-ctf%E6%8B%9B%E6%96%B0%E8%B5%9B%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/"/>
       <url>/2021/12/15/%E7%AC%AC%E4%B8%89%E5%B1%8Axcitc-ctf%E6%8B%9B%E6%96%B0%E8%B5%9B%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/</url>
@@ -13,7 +93,7 @@
       
       <categories>
           
-          <category> xcitc ctf </category>
+          <category> xcitc wp </category>
           
       </categories>
       
@@ -23,6 +103,8 @@
             <tag> ctf </tag>
             
             <tag> xcitc </tag>
+            
+            <tag> wp </tag>
             
         </tags>
       
