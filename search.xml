@@ -4,6 +4,66 @@
   
     
     <entry>
+      <title>ida pro 7.5 使用ipython Byte报错问题解决</title>
+      <link href="/2022/11/13/idapro7.5%E4%BD%BF%E7%94%A8ipython%20Byte%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+      <url>/2022/11/13/idapro7.5%E4%BD%BF%E7%94%A8ipython%20Byte%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
+      
+        <content type="html"><![CDATA[<h1 id="ida-pro-7-5-使用ipython-Byte报错问题解决"><a href="#ida-pro-7-5-使用ipython-Byte报错问题解决" class="headerlink" title="ida pro 7.5 使用ipython Byte报错问题解决"></a>ida pro 7.5 使用ipython Byte报错问题解决</h1><p>这两天使用ida 发现ipython代码无法运行</p><p>比如PatchByte()，Byte()都提示<br>NameError: name ‘Byte’ is not defined<br>又舍不得放弃7.5(一些题目拿7.5版生成的伪代码比7.0版要好看的多)，<br>于是在网上查了很久，找出了解决办法。</p><h2 id="方法1-兼容办法-："><a href="#方法1-兼容办法-：" class="headerlink" title="方法1(兼容办法)："></a><strong>方法1</strong>(兼容办法)：</h2><p>其次是在比较方便的在7.5用7.0API办法，来源：<a href="https://github.com/0xgalz/Virtuailor/issues/8">https://github.com/0xgalz/Virtuailor/issues/8</a><br>在代码面前：<br>from idc_bc695 import *<br>即可。</p><h2 id="方法2-一劳永逸版-："><a href="#方法2-一劳永逸版-：" class="headerlink" title="方法2(一劳永逸版)："></a><strong>方法2</strong>(一劳永逸版)：</h2><p>来源官方文档：<a href="https://www.hex-rays.com/products/ida/support/ida74_idapython_no_bc695.shtml">https://www.hex-rays.com/products/ida/support/ida74_idapython_no_bc695.shtml</a><br>找到</p><ul><li>~&#x2F;.idapro&#x2F;cfg&#x2F;idapython.cfg (Linux)</li><li>%APPDATA%\Hex-Rays\IDA Pro\cfg\idapython.cfg (Windows) (绿色版的话在程序目录下那个cfg文件夹里)</li></ul><p>把AUTOIMPORT_COMPAT_IDA695改为YES</p><p>文章来源 <a href="https://www.52pojie.cn/thread-1403005-1-1.html">52pojie论坛用户神慯</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常小问题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> idapro </tag>
+            
+            <tag> ipython </tag>
+            
+            <tag> ida脚本问题 </tag>
+            
+            <tag> 日常日记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DASCTF X GFCTF 2022十月挑战赛！</title>
+      <link href="/2022/10/24/DASCTF%20X%20GFCTF%202022%E5%8D%81%E6%9C%88%E6%8C%91%E6%88%98%E8%B5%9B%EF%BC%81/"/>
+      <url>/2022/10/24/DASCTF%20X%20GFCTF%202022%E5%8D%81%E6%9C%88%E6%8C%91%E6%88%98%E8%B5%9B%EF%BC%81/</url>
+      
+        <content type="html"><![CDATA[<h1 id="DASCTF-X-GFCTF-2022十月挑战赛！"><a href="#DASCTF-X-GFCTF-2022十月挑战赛！" class="headerlink" title="DASCTF X GFCTF 2022十月挑战赛！"></a>DASCTF X GFCTF 2022十月挑战赛！</h1><h2 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h2><h3 id="贪玩CTF"><a href="#贪玩CTF" class="headerlink" title="贪玩CTF"></a>贪玩CTF</h3><p>die看无壳 64位</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221023225242453.png" alt="image-20221023225242453"></p><p>使用ida64动态调试发现自动退出</p><p>发现TlsCallback_0 在start函数前面执行</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221023225905176.png" alt="image-20221023225905176"></p><p>把call    cs:IsDebuggerPresent nop掉</p><p>并把 jz patch 换成jnz</p><p>如下图</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221023230137420.png" alt="image-20221023230137420"></p><p>可以正常调试了</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221023230339130.png" alt="image-20221023230339130"></p><p>shift+f12看字符串</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221023230518151.png" alt="image-20221023230518151"></p><p>进去 ctrl + x 数据的交叉引用 静态分析</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221023231430104.png" alt="image-20221023231430104"></p><p>进入sub_7FF6ED1619C0 函数</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221023231725807.png" alt="image-20221023231725807"></p><p>长度如果不等于16 返回 -1 得到是账户是 是16位</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221023231835581.png" alt="image-20221023231835581"></p><p>返回-1 弹出 弹窗 字符长长度不对</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221023233439701.png" alt="image-20221023233439701"></p><p>和上面一样密码也是16位 否则返回 -1 然后提示框 长度不对</p><p>让后我随便输入16个账户和16个密码</p><p>最下面有异或</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221024002114932.png" alt="image-20221024002114932"></p><p>下面的判断给他断下来按tab转汇编窗口</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221024001716092.png" alt="image-20221024001716092"></p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221024002040359.png" alt="image-20221024002040359"></p><p>双击进入rsi寄存器</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221024002149163.png" alt="image-20221024002149163"></p><p>提取</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221024002343866.png" alt="image-20221024002343866"></p><p>编写脚本</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">str1 = [   0x04, 0x1F, 0x1F, 0x1E, 0x43, 0x4B, 0x43, 0x45, 0x44, 0x00, 0x16, 0x10, 0x55, 0x17, 0x12, 0x73]</span><br><span class="line">str2= &#x27;&#x27;</span><br><span class="line">for i in range(len(str1) -1):</span><br><span class="line">    str2 += chr(str1[i] ^ 0x73)</span><br><span class="line">str2 += chr(0x73)</span><br><span class="line">print(str2)</span><br></pre></td></tr></table></figure><p>账户：wllm08067sec&amp;das</p><p>分析密码进入 sub_7FF6ED161390函数</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221024002614641.png" alt="image-20221024002614641"></p><p>进入 byte_7FF6ED166040 字节</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221024004933249.png" alt="image-20221024004933249"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">63h, 7Ch, 77h, 7Bh, 0F2h, 6Bh, 6Fh, 0C5h, 30h, 1, 67h, 2Bh, 0FEh, 0D7h</span><br></pre></td></tr></table></figure><p>​aes加密 特征</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221024010824134.png" alt="image-20221024010824134"></p><p>根据上面猜测上面的buffer应该是密钥</p><p>密钥：wllm08067sec&amp;das</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221024100831027.png" alt="image-20221024100831027"></p><p>让后跳出往下走</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221024100354185.png" alt="image-20221024100354185"></p><p>byte_7FF6ED166990[v18] 是自己输入的密码 </p><p>byte_7FF6ED1643D8[v18] 是aes加密后的密码</p><p>提取byte_7FF6ED1643D8[v18] 里面的字符</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221024101025399.png" alt="image-20221024101025399"></p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221024101047770.png" alt="image-20221024101047770"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\x3C\x97\x72\x96\x5A\x33\x63\x9C\x97\x30\x4D\x90\x84\xE8\x5F\x56</span><br></pre></td></tr></table></figure><p>让后我们找个在线aes 解密<a href="https://the-x.cn/cryptography/Aes.aspx">https://the-x.cn/cryptography/Aes.aspx</a></p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221024101439316.png" alt="image-20221024101439316"></p><p>账户是：wllm08067sec&amp;das</p><p>密码是：e4deb7a6510a10f7</p><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20221024101605649.png" alt="image-20221024101605649"></p><p>flag 格式为DASCTF{账号+密码}</p><p>DASCTF{wllm08067sec&amp;dase4deb7a6510a10f7}</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Reverse_wp </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DASCTF </tag>
+            
+            <tag> 2022十月挑战赛 </tag>
+            
+            <tag> 贪玩CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>汇编 JCC指令表</title>
       <link href="/2022/08/02/%E6%B1%87%E7%BC%96%20JCC%E6%8C%87%E4%BB%A4%E8%A1%A8/"/>
       <url>/2022/08/02/%E6%B1%87%E7%BC%96%20JCC%E6%8C%87%E4%BB%A4%E8%A1%A8/</url>
