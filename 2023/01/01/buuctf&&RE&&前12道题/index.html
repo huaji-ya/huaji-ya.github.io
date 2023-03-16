@@ -1,0 +1,310 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>buuctf&amp;&amp;RE&amp;&amp;前12道题 | HUAJI</title><meta name="keywords" content="buuctf,ctf,逆向wp,学习笔记,reverse"><meta name="author" content="HUAJI"><meta name="copyright" content="HUAJI"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="buuctf&amp;&amp;RE&amp;&amp;前12道题本文章用到的工具 die下载地址 ：https:&#x2F;&#x2F;github.com&#x2F;horsicq&#x2F;DIE-engine&#x2F;releases exeinfo下载地址 ： https:&#x2F;&#x2F;github.com&#x2F;ExeinfoASL&#x2F;ASL&#x2F;blob&#x2F;master&#x2F;exeinfope.zip idapro下载地址：https:&#x2F;&#x2F;www.123pa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="buuctf&amp;&amp;RE&amp;&amp;前12道题">
+<meta property="og:url" content="https://huajien.gitee.io/2023/01/01/buuctf&&RE&&%E5%89%8D12%E9%81%93%E9%A2%98/index.html">
+<meta property="og:site_name" content="HUAJI">
+<meta property="og:description" content="buuctf&amp;&amp;RE&amp;&amp;前12道题本文章用到的工具 die下载地址 ：https:&#x2F;&#x2F;github.com&#x2F;horsicq&#x2F;DIE-engine&#x2F;releases exeinfo下载地址 ： https:&#x2F;&#x2F;github.com&#x2F;ExeinfoASL&#x2F;ASL&#x2F;blob&#x2F;master&#x2F;exeinfope.zip idapro下载地址：https:&#x2F;&#x2F;www.123pa">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://b.zhutix.com/bizhi/guweiz/13.jpg">
+<meta property="article:published_time" content="2023-01-01T08:22:03.000Z">
+<meta property="article:modified_time" content="2023-01-01T08:22:03.000Z">
+<meta property="article:author" content="HUAJI">
+<meta property="article:tag" content="buuctf">
+<meta property="article:tag" content="ctf">
+<meta property="article:tag" content="逆向wp">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="reverse">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://b.zhutix.com/bizhi/guweiz/13.jpg"><link rel="shortcut icon" href="https://www.helloimg.com/images/2022/06/24/Znfc66.png"><link rel="canonical" href="https://huajien.gitee.io/2023/01/01/buuctf&amp;&amp;RE&amp;&amp;%E5%89%8D12%E9%81%93%E9%A2%98/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'buuctf&&RE&&前12道题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-01 16:22:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.helloimg.com/images/2021/08/10/Ct2WNr.jpg" onerror="onerror=null;src='https://s4.ax1x.com/2021/12/15/ozqJfg.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://b.zhutix.com/bizhi/guweiz/13.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">HUAJI</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">buuctf&amp;&amp;RE&amp;&amp;前12道题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-01T08:22:03.000Z" title="发表于 2023-01-01 16:22:03">2023-01-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-01T08:22:03.000Z" title="更新于 2023-01-01 16:22:03">2023-01-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Reverse-wp-buuctf/">Reverse_wp buuctf</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="buuctf&amp;&amp;RE&amp;&amp;前12道题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="buuctf-amp-amp-RE-amp-amp-前12道题"><a href="#buuctf-amp-amp-RE-amp-amp-前12道题" class="headerlink" title="buuctf&amp;&amp;RE&amp;&amp;前12道题"></a>buuctf&amp;&amp;RE&amp;&amp;前12道题</h1><p>本文章用到的工具</p>
+<p>die下载地址 ：<a target="_blank" rel="noopener" href="https://github.com/horsicq/DIE-engine/releases">https://github.com/horsicq/DIE-engine/releases</a></p>
+<p>exeinfo下载地址 ： <a target="_blank" rel="noopener" href="https://github.com/ExeinfoASL/ASL/blob/master/exeinfope.zip">https://github.com/ExeinfoASL/ASL/blob/master/exeinfope.zip</a></p>
+<p>idapro下载地址：<a target="_blank" rel="noopener" href="https://www.123pan.com/s/mCY8Vv-q4hWd.html%E6%8F%90%E5%8F%96%E7%A0%81:HUA0">https://www.123pan.com/s/mCY8Vv-q4hWd.html提取码:HUA0</a></p>
+<p>jadx-gui 下载地址 <a target="_blank" rel="noopener" href="https://github.com/skylot/jadx/releases/tag/v1.4.6">https://github.com/skylot/jadx/releases/tag/v1.4.6</a></p>
+<p>apkidc下载地址：<a target="_blank" rel="noopener" href="https://down.52pojie.cn/?query=apkid">https://down.52pojie.cn/?query=apkid</a></p>
+<p>仅用于学习</p>
+<h2 id="easyre"><a href="#easyre" class="headerlink" title="easyre"></a>easyre</h2><p>用die分析一下</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220623153705178.png" alt="image-20220623153705178"></p>
+<p>使用ida64打开easyre.exe</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220623154005125.png" alt="image-20220623154005125"></p>
+<h2 id="reverse1"><a href="#reverse1" class="headerlink" title="reverse1"></a>reverse1</h2><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220623154250990.png" alt="image-20220623154250990"></p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220623154343804.png" alt="image-20220623154343804"></p>
+<p>shift+f12</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220623154505781.png" alt="image-20220623154505781"></p>
+<p>异或</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220623154611201.png" alt="image-20220623154611201"></p>
+<p>双击进入</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220623154755679.png" alt="image-20220623154755679"></p>
+<p>可以看到 lea 取 rcx str2 为 {hello_world}</p>
+<p>让后f5反编译查看伪代码</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220624093942025.png" alt="image-20220624093942025"></p>
+<p>将：{hello_world}</p>
+<p>替换o为0</p>
+<h2 id="reverse2"><a href="#reverse2" class="headerlink" title="reverse2"></a>reverse2</h2><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220624094219719.png" alt="image-20220624094219719"></p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220624094330853.png" alt="image-20220624094330853"></p>
+<p>直接f5反编译</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220624094434960.png" alt="image-20220624094434960"></p>
+<p>让后shift+f12</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220624094808804.png" alt="image-20220624094808804"></p>
+<p>暂时存储一下</p>
+<p>将 eax 取内存 {hacking_for_fun}</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220624094942907.png" alt="image-20220624094942907"></p>
+<p>返回看到</p>
+<p>eax, byte ptr flag[rax]</p>
+<p>回到刚刚反编译的伪代码</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220624095247209.png" alt="image-20220624095247209"></p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220624100011427.png" alt="image-20220624100011427"></p>
+<p>将 ：{hacking_for_fun}</p>
+<p>i和r替换为1</p>
+<h2 id="内涵的软件"><a href="#内涵的软件" class="headerlink" title="内涵的软件"></a>内涵的软件</h2><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220624101137339.png" alt="image-20220624101137339"></p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220624103234143.png" alt="image-20220624103234143"></p>
+<p>双击进入main_0</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220624103334318.png" alt="image-20220624103334318"></p>
+<p>直接flag</p>
+<h2 id="新年快乐"><a href="#新年快乐" class="headerlink" title="新年快乐"></a>新年快乐</h2><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220624174141942.png" alt="image-20220624174141942"></p>
+<p>upx加密使用工具去壳 or 动态od 脱壳</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220625093823581.png" alt="image-20220625093823581"></p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220625093846273.png" alt="image-20220625093846273"></p>
+<p>idapro32打开就是flag</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220625094025841.png" alt="image-20220625094025841"></p>
+<h2 id="xor"><a href="#xor" class="headerlink" title="xor"></a>xor</h2><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220625095455799.png" alt="image-20220625095455799"></p>
+<p>无壳64位mac 软件 ida64pro打开直接f5反编译</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220625100109897.png" alt="image-20220625100109897"></p>
+<p>双金进入global</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220625100214564.png" alt="image-20220625100214564"><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220625100627931.png" alt="image-20220625100627931"></p>
+<p>双击进入里面</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220625100919422.png" alt="image-20220625100919422">复制一份到剪贴板</p>
+<p>让后shift+e</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220625101033616.png" alt="image-20220625101033616"></p>
+<p>转换为数组</p>
+<p>密文[0x66, 0x0A, 0x6B, 0x0C, 0x77, 0x26, 0x4F, 0x2E, 0x40, 0x11, 0x78, 0x0D, 0x5A, 0x3B, 0x55, 0x11, 0x70, 0x19, 0x46, 0x1F, 0x76, 0x22, 0x4D, 0x23, 0x44, 0x0E, 0x67, 0x06, 0x68, 0x0F, 0x47, 0x32, 0x4F, 0x00]</p>
+<p>xor异或 密文 依次-1让后得到flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cipher = [0x66, 0x0A, 0x6B, 0x0C, 0x77, 0x26, 0x4F, 0x2E, 0x40, 0x11, 0x78, 0x0D, 0x5A, 0x3B, 0x55, 0x11, 0x70, 0x19, 0x46, 0x1F, 0x76, 0x22, 0x4D, 0x23, 0x44, 0x0E, 0x67, 0x06, 0x68, 0x0F, 0x47, 0x32, 0x4F, 0x00]</span><br><span class="line">cipher_text=[0] *len(cipher)</span><br><span class="line"></span><br><span class="line">result = &#x27;&#x27;</span><br><span class="line">for i in range(1,len(cipher) -1):</span><br><span class="line">    result += chr(cipher[i] ^ cipher[i-1])</span><br><span class="line">print(chr(cipher[0])+result)</span><br><span class="line">#flag&#123;QianQiuWanDai_YiTongJiangHu&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="helloword"><a href="#helloword" class="headerlink" title="helloword"></a>helloword</h2><p>下载下来是个apk使用apkide打开</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220625105637665.png" alt="image-20220625105637665"></p>
+<p>依次打开smali&gt;com&gt;example&gt;helloword&gt;MainActivity.smali</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220625105737705.png" alt="image-20220625105737705"></p>
+<p>flag出来</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220625105835945.png" alt="image-20220625105835945"></p>
+<h2 id="reverse3"><a href="#reverse3" class="headerlink" title="reverse3"></a>reverse3</h2><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220625110529049.png" alt="image-20220625110529049"></p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20220625110838140.png" alt="image-20220625110838140"></p>
+<p>双击进入_main_0</p>
+<p>f5查看伪代码</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20230316203948983.png" alt="image-20230316203948983"></p>
+<p>让后进去str2找到密文<code>e3nifIH9b_C@n@dH</code></p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20230316203853019.png" alt="image-20230316203853019"></p>
+<p> 先base64 在异或+- 逆向倒着来写出脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import base64</span><br><span class="line">cipher = &#x27;e3nifIH9b_C@n@dH&#x27;</span><br><span class="line">result =&#x27;&#x27;</span><br><span class="line"></span><br><span class="line">for i in range(len(cipher)):</span><br><span class="line">    result +=chr( ord(cipher[i]) - i)</span><br><span class="line">print(base64.b64decode(result))</span><br><span class="line">#flag&#123;i_l0ve_you&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>flag&#123;i_l0ve_you&#125;</code></p>
+<h2 id="不一样的flag"><a href="#不一样的flag" class="headerlink" title="不一样的flag"></a>不一样的flag</h2><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20230316204307860.png" alt="image-20230316204307860"></p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20230316204332415.png" alt="image-20230316204332415"></p>
+<p>查看无壳</p>
+<p>ida32 打开直接就是main </p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20230316204430912.png" alt="image-20230316204430912"></p>
+<p>看到上写左右和一堆有规则的字符串猜测迷宫题目</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">*11110100001010000101111# 源字符串</span><br><span class="line"></span><br><span class="line">*1111</span><br><span class="line">01000</span><br><span class="line">01010</span><br><span class="line">00010</span><br><span class="line">1111#</span><br><span class="line">修改后</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">控制器</span><br><span class="line"></span><br><span class="line">1 up 上</span><br><span class="line">2 down 下</span><br><span class="line">3 left 坐</span><br><span class="line">4 right 右</span><br></pre></td></tr></table></figure>
+
+<p><code> flag&#123;222441144222&#125;</code></p>
+<h2 id="SimpleRev"><a href="#SimpleRev" class="headerlink" title="SimpleRev"></a>SimpleRev</h2><p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20230316204930805.png" alt="image-20230316204930805"></p>
+<p>查克不存在发现是Linux 64位程序</p>
+<p>让后使用ida64 打开调试发现 不行</p>
+<p>一直都不能运行</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20230316205029585.png" alt="image-20230316205029585"></p>
+<p>让后</p>
+<p>使用ida静态分析</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">v11 = __readfsqword(0x28u);</span><br><span class="line">  *(_QWORD *)src = &#x27;SLCDN&#x27;;                     // NDCLS</span><br><span class="line">  v7 = 0LL;</span><br><span class="line">  v8 = 0;</span><br><span class="line">  v9[0] = &#x27;wodah&#x27;;                              // hadow</span><br><span class="line">  v9[1] = 0LL;</span><br><span class="line">  v10 = 0;</span><br><span class="line">  text = join(key3, (const char *)v9);          // text = killshadow</span><br><span class="line">  strcpy(key, key1);                            // ADSFK</span><br><span class="line">  strcat(key, src);                             // key = ADSFKDNLCS 错</span><br><span class="line">                                                // 大小端序</span><br><span class="line">                                                // key = ADSFKNDCLS 对</span><br><span class="line">  v2 = 0;</span><br><span class="line">  v3 = 0;</span><br><span class="line">  getchar();</span><br><span class="line">  v5 = strlen(key);                             // 长度给v5</span><br><span class="line">  for ( i = 0; i &lt; v5; ++i )</span><br><span class="line">  &#123;</span><br><span class="line">    if ( key[v3 % v5] &gt; 64 &amp;&amp; key[v3 % v5] &lt;= 90 )// 将大写转换为小写</span><br><span class="line">      key[i] = key[v3 % v5] + 32;</span><br><span class="line">    ++v3;</span><br><span class="line">  &#125;</span><br><span class="line">  printf(&quot;Please input your flag:&quot;);</span><br><span class="line">  while ( 1 )</span><br><span class="line">  &#123;</span><br><span class="line">    v1 = getchar();                             // 缓冲</span><br><span class="line">    if ( v1 == &#x27;\n&#x27; )                           // 输入回车退出</span><br><span class="line">      break;</span><br><span class="line">    if ( v1 == &#x27; &#x27; )                            // 输入 v2加1</span><br><span class="line">    &#123;</span><br><span class="line">      ++v2;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">      if ( v1 &lt;= 96 || v1 &gt; 122 )               // v1 小写</span><br><span class="line">      &#123;</span><br><span class="line">        if ( v1 &gt; 64 &amp;&amp; v1 &lt;= 90 )              // v1大写</span><br><span class="line">        &#123;</span><br><span class="line">          str2[v2] = (v1 - 39 - key[v3 % v5] + 97) % 26 + 97;// 算法</span><br><span class="line">          ++v3;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      else</span><br><span class="line">      &#123;</span><br><span class="line">        str2[v2] = (v1 - 39 - key[v3 % v5] + 97) % 26 + 97;</span><br><span class="line">        ++v3;</span><br><span class="line">      &#125;</span><br><span class="line">      if ( !(v3 % v5) )</span><br><span class="line">        putchar(32);</span><br><span class="line">      ++v2;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  if ( !strcmp(text, str2) )</span><br><span class="line">    puts(&quot;Congratulation!\n&quot;);</span><br><span class="line">  else</span><br><span class="line">    puts(&quot;Try again!\n&quot;);</span><br><span class="line">  return __readfsqword(0x28u) ^ v11;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>让写出脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import string</span><br><span class="line"></span><br><span class="line">cipher = &quot;killshadow&quot;</span><br><span class="line">key = &quot;ADSFKNDCLS&quot;</span><br><span class="line">key = str.lower(key)  # 转换小写</span><br><span class="line">result = []</span><br><span class="line">dic = string.ascii_uppercase + string.ascii_letters  # 字典</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for i in range(len(cipher)):</span><br><span class="line">    for j in dic:</span><br><span class="line">        if (ord(j) - 39 - ord(key[i]) + 97) % 26 + 97 == ord(cipher[i]):</span><br><span class="line">            result.append(j)</span><br><span class="line">            break</span><br><span class="line">print(&quot;flag&#123;&quot; + &quot;&quot;.join(result) + &quot;&#125;&quot;)</span><br><span class="line"># flag&#123;KLDQCUDFZO&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>flag&#123;KLDQCUDFZO&#125;</code></p>
+<h2 id="Java逆向解密"><a href="#Java逆向解密" class="headerlink" title="Java逆向解密"></a>Java逆向解密</h2><p>是一个.class文件使用jadx-gui 打开</p>
+<p>看到encode </p>
+<p>让后进入</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20230316205348723.png" alt="image-20230316205348723"></p>
+<p>写出逆向脚本 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cipher = [180, 136, 137, 147, 191, 137, 147, 191, 148, 136, 133, 191, 134, 140, 129, 135, 191, 65]</span><br><span class="line"></span><br><span class="line">key = [0] * len(cipher)</span><br><span class="line">for i in range(len(cipher)):</span><br><span class="line">    key[i] = chr(cipher[i] - ord(&#x27;@&#x27;) ^ 32)</span><br><span class="line">print(&quot;&quot;.join(key))</span><br><span class="line">#flag&#123;This_is_the_flag_!&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>#flag&#123;This_is_the_flag_!&#125;</code></p>
+<h2 id="GXYCTF2019-luck-guy"><a href="#GXYCTF2019-luck-guy" class="headerlink" title="[GXYCTF2019]luck_guy"></a>[GXYCTF2019]luck_guy</h2><p>使用die 工具查壳 发现是64位 无壳子使用ida64 pro 打开</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20230316221550448.png" alt="image-20230316221550448"></p>
+<p>默认进入main 函数 让后发现没有什么操作直接去patch_me –&gt; get-flag</p>
+<p><img src="https://fastly.jsdelivr.net/gh/huajien/picgo/img/image-20230316223527577.png" alt="image-20230316223527577"></p>
+<p>密文<code>[105, 99, 117, 103, 96, 111, 102, 127] </code></p>
+<p>让后写出脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cipher = [105, 99, 117, 103, 96, 111, 102, 127] </span><br><span class="line">result = &#x27;&#x27;</span><br><span class="line">for i in range(len(cipher)):</span><br><span class="line">    if i % 2 == 1:</span><br><span class="line">        result += chr(cipher[i] -2)</span><br><span class="line">    else:</span><br><span class="line">        result += chr(cipher[i] -1)</span><br><span class="line">print(result)</span><br><span class="line">#GXY&#123;do_not_hate_me&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>GXY&#123;do_not_hate_me&#125;</code></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://huajien.gitee.io">HUAJI</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://huajien.gitee.io/2023/01/01/buuctf&amp;&amp;RE&amp;&amp;%E5%89%8D12%E9%81%93%E9%A2%98/">https://huajien.gitee.io/2023/01/01/buuctf&amp;&amp;RE&amp;&amp;%E5%89%8D12%E9%81%93%E9%A2%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://huajien.gitee.io" target="_blank">HUAJI</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/buuctf/">buuctf</a><a class="post-meta__tags" href="/tags/ctf/">ctf</a><a class="post-meta__tags" href="/tags/%E9%80%86%E5%90%91wp/">逆向wp</a><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><a class="post-meta__tags" href="/tags/reverse/">reverse</a></div><div class="post_share"><div class="social-share" data-image="https://b.zhutix.com/bizhi/guweiz/13.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/11/13/idapro7.5%E4%BD%BF%E7%94%A8ipython%20Byte%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"><img class="next-cover" src="https://www.helloimg.com/images/2023/02/25/oP4a7D.md.jpg" onerror="onerror=null;src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">ida pro 7.5 使用ipython Byte报错问题解决</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/12/15/%E7%AC%AC%E4%B8%89%E5%B1%8Axcitc-ctf%E6%8B%9B%E6%96%B0%E8%B5%9B%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/" title="第三届xcitc-ctf招新赛部分题解"><img class="cover" src="https://b.zhutix.com/bizhi/ysdmnh/08.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-15</div><div class="title">第三届xcitc-ctf招新赛部分题解</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.helloimg.com/images/2021/08/10/Ct2WNr.jpg" onerror="this.onerror=null;this.src='https://s4.ax1x.com/2021/12/15/ozqJfg.gif'" alt="avatar"/></div><div class="author-info__name">HUAJI</div><div class="author-info__description">滑稽的Blog,欢迎访问</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/huajien"><i class="fab fa-github"></i><span>联系我们</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/huajien" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:3514825663@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到滑稽博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#buuctf-amp-amp-RE-amp-amp-%E5%89%8D12%E9%81%93%E9%A2%98"><span class="toc-text">buuctf&amp;&amp;RE&amp;&amp;前12道题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#easyre"><span class="toc-text">easyre</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reverse1"><span class="toc-text">reverse1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reverse2"><span class="toc-text">reverse2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E6%B6%B5%E7%9A%84%E8%BD%AF%E4%BB%B6"><span class="toc-text">内涵的软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90"><span class="toc-text">新年快乐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xor"><span class="toc-text">xor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#helloword"><span class="toc-text">helloword</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reverse3"><span class="toc-text">reverse3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84flag"><span class="toc-text">不一样的flag</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SimpleRev"><span class="toc-text">SimpleRev</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E9%80%86%E5%90%91%E8%A7%A3%E5%AF%86"><span class="toc-text">Java逆向解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GXYCTF2019-luck-guy"><span class="toc-text">[GXYCTF2019]luck_guy</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/01/01/buuctf&amp;&amp;RE&amp;&amp;%E5%89%8D12%E9%81%93%E9%A2%98/" title="buuctf&amp;&amp;RE&amp;&amp;前12道题"><img src="https://b.zhutix.com/bizhi/guweiz/13.jpg" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="buuctf&amp;&amp;RE&amp;&amp;前12道题"/></a><div class="content"><a class="title" href="/2023/01/01/buuctf&amp;&amp;RE&amp;&amp;%E5%89%8D12%E9%81%93%E9%A2%98/" title="buuctf&amp;&amp;RE&amp;&amp;前12道题">buuctf&amp;&amp;RE&amp;&amp;前12道题</a><time datetime="2023-01-01T08:22:03.000Z" title="发表于 2023-01-01 16:22:03">2023-01-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/13/idapro7.5%E4%BD%BF%E7%94%A8ipython%20Byte%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" title="ida pro 7.5 使用ipython Byte报错问题解决"><img src="https://www.helloimg.com/images/2023/02/25/oP4a7D.md.jpg" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="ida pro 7.5 使用ipython Byte报错问题解决"/></a><div class="content"><a class="title" href="/2022/11/13/idapro7.5%E4%BD%BF%E7%94%A8ipython%20Byte%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" title="ida pro 7.5 使用ipython Byte报错问题解决">ida pro 7.5 使用ipython Byte报错问题解决</a><time datetime="2022-11-13T06:03:00.000Z" title="发表于 2022-11-13 14:03:00">2022-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/24/DASCTF%20X%20GFCTF%202022%E5%8D%81%E6%9C%88%E6%8C%91%E6%88%98%E8%B5%9B%EF%BC%81/" title="DASCTF X GFCTF 2022十月挑战赛！"><img src="https://www.helloimg.com/images/2023/02/25/oP4PHo.md.jpg" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="DASCTF X GFCTF 2022十月挑战赛！"/></a><div class="content"><a class="title" href="/2022/10/24/DASCTF%20X%20GFCTF%202022%E5%8D%81%E6%9C%88%E6%8C%91%E6%88%98%E8%B5%9B%EF%BC%81/" title="DASCTF X GFCTF 2022十月挑战赛！">DASCTF X GFCTF 2022十月挑战赛！</a><time datetime="2022-10-24T06:03:00.000Z" title="发表于 2022-10-24 14:03:00">2022-10-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/02/%E6%B1%87%E7%BC%96%20JCC%E6%8C%87%E4%BB%A4%E8%A1%A8/" title="汇编 JCC指令表"><img src="https://www.helloimg.com/images/2022/10/22/ZrHsXu.md.png" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="汇编 JCC指令表"/></a><div class="content"><a class="title" href="/2022/08/02/%E6%B1%87%E7%BC%96%20JCC%E6%8C%87%E4%BB%A4%E8%A1%A8/" title="汇编 JCC指令表">汇编 JCC指令表</a><time datetime="2022-08-02T15:14:03.000Z" title="发表于 2022-08-02 23:14:03">2022-08-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/05/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%A0%87%E5%BF%97%E4%BD%8D/" title="汇编语言中的标志位"><img src="https://www.helloimg.com/images/2022/08/30/ZzOhQt.md.png" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="汇编语言中的标志位"/></a><div class="content"><a class="title" href="/2022/04/05/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%A0%87%E5%BF%97%E4%BD%8D/" title="汇编语言中的标志位">汇编语言中的标志位</a><time datetime="2022-04-05T09:34:46.000Z" title="发表于 2022-04-05 17:34:46">2022-04-05</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://b.zhutix.com/bizhi/guweiz/13.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2023 By HUAJI</div><div class="footer_custom_text">滑稽🤪</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'PV4cFjLDqRP85BMmqrxzifKk-gzGzoHsz',
+      appKey: 'nWF1CLMPaB4wcVwSVWqY4EQs',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
