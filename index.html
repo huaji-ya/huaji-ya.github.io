@@ -1,327 +1,994 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>HUAJI - 个人博客</title><meta name="keywords" content="滑稽，滑稽的，滑稽的博客，这是一个滑稽的Blog，Funny The Bolg，Funny Bolg，"><meta name="author" content="HUAJI"><meta name="copyright" content="HUAJI"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="滑稽的Blog,欢迎访问">
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="HUAJI">
+  <meta name="keywords" content="滑稽，滑稽的，滑稽的博客，这是一个滑稽的Blog，Funny The Bolg，Funny Bolg，">
+  
+    <meta name="description" content="滑稽的Blog,欢迎访问">
 <meta property="og:type" content="website">
 <meta property="og:title" content="HUAJI">
 <meta property="og:url" content="https://huajien.gitee.io/index.html">
 <meta property="og:site_name" content="HUAJI">
 <meta property="og:description" content="滑稽的Blog,欢迎访问">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.helloimg.com/images/2021/08/10/Ct2WNr.jpg">
 <meta property="article:author" content="HUAJI">
 <meta property="article:tag" content="滑稽，滑稽的，滑稽的博客，这是一个滑稽的Blog，Funny The Bolg，Funny Bolg，">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.helloimg.com/images/2021/08/10/Ct2WNr.jpg"><link rel="shortcut icon" href="https://www.helloimg.com/images/2022/06/24/Znfc66.png"><link rel="canonical" href="https://huajien.gitee.io/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '天',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'HUAJI',
-  isPost: false,
-  isHome: true,
-  isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2023-08-05 09:14:43'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
+<meta name="twitter:card" content="summary_large_image">
   
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
   
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
+  
+  <title>HUAJI</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"huajien.gitee.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
     
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
     
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.helloimg.com/images/2021/08/10/Ct2WNr.jpg" onerror="onerror=null;src='https://s4.ax1x.com/2021/12/15/ozqJfg.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://www.helloimg.com/images/2023/03/20/o12giQ.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">HUAJI</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">HUAJI</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/huajien" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:3514825663@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2023/07/08/iscc2023_Reverse/" title="iscc2023_reversewp"><img class="post_bg" src="https://www.helloimg.com/images/2023/08/04/oLdX60.th.png" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="iscc2023_reversewp"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/07/08/iscc2023_Reverse/" title="iscc2023_reversewp">iscc2023_reversewp</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-08T00:03:00.000Z" title="发表于 2023-07-08 08:03:00">2023-07-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Reverse-wp-iscc-2023/">Reverse_wp iscc_2023</a></span></div><div class="content">Reverseeasyctf2安卓apk 打开看  jeb 反编译找到MainActivity
- 进入zzsence方法   编写脚本
-12345678910111213141516from Crypto.Cipher import AESfrom Crypto.Util.Padding import unpad# 密文ciphertext = bytes(x &amp; 0xFF for x in  [0x7F, 41, 0x20, -23, 53, 0xFFFFFF8F, -59, 0x9A, 5, 16, 52, 0xBC, 91, 150, 43, 0xA3, 140, 170, 0x9E, 36, 0x91, 140, 0xD3, 17, 18, 0x4F, 200, 0xB1, 0x7A, 78, 0xDB, 0xF7])# # 密钥key = bytes(x &amp; 0xFF for x in  [-95,109,22,-2,26,-6,48,95,-41,126,94,-98,-20,107,-97,-35])# 偏移iviv = bytes([0,2,4,6,8, ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/01/16/buuctf&amp;&amp;RE&amp;&amp;%E5%89%8D12%E9%81%93%E9%A2%98/" title="buuctf&amp;&amp;RE&amp;&amp;前12道题"><img class="post_bg" src="https://b.zhutix.com/bizhi/guweiz/13.jpg" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="buuctf&amp;&amp;RE&amp;&amp;前12道题"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/01/16/buuctf&amp;&amp;RE&amp;&amp;%E5%89%8D12%E9%81%93%E9%A2%98/" title="buuctf&amp;&amp;RE&amp;&amp;前12道题">buuctf&amp;&amp;RE&amp;&amp;前12道题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-16T14:03:00.000Z" title="发表于 2023-01-16 22:03:00">2023-01-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Reverse-wp-buuctf/">Reverse_wp buuctf</a></span></div><div class="content">buuctf&amp;&amp;RE&amp;&amp;前12道题本文章用到的工具
-die下载地址 ：https://github.com/horsicq/DIE-engine/releases
-exeinfo下载地址 ： https://github.com/ExeinfoASL/ASL/blob/master/exeinfope.zip
-idapro下载地址：https://www.123pan.com/s/mCY8Vv-q4hWd.html            提取码:HUA0
-jadx-gui 下载地址 https://github.com/skylot/jadx/releases/tag/v1.4.6
-apkidc下载地址：https://down.52pojie.cn/?query=apkid
-仅用于学习
-easyre用die分析一下
-
-使用ida64打开easyre.exe
-
-reverse1
-
-shift+f12
-
-异或
-
-双击进入
-
-可以看到 lea 取 rcx str2 为 {hello_world}
-让后f5反编译查看伪代码
-
-将：{hello_world}
-替 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/11/13/idapro7.5%E4%BD%BF%E7%94%A8ipython%20Byte%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" title="ida pro 7.5 使用ipython Byte报错问题解决"><img class="post_bg" src="https://www.helloimg.com/images/2023/02/25/oP4a7D.md.jpg" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="ida pro 7.5 使用ipython Byte报错问题解决"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/13/idapro7.5%E4%BD%BF%E7%94%A8ipython%20Byte%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" title="ida pro 7.5 使用ipython Byte报错问题解决">ida pro 7.5 使用ipython Byte报错问题解决</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-13T06:03:00.000Z" title="发表于 2022-11-13 14:03:00">2022-11-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%97%A5%E5%B8%B8%E5%B0%8F%E9%97%AE%E9%A2%98/">日常小问题</a></span></div><div class="content">ida pro 7.5 使用ipython Byte报错问题解决这两天使用ida 发现ipython代码无法运行
-比如PatchByte()，Byte()都提示NameError: name ‘Byte’ is not defined又舍不得放弃7.5(一些题目拿7.5版生成的伪代码比7.0版要好看的多)，于是在网上查了很久，找出了解决办法。
-方法1(兼容办法)：其次是在比较方便的在7.5用7.0API办法，来源：https://github.com/0xgalz/Virtuailor/issues/8在代码面前：from idc_bc695 import *即可。
-方法2(一劳永逸版)：来源官方文档：https://www.hex-rays.com/products/ida/support/ida74_idapython_no_bc695.shtml找到
-
-~&#x2F;.idapro&#x2F;cfg&#x2F;idapython.cfg (Linux)
-%APPDATA%\Hex-Rays\IDA Pro\cfg\idapython.cfg (Windows) (绿色版的话在程序 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/10/24/DASCTF%20X%20GFCTF%202022%E5%8D%81%E6%9C%88%E6%8C%91%E6%88%98%E8%B5%9B%EF%BC%81/" title="DASCTF X GFCTF 2022十月挑战赛！"><img class="post_bg" src="https://www.helloimg.com/images/2023/02/25/oP4PHo.md.jpg" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="DASCTF X GFCTF 2022十月挑战赛！"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/24/DASCTF%20X%20GFCTF%202022%E5%8D%81%E6%9C%88%E6%8C%91%E6%88%98%E8%B5%9B%EF%BC%81/" title="DASCTF X GFCTF 2022十月挑战赛！">DASCTF X GFCTF 2022十月挑战赛！</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-24T06:03:00.000Z" title="发表于 2022-10-24 14:03:00">2022-10-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Reverse-wp/">Reverse_wp</a></span></div><div class="content">DASCTF X GFCTF 2022十月挑战赛！Reverse贪玩CTFdie看无壳 64位
-
-使用ida64动态调试发现自动退出
-发现TlsCallback_0 在start函数前面执行
-
-把call    cs:IsDebuggerPresent nop掉
-并把 jz patch 换成jnz
-如下图
-
-可以正常调试了
-
-shift+f12看字符串
-
-进去 ctrl + x 数据的交叉引用 静态分析
-
-进入	sub_7FF6ED1619C0 函数
-
-长度如果不等于16 返回 -1 得到是账户是 是16位
-
-返回-1 弹出 弹窗 字符长长度不对
-
-和上面一样密码也是16位 否则返回 -1 然后提示框 长度不对
-让后我随便输入16个账户和16个密码
-最下面有异或
-
-下面的判断给他断下来	按tab转汇编窗口
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
 
 
-双击进入rsi寄存器
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/09/27/new%E6%90%AD%E5%BB%BAwin10%E5%8F%8C%E6%9C%BA%E8%B0%83%E8%AF%95/" target="_self">
+          win10配置双机调试
+        </a>
+      </h2>
 
-提取
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/09/27/new%E6%90%AD%E5%BB%BAwin10%E5%8F%8C%E6%9C%BA%E8%B0%83%E8%AF%95/" target="_self">
+        <div>
+          搭建Windows 10 双机调试首先安装号Windows 10 系统  管理员方式运行cmd 依次输入  123456//添加开机引导项bcdedit /copy &#123;current&#125; /d Debug//设置引导项时间bcdedit /timeout 30  让后使用Windows自动的重启不要使用VMware 重启 重启后依次输入  依次输入管理员cmd  12345bcd
+        </div>
+      </a>
 
-编写脚本
-123456str1 = [   0x04, 0x1F, 0x1F, 0x1E, 0x43, 0x4B, 0x43, 0x45, 0x44, 0x00, 0x16, 0x10, 0x55, 0x17, 0x12, 0x73]str2= & ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/08/02/%E6%B1%87%E7%BC%96%20JCC%E6%8C%87%E4%BB%A4%E8%A1%A8/" title="汇编 JCC指令表"><img class="post_bg" src="https://www.helloimg.com/images/2022/10/22/ZrHsXu.md.png" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="汇编 JCC指令表"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/02/%E6%B1%87%E7%BC%96%20JCC%E6%8C%87%E4%BB%A4%E8%A1%A8/" title="汇编 JCC指令表">汇编 JCC指令表</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-02T15:14:03.000Z" title="发表于 2022-08-02 23:14:03">2022-08-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/32%E4%BD%8D%E6%B1%87%E7%BC%96/">32位汇编</a></span></div><div class="content">汇编 JCC指令表JCC指条件跳转指令，CC就是指条件码。
-
-
-JCC指令
-中文含义
-英文原意
-检查符号位
-典型c应用
-
-
-
-JZ&#x2F;JE
-若为0则跳转；若相等则跳转
-jump if zero;jump if equal
-ZF&#x3D;1
-if (i &#x3D;&#x3D; j);if (i &#x3D;&#x3D; 0);
-
-
-JNZ&#x2F;JNE
-若不为0则跳转；若不相等则跳转
-jump if not zero;jump if not equal
-ZF&#x3D;0
-if (i !&#x3D; j);if (i !&#x3D; 0);
-
-
-JS
-若为负则跳转
-jump if sign
-SF&#x3D;1
-if (i &lt; 0);
-
-
-JNS
-若为正则跳转
-jump if not sign
-SF&#x3D;0
-if (i &gt; 0);
-
-
-JP&#x2F;JPE
-若1出现次数为偶数则跳转
-jump if Parity (Even)
-PF&#x3D;1
-(null)
-
-
-JNP&#x2F;JPO
-若1出现次数为奇数则跳转
-jump if not parity ( ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/04/05/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%A0%87%E5%BF%97%E4%BD%8D/" title="汇编语言中的标志位"><img class="post_bg" src="https://www.helloimg.com/images/2022/08/30/ZzOhQt.md.png" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="汇编语言中的标志位"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/04/05/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%A0%87%E5%BF%97%E4%BD%8D/" title="汇编语言中的标志位">汇编语言中的标志位</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-04-05T09:34:46.000Z" title="发表于 2022-04-05 17:34:46">2022-04-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/32%E4%BD%8D%E6%B1%87%E7%BC%96/">32位汇编</a></span></div><div class="content">汇编中的：CF、PF、AF、ZF、SF、TF、IF、DF、OF标志位CF:进位标志位在无符号运算时，记录了运算结果的最高有效位向更高位的进位值或从更高位借位，产生进位或借位时CF&#x3D;1，否则CF&#x3D;0；
-PF:奇偶标志位相关指令执行后结果所有bit中1的个数为偶数，那么PF&#x3D;1，1的个数为奇数则PF&#x3D;0；
-AF:辅助进位标志位运算过程中看最后四位，不论长度为多少。最后四位向前有进位或者借位，AF&#x3D;1,否则AF&#x3D;0;
-ZF:零标志位相关指令执行后结果为0那么ZF&#x3D;1,结果不为0则ZF&#x3D;0；
-SF:符号标志位相关指令执行后结果为负那么SF&#x3D;1，结果非负数则SF&#x3D;0；
-TF:调试标志位当TF&#x3D;1时，处理器每次只执行一条指令，即单步执行;
-IF:中断允许标志位它用来控制8086是否允许接收外部中断请求。若IF&#x3D;1，8086能响应外部中断，反之则屏蔽外部中断;
-DF:方向标志位在串处理指令中，每次操作后，如果DF&#x3D;0，si、di递增，如果DF&#x3D;1，si、di递减 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2021/10/13/%E7%AC%AC%E4%B8%89%E5%B1%8Axcitc-ctf%E6%8B%9B%E6%96%B0%E8%B5%9B%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/" title="第三届xcitc-ctf招新赛部分题解"><img class="post_bg" src="https://www.helloimg.com/images/2021/10/05/CNPn6E.md.jpg" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="第三届xcitc-ctf招新赛部分题解"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/10/13/%E7%AC%AC%E4%B8%89%E5%B1%8Axcitc-ctf%E6%8B%9B%E6%96%B0%E8%B5%9B%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/" title="第三届xcitc-ctf招新赛部分题解">第三届xcitc-ctf招新赛部分题解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-10-13T02:03:00.000Z" title="发表于 2021-10-13 10:03:00">2021-10-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/xcitc-wp/">xcitc wp</a></span></div><div class="content">write upreverseEz_ezEz_ez然后找ida64打开这个helloELF这个文件搜索ida工具使用教程然后按了f5答案就出来了
-ez_asmez_asm 打开发现里面有H，H在计算机中表示16进制，让后尝试16进制转换为10进制让后换算出来ASCII
-依次类推转换完就是pflag{Hello_Assembly}
-welcome_loginwelcome_login下载发现是一个可执行文件然后使用ida64打开发现没有然后使用ida32位打开选中几个字段然后跳转到地址然后上下找发现分成三段然后一个一个复制让后就出来了答案
-WEB欢迎欢迎欢迎欢迎题首先打开里面的连接，习惯性的按f12查看内存中的源代码发现里面又一行注释falg.txt让后在端口后面&#x2F;flag.txt发现flag{welcome_to_xcitc_21}
-easyphpeasyphp进入先看if 条件 发现是get传参数flag如果等于0就输出结果
-让后就开始做题端口后面加&#x2F;?flag[]&#x3D;0 结果就出来了flag{f97c5d29941bfb1b2fdab0874906ab8 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2021/08/10/hello-world/" title="你好HEXO"><img class="post_bg" src="https://b.zhutix.com/bizhi/ysdmnh/05.jpg" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="你好HEXO"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/10/hello-world/" title="你好HEXO">你好HEXO</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-08-10T12:03:00.000Z" title="发表于 2021-08-10 20:03:00">2021-08-10</time></span></div><div class="content">欢迎光临滑稽博客 !这是你的第一个帖子。如果您在使用滑稽博客时遇到任何问题，您可以在企鹅联系我上问我。
-快速启动HEXO创建一个新帖子1$ hexo new &quot;My New Post&quot;
-
-HEXO运行服务器1$ hexo server
-
-HEXO运行服务器1$ hexo generate
-
-HEXO部署到远程站点1$ hexo deploy
-</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.helloimg.com/images/2021/08/10/Ct2WNr.jpg" onerror="this.onerror=null;this.src='https://s4.ax1x.com/2021/12/15/ozqJfg.gif'" alt="avatar"/></div><div class="author-info__name">HUAJI</div><div class="author-info__description">滑稽的Blog,欢迎访问</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/huajien"><i class="fab fa-github"></i><span>联系我们</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/huajien" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:3514825663@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到滑稽博客</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/08/iscc2023_Reverse/" title="iscc2023_reversewp"><img src="https://www.helloimg.com/images/2023/08/04/oLdX60.th.png" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="iscc2023_reversewp"/></a><div class="content"><a class="title" href="/2023/07/08/iscc2023_Reverse/" title="iscc2023_reversewp">iscc2023_reversewp</a><time datetime="2023-07-08T00:03:00.000Z" title="发表于 2023-07-08 08:03:00">2023-07-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/16/buuctf&amp;&amp;RE&amp;&amp;%E5%89%8D12%E9%81%93%E9%A2%98/" title="buuctf&amp;&amp;RE&amp;&amp;前12道题"><img src="https://b.zhutix.com/bizhi/guweiz/13.jpg" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="buuctf&amp;&amp;RE&amp;&amp;前12道题"/></a><div class="content"><a class="title" href="/2023/01/16/buuctf&amp;&amp;RE&amp;&amp;%E5%89%8D12%E9%81%93%E9%A2%98/" title="buuctf&amp;&amp;RE&amp;&amp;前12道题">buuctf&amp;&amp;RE&amp;&amp;前12道题</a><time datetime="2023-01-16T14:03:00.000Z" title="发表于 2023-01-16 22:03:00">2023-01-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/13/idapro7.5%E4%BD%BF%E7%94%A8ipython%20Byte%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" title="ida pro 7.5 使用ipython Byte报错问题解决"><img src="https://www.helloimg.com/images/2023/02/25/oP4a7D.md.jpg" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="ida pro 7.5 使用ipython Byte报错问题解决"/></a><div class="content"><a class="title" href="/2022/11/13/idapro7.5%E4%BD%BF%E7%94%A8ipython%20Byte%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" title="ida pro 7.5 使用ipython Byte报错问题解决">ida pro 7.5 使用ipython Byte报错问题解决</a><time datetime="2022-11-13T06:03:00.000Z" title="发表于 2022-11-13 14:03:00">2022-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/24/DASCTF%20X%20GFCTF%202022%E5%8D%81%E6%9C%88%E6%8C%91%E6%88%98%E8%B5%9B%EF%BC%81/" title="DASCTF X GFCTF 2022十月挑战赛！"><img src="https://www.helloimg.com/images/2023/02/25/oP4PHo.md.jpg" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="DASCTF X GFCTF 2022十月挑战赛！"/></a><div class="content"><a class="title" href="/2022/10/24/DASCTF%20X%20GFCTF%202022%E5%8D%81%E6%9C%88%E6%8C%91%E6%88%98%E8%B5%9B%EF%BC%81/" title="DASCTF X GFCTF 2022十月挑战赛！">DASCTF X GFCTF 2022十月挑战赛！</a><time datetime="2022-10-24T06:03:00.000Z" title="发表于 2022-10-24 14:03:00">2022-10-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/02/%E6%B1%87%E7%BC%96%20JCC%E6%8C%87%E4%BB%A4%E8%A1%A8/" title="汇编 JCC指令表"><img src="https://www.helloimg.com/images/2022/10/22/ZrHsXu.md.png" onerror="this.onerror=null;this.src='https://s3.mashiro.top/view/2018/05/13/image-404.png'" alt="汇编 JCC指令表"/></a><div class="content"><a class="title" href="/2022/08/02/%E6%B1%87%E7%BC%96%20JCC%E6%8C%87%E4%BB%A4%E8%A1%A8/" title="汇编 JCC指令表">汇编 JCC指令表</a><time datetime="2022-08-02T15:14:03.000Z" title="发表于 2022-08-02 23:14:03">2022-08-02</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
-            <i class="fas fa-folder-open"></i>
-            <span>分类</span>
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-09-27 16:03" pubdate>
+              2023-09-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
             
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-%E9%85%8D%E7%BD%AE/" class="category-chain-item">环境搭建 配置</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">#环境搭建</a>
+            
+              <a href="/tags/%E5%8F%8C%E6%9C%BA%E8%B0%83%E8%AF%95/">#双机调试</a>
+            
+              <a href="/tags/Windows-10/">#Windows 10</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/07/08/iscc2023_Reverse/" target="_self">
+          iscc2023_reversewp
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/07/08/iscc2023_Reverse/" target="_self">
+        <div>
+          Reverseeasyctf2安卓apk 打开看  jeb 反编译找到MainActivity  进入zzsence方法   编写脚本 12345678910111213141516from Crypto.Cipher import AESfrom Crypto.Util.Padding import unpad# 密文ciphertext = bytes(x &amp; 0xFF for x i
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-07-08 08:03" pubdate>
+              2023-07-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Reverse-wp-iscc-2023/" class="category-chain-item">Reverse_wp iscc_2023</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/ctf/">#ctf</a>
+            
+              <a href="/tags/%E9%80%86%E5%90%91wp/">#逆向wp</a>
+            
+              <a href="/tags/reverse/">#reverse</a>
+            
+              <a href="/tags/iscc-2023/">#iscc_2023</a>
+            
+              <a href="/tags/%E6%AF%94%E8%B5%9B/">#比赛</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/01/16/buuctf&amp;&amp;RE&amp;&amp;%E5%89%8D12%E9%81%93%E9%A2%98/" target="_self">
+          buuctf&amp;&amp;RE&amp;&amp;前12道题
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/01/16/buuctf&amp;&amp;RE&amp;&amp;%E5%89%8D12%E9%81%93%E9%A2%98/" target="_self">
+        <div>
+          buuctf&amp;&amp;RE&amp;&amp;前12道题本文章用到的工具 die下载地址 ：https://github.com/horsicq/DIE-engine/releases exeinfo下载地址 ： https://github.com/ExeinfoASL/ASL/blob/master/exeinfope.zip idapro下载地址：https://www.123pa
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-01-16 22:03" pubdate>
+              2023-01-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Reverse-wp-buuctf/" class="category-chain-item">Reverse_wp buuctf</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/buuctf/">#buuctf</a>
+            
+              <a href="/tags/ctf/">#ctf</a>
+            
+              <a href="/tags/%E9%80%86%E5%90%91wp/">#逆向wp</a>
+            
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">#学习笔记</a>
+            
+              <a href="/tags/reverse/">#reverse</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2022/11/13/idapro7.5%E4%BD%BF%E7%94%A8ipython%20Byte%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" target="_self">
+          ida pro 7.5 使用ipython Byte报错问题解决
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/11/13/idapro7.5%E4%BD%BF%E7%94%A8ipython%20Byte%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" target="_self">
+        <div>
+          ida pro 7.5 使用ipython Byte报错问题解决这两天使用ida 发现ipython代码无法运行 比如PatchByte()，Byte()都提示NameError: name ‘Byte’ is not defined又舍不得放弃7.5(一些题目拿7.5版生成的伪代码比7.0版要好看的多)，于是在网上查了很久，找出了解决办法。 方法1(兼容办法)：其次是在比较方便的在7.5用7.0
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-13 14:03" pubdate>
+              2022-11-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%97%A5%E5%B8%B8%E5%B0%8F%E9%97%AE%E9%A2%98/" class="category-chain-item">日常小问题</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/idapro/">#idapro</a>
+            
+              <a href="/tags/ipython/">#ipython</a>
+            
+              <a href="/tags/ida%E8%84%9A%E6%9C%AC%E9%97%AE%E9%A2%98/">#ida脚本问题</a>
+            
+              <a href="/tags/%E6%97%A5%E5%B8%B8%E6%97%A5%E8%AE%B0/">#日常日记</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2022/10/24/DASCTF%20X%20GFCTF%202022%E5%8D%81%E6%9C%88%E6%8C%91%E6%88%98%E8%B5%9B%EF%BC%81/" target="_self">
+          DASCTF X GFCTF 2022十月挑战赛！
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/10/24/DASCTF%20X%20GFCTF%202022%E5%8D%81%E6%9C%88%E6%8C%91%E6%88%98%E8%B5%9B%EF%BC%81/" target="_self">
+        <div>
+          DASCTF X GFCTF 2022十月挑战赛！Reverse贪玩CTFdie看无壳 64位  使用ida64动态调试发现自动退出 发现TlsCallback_0 在start函数前面执行  把call    cs:IsDebuggerPresent nop掉 并把 jz patch 换成jnz 如下图  可以正常调试了  shift+f12看字符串  进去 ctrl + x 数据的交叉引用 静
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-10-24 14:03" pubdate>
+              2022-10-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Reverse-wp/" class="category-chain-item">Reverse_wp</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/DASCTF/">#DASCTF</a>
+            
+              <a href="/tags/2022%E5%8D%81%E6%9C%88%E6%8C%91%E6%88%98%E8%B5%9B/">#2022十月挑战赛</a>
+            
+              <a href="/tags/%E8%B4%AA%E7%8E%A9CTF/">#贪玩CTF</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2022/08/02/%E6%B1%87%E7%BC%96%20JCC%E6%8C%87%E4%BB%A4%E8%A1%A8/" target="_self">
+          汇编 JCC指令表
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/08/02/%E6%B1%87%E7%BC%96%20JCC%E6%8C%87%E4%BB%A4%E8%A1%A8/" target="_self">
+        <div>
+          汇编 JCC指令表JCC指条件跳转指令，CC就是指条件码。   JCC指令 中文含义 英文原意 检查符号位 典型c应用    JZ&#x2F;JE 若为0则跳转；若相等则跳转 jump if zero;jump if equal ZF&#x3D;1 if (i &#x3D;&#x3D; j);if (i &#x3D;&#x3D; 0);   JNZ&#x2F;JNE 若不为0则跳转；若不相等则跳转
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-08-02 23:14" pubdate>
+              2022-08-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/32%E4%BD%8D%E6%B1%87%E7%BC%96/" class="category-chain-item">32位汇编</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%B1%87%E7%BC%96%E8%B7%B3%E8%BD%AC/">#汇编跳转</a>
+            
+              <a href="/tags/%E8%B7%B3%E8%BD%AC%E6%8C%87%E4%BB%A4/">#跳转指令</a>
+            
+              <a href="/tags/jcc/">#jcc</a>
+            
+              <a href="/tags/je/">#je</a>
+            
+              <a href="/tags/jc/">#jc</a>
+            
+              <a href="/tags/jb/">#jb</a>
+            
+              <a href="/tags/ja/">#ja</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2022/05/14/xp%E6%90%AD%E5%BB%BA%E5%8F%8C%E5%87%BB%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83/" target="_self">
+          win_xp配置双机调试
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/05/14/xp%E6%90%AD%E5%BB%BA%E5%8F%8C%E5%87%BB%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83/" target="_self">
+        <div>
+          xp配置双机调试先安装Windows xp 系统让后 在C盘目录下有一个 boot.ini 文件，默认情况下的配置如下 12345678[boot loader]timeout=30default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS[operating systems]multi(0)disk(0)rdisk(0)partition(1)\WIN
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-14 08:03" pubdate>
+              2022-05-14
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-%E9%85%8D%E7%BD%AE/" class="category-chain-item">环境搭建 配置</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">#环境搭建</a>
+            
+              <a href="/tags/%E5%8F%8C%E6%9C%BA%E8%B0%83%E8%AF%95/">#双机调试</a>
+            
+              <a href="/tags/Windows-xp/">#Windows xp</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2022/04/05/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%A0%87%E5%BF%97%E4%BD%8D/" target="_self">
+          汇编语言中的标志位
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/04/05/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%A0%87%E5%BF%97%E4%BD%8D/" target="_self">
+        <div>
+          汇编中的：CF、PF、AF、ZF、SF、TF、IF、DF、OF标志位CF:进位标志位在无符号运算时，记录了运算结果的最高有效位向更高位的进位值或从更高位借位，产生进位或借位时CF&#x3D;1，否则CF&#x3D;0； PF:奇偶标志位相关指令执行后结果所有bit中1的个数为偶数，那么PF&#x3D;1，1的个数为奇数则PF&#x3D;0； AF:辅助进位标志位运算过程中看最后四位，不论长度为多少
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-04-05 17:34" pubdate>
+              2022-04-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/32%E4%BD%8D%E6%B1%87%E7%BC%96/" class="category-chain-item">32位汇编</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%B1%87%E7%BC%96%E6%A0%87%E5%BF%97%E4%BD%8D/">#汇编标志位</a>
+            
+              <a href="/tags/CF/">#CF</a>
+            
+              <a href="/tags/PF/">#PF</a>
+            
+              <a href="/tags/AF/">#AF</a>
+            
+              <a href="/tags/ZF/">#ZF</a>
+            
+              <a href="/tags/SF/">#SF</a>
+            
+              <a href="/tags/TF/">#TF</a>
+            
+              <a href="/tags/IF/">#IF</a>
+            
+              <a href="/tags/DF/">#DF</a>
+            
+              <a href="/tags/OF/">#OF</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2021/10/13/%E7%AC%AC%E4%B8%89%E5%B1%8Axcitc-ctf%E6%8B%9B%E6%96%B0%E8%B5%9B%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/" target="_self">
+          第三届xcitc-ctf招新赛部分题解
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/10/13/%E7%AC%AC%E4%B8%89%E5%B1%8Axcitc-ctf%E6%8B%9B%E6%96%B0%E8%B5%9B%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/" target="_self">
+        <div>
+          write upreverseEz_ezEz_ez然后找ida64打开这个helloELF这个文件搜索ida工具使用教程然后按了f5答案就出来了 ez_asmez_asm 打开发现里面有H，H在计算机中表示16进制，让后尝试16进制转换为10进制让后换算出来ASCII 依次类推转换完就是pflag{Hello_Assembly} welcome_loginwelcome_login下载发现是一个可
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-10-13 10:03" pubdate>
+              2021-10-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/xcitc-wp/" class="category-chain-item">xcitc wp</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/ctf/">#ctf</a>
+            
+              <a href="/tags/xcitc/">#xcitc</a>
+            
+              <a href="/tags/wp/">#wp</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2021/08/10/hello-world/" target="_self">
+          你好HEXO
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/08/10/hello-world/" target="_self">
+        <div>
+          欢迎光临滑稽博客 !这是你的第一个帖子。如果您在使用滑稽博客时遇到任何问题，您可以在企鹅联系我上问我。 快速启动HEXO创建一个新帖子1$ hexo new &quot;My New Post&quot;  HEXO运行服务器1$ hexo server  HEXO运行服务器1$ hexo generate  HEXO部署到远程站点1$ hexo deploy
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-08-10 20:03" pubdate>
+              2021-08-10
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+
+
+              </div>
             </div>
-            <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/32%E4%BD%8D%E6%B1%87%E7%BC%96/"><span class="card-category-list-name">32位汇编</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Reverse-wp/"><span class="card-category-list-name">Reverse_wp</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Reverse-wp-buuctf/"><span class="card-category-list-name">Reverse_wp buuctf</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Reverse-wp-iscc-2023/"><span class="card-category-list-name">Reverse_wp iscc_2023</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/xcitc-wp/"><span class="card-category-list-name">xcitc wp</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%97%A5%E5%B8%B8%E5%B0%8F%E9%97%AE%E9%A2%98/"><span class="card-category-list-name">日常小问题</span><span class="card-category-list-count">1</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/DASCTF/" style="font-size: 1.15em; color: rgb(79, 76, 174)">DASCTF</a><a href="/tags/2022%E5%8D%81%E6%9C%88%E6%8C%91%E6%88%98%E8%B5%9B/" style="font-size: 1.15em; color: rgb(182, 172, 128)">2022十月挑战赛</a><a href="/tags/%E8%B4%AA%E7%8E%A9CTF/" style="font-size: 1.15em; color: rgb(15, 52, 113)">贪玩CTF</a><a href="/tags/iscc-2023/" style="font-size: 1.15em; color: rgb(37, 29, 71)">iscc_2023</a><a href="/tags/ctf/" style="font-size: 1.45em; color: rgb(103, 30, 168)">ctf</a><a href="/tags/%E9%80%86%E5%90%91wp/" style="font-size: 1.3em; color: rgb(171, 171, 151)">逆向wp</a><a href="/tags/%E6%AF%94%E8%B5%9B/" style="font-size: 1.15em; color: rgb(91, 18, 112)">比赛</a><a href="/tags/reverse/" style="font-size: 1.3em; color: rgb(181, 178, 77)">reverse</a><a href="/tags/buuctf/" style="font-size: 1.15em; color: rgb(59, 25, 181)">buuctf</a><a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 1.15em; color: rgb(26, 1, 192)">学习笔记</a><a href="/tags/%E6%B1%87%E7%BC%96%E8%B7%B3%E8%BD%AC/" style="font-size: 1.15em; color: rgb(46, 113, 166)">汇编跳转</a><a href="/tags/%E8%B7%B3%E8%BD%AC%E6%8C%87%E4%BB%A4/" style="font-size: 1.15em; color: rgb(179, 156, 115)">跳转指令</a><a href="/tags/jcc/" style="font-size: 1.15em; color: rgb(95, 91, 82)">jcc</a><a href="/tags/je/" style="font-size: 1.15em; color: rgb(49, 170, 25)">je</a><a href="/tags/jc/" style="font-size: 1.15em; color: rgb(162, 143, 57)">jc</a><a href="/tags/jb/" style="font-size: 1.15em; color: rgb(9, 121, 152)">jb</a><a href="/tags/ja/" style="font-size: 1.15em; color: rgb(54, 128, 52)">ja</a><a href="/tags/%E6%B1%87%E7%BC%96%E6%A0%87%E5%BF%97%E4%BD%8D/" style="font-size: 1.15em; color: rgb(153, 56, 135)">汇编标志位</a><a href="/tags/CF/" style="font-size: 1.15em; color: rgb(156, 120, 145)">CF</a><a href="/tags/PF/" style="font-size: 1.15em; color: rgb(191, 93, 140)">PF</a><a href="/tags/AF/" style="font-size: 1.15em; color: rgb(145, 38, 9)">AF</a><a href="/tags/ZF/" style="font-size: 1.15em; color: rgb(30, 60, 154)">ZF</a><a href="/tags/SF/" style="font-size: 1.15em; color: rgb(114, 129, 84)">SF</a><a href="/tags/TF/" style="font-size: 1.15em; color: rgb(157, 96, 129)">TF</a><a href="/tags/IF/" style="font-size: 1.15em; color: rgb(74, 53, 142)">IF</a><a href="/tags/DF/" style="font-size: 1.15em; color: rgb(149, 25, 124)">DF</a><a href="/tags/OF/" style="font-size: 1.15em; color: rgb(121, 35, 68)">OF</a><a href="/tags/idapro/" style="font-size: 1.15em; color: rgb(152, 150, 67)">idapro</a><a href="/tags/ipython/" style="font-size: 1.15em; color: rgb(54, 170, 89)">ipython</a><a href="/tags/ida%E8%84%9A%E6%9C%AC%E9%97%AE%E9%A2%98/" style="font-size: 1.15em; color: rgb(111, 159, 169)">ida脚本问题</a><a href="/tags/%E6%97%A5%E5%B8%B8%E6%97%A5%E8%AE%B0/" style="font-size: 1.15em; color: rgb(89, 59, 141)">日常日记</a><a href="/tags/xcitc/" style="font-size: 1.15em; color: rgb(127, 109, 117)">xcitc</a><a href="/tags/wp/" style="font-size: 1.15em; color: rgb(169, 96, 78)">wp</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">八月 2021</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">8</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2021-08-09T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">5.4k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-08-05T01:14:43.828Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://www.helloimg.com/images/2023/03/20/o12giQ.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2023 By HUAJI</div><div class="footer_custom_text">滑稽🤪</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
-  endLoading: () => {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loading-box').classList.add("loaded")
-  },
-  initLoading: () => {
-    document.body.style.overflow = '';
-    document.getElementById('loading-box').classList.remove("loaded")
+          </div>
+        </div>
+      </div>
+    
 
-  }
-}
-window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function subtitleType () {
-  getScript('https://yijuzhan.com/api/word.php?m=js').then(() => {
-    const con = str[0]
-    if (true) {
-      const from = '出自 ' + str[1]
-      const sub = []
-      sub.unshift(con, from)
-      window.typed = new Typed('#subtitle', {
-        strings: sub,
-        startDelay: 300,
-        typeSpeed: 150,
-        loop: true,
-        backSpeed: 50,
-      })
-    } else {
-      document.getElementById('subtitle').innerHTML = con
-    }
-  })
-}
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-if (true) {
-  if (typeof Typed === 'function') {
-    subtitleType()
-  } else {
-    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
-  }
-} else {
-  subtitleType()
-}
-</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
-POWERMODE.shake = true;
-POWERMODE.mobile = false;
-document.body.addEventListener('input', POWERMODE);
-</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
