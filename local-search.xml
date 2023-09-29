@@ -49,15 +49,15 @@
     
     <tags>
       
-      <tag>iscc_2023</tag>
-      
       <tag>ctf</tag>
       
       <tag>逆向wp</tag>
       
-      <tag>比赛</tag>
-      
       <tag>reverse</tag>
+      
+      <tag>iscc_2023</tag>
+      
+      <tag>比赛</tag>
       
     </tags>
     
@@ -82,15 +82,15 @@
     
     <tags>
       
+      <tag>buuctf</tag>
+      
       <tag>ctf</tag>
       
       <tag>逆向wp</tag>
       
-      <tag>reverse</tag>
-      
-      <tag>buuctf</tag>
-      
       <tag>学习笔记</tag>
+      
+      <tag>reverse</tag>
       
     </tags>
     
@@ -289,6 +289,39 @@
       <tag>xcitc</tag>
       
       <tag>wp</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>git的使用</title>
+    <link href="/2021/08/29/git%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <url>/2021/08/29/git%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<h2 id="什么是-Git"><a href="#什么是-Git" class="headerlink" title="什么是 Git"></a>什么是 Git</h2><p>Git 是分布式版本控制系统，可以帮助团队协作开发、管理代码版本，以及追踪文件的改动。</p><h2 id="Git-基本配置"><a href="#Git-基本配置" class="headerlink" title="Git 基本配置"></a>Git 基本配置</h2><p>在开始使用 Git 之前，需要进行基本的配置，包括用户名和邮箱等信息。</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus">git config <span class="hljs-attr">--global</span> user<span class="hljs-selector-class">.name</span> <span class="hljs-string">&quot;Your Name&quot;</span><br>git config <span class="hljs-attr">--global</span> user<span class="hljs-selector-class">.email</span> <span class="hljs-string">&quot;your-email@example.com&quot;</span><br></code></pre></td></tr></table></figure><h2 id="创建新仓库"><a href="#创建新仓库" class="headerlink" title="创建新仓库"></a>创建新仓库</h2><p>创建一个新的本地仓库可以使用 <code>git init</code> 命令。</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp">git <span class="hljs-keyword">init</span><br></code></pre></td></tr></table></figure><h2 id="克隆远程仓库"><a href="#克隆远程仓库" class="headerlink" title="克隆远程仓库"></a>克隆远程仓库</h2><p>如果要获取远程仓库的代码到本地可以使用 <code>git clone</code> 命令。</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">git <span class="hljs-keyword">clone</span> <span class="hljs-title">&lt;repository-url</span>&gt;<br></code></pre></td></tr></table></figure><h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><p>以下是一些常用的 Git 命令和操作：</p><ul><li><code>git add &lt;file&gt;</code>: 将文件添加到暂存区。</li><li><code>git commit -m &quot;Commit message&quot;</code>: 提交暂存区的改动到本地仓库。</li><li><code>git status</code>: 显示工作区和暂存区的状态。</li><li><code>git log</code>: 查看提交历史记录。</li><li><code>git branch</code>: 列出所有分支。</li><li><code>git checkout &lt;branch-name&gt;</code>: 切换到指定的分支。</li><li><code>git merge &lt;branch-name&gt;</code>: 合并指定分支到当前分支。</li></ul><h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><p>使用分支可以同时进行多个功能的开发，以下是一些常见的分支操作：</p><ul><li><code>git branch &lt;branch-name&gt;</code>: 创建一个新的分支。</li><li><code>git branch -d &lt;branch-name&gt;</code>: 删除指定的分支。</li><li><code>git checkout &lt;branch-name&gt;</code>: 切换到指定的分支。</li><li><code>git merge &lt;branch-name&gt;</code>: 合并指定分支到当前分支。</li><li><code>git stash</code>: 暂存当前的修改。</li></ul><h2 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h2><p>使用远程仓库可以方便地与团队成员协作和共享代码，以下是一些常见的远程操作：</p><ul><li><code>git remote add origin &lt;repository-url&gt;</code>: 关联本地仓库与远程仓库。</li><li><code>git push -u origin &lt;branch-name&gt;</code>: 将本地分支推送到远程仓库。</li><li><code>git pull</code>: 获取远程仓库的最新代码。</li><li><code>git clone &lt;repository-url&gt;</code>: 克隆远程仓库到本地。</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>git</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>开发</tag>
+      
+      <tag>git</tag>
+      
+      <tag>github</tag>
+      
+      <tag>gitee</tag>
+      
+      <tag>学习</tag>
       
     </tags>
     
