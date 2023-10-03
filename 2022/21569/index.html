@@ -16,27 +16,30 @@
   <meta name="author" content="HUAJI">
   <meta name="keywords" content="滑稽，滑稽的，滑稽的博客，这是一个滑稽的Blog，Funny The Bolg，Funny Bolg，">
   
-    <meta name="description" content="ida pro 7.5 使用ipython Byte报错问题解决这两天使用ida 发现ipython代码无法运行 比如PatchByte()，Byte()都提示NameError: name ‘Byte’ is not defined又舍不得放弃7.5(一些题目拿7.5版生成的伪代码比7.0版要好看的多)，于是在网上查了很久，找出了解决办法。 方法1(兼容办法)：其次是在比较方便的在7.5用7.0">
+    <meta name="description" content="汇编 JCC指令表JCC指条件跳转指令，CC就是指条件码。   JCC指令 中文含义 英文原意 检查符号位 典型c应用    JZ&#x2F;JE 若为0则跳转；若相等则跳转 jump if zero;jump if equal ZF&#x3D;1 if (i &#x3D;&#x3D; j);if (i &#x3D;&#x3D; 0);   JNZ&#x2F;JNE 若不为0则跳转；若不相等则跳转">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ida pro 7.5 使用ipython Byte报错问题解决">
-<meta property="og:url" content="https://huajien.gitee.io/34052/index.html">
+<meta property="og:title" content="汇编 JCC指令表">
+<meta property="og:url" content="https://huajien.gitee.io/2022/21569/index.html">
 <meta property="og:site_name" content="HUAJI">
-<meta property="og:description" content="ida pro 7.5 使用ipython Byte报错问题解决这两天使用ida 发现ipython代码无法运行 比如PatchByte()，Byte()都提示NameError: name ‘Byte’ is not defined又舍不得放弃7.5(一些题目拿7.5版生成的伪代码比7.0版要好看的多)，于是在网上查了很久，找出了解决办法。 方法1(兼容办法)：其次是在比较方便的在7.5用7.0">
+<meta property="og:description" content="汇编 JCC指令表JCC指条件跳转指令，CC就是指条件码。   JCC指令 中文含义 英文原意 检查符号位 典型c应用    JZ&#x2F;JE 若为0则跳转；若相等则跳转 jump if zero;jump if equal ZF&#x3D;1 if (i &#x3D;&#x3D; j);if (i &#x3D;&#x3D; 0);   JNZ&#x2F;JNE 若不为0则跳转；若不相等则跳转">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-11-13T06:03:00.000Z">
-<meta property="article:modified_time" content="2022-11-13T15:14:03.000Z">
+<meta property="article:published_time" content="2022-08-02T15:14:03.000Z">
+<meta property="article:modified_time" content="2022-08-02T15:14:03.000Z">
 <meta property="article:author" content="HUAJI">
-<meta property="article:tag" content="idapro">
-<meta property="article:tag" content="ipython">
-<meta property="article:tag" content="ida脚本问题">
-<meta property="article:tag" content="日常日记">
+<meta property="article:tag" content="汇编跳转">
+<meta property="article:tag" content="跳转指令">
+<meta property="article:tag" content="jcc">
+<meta property="article:tag" content="je">
+<meta property="article:tag" content="jc">
+<meta property="article:tag" content="jb">
+<meta property="article:tag" content="ja">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>ida pro 7.5 使用ipython Byte报错问题解决 - HUAJI</title>
+  <title>汇编 JCC指令表 - HUAJI</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -254,7 +257,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="ida pro 7.5 使用ipython Byte报错问题解决"></span>
+            <span id="subtitle" data-typed-text="汇编 JCC指令表"></span>
           
         </div>
 
@@ -265,8 +268,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-11-13 14:03" pubdate>
-          2022年11月13日 下午
+        <time datetime="2022-08-02 23:14" pubdate>
+          2022年8月2日 晚上
         </time>
       </span>
     
@@ -277,7 +280,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          537 字
+          1.3k 字
         
       </span>
     
@@ -288,7 +291,7 @@
         
         
         
-          5 分钟
+          11 分钟
         
       </span>
     
@@ -325,21 +328,134 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">ida pro 7.5 使用ipython Byte报错问题解决</h1>
+            <h1 id="seo-header">汇编 JCC指令表</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="ida-pro-7-5-使用ipython-Byte报错问题解决"><a href="#ida-pro-7-5-使用ipython-Byte报错问题解决" class="headerlink" title="ida pro 7.5 使用ipython Byte报错问题解决"></a>ida pro 7.5 使用ipython Byte报错问题解决</h1><p>这两天使用ida 发现ipython代码无法运行</p>
-<p>比如PatchByte()，Byte()都提示<br>NameError: name ‘Byte’ is not defined<br>又舍不得放弃7.5(一些题目拿7.5版生成的伪代码比7.0版要好看的多)，<br>于是在网上查了很久，找出了解决办法。</p>
-<h2 id="方法1-兼容办法-："><a href="#方法1-兼容办法-：" class="headerlink" title="方法1(兼容办法)："></a><strong>方法1</strong>(兼容办法)：</h2><p>其次是在比较方便的在7.5用7.0API办法，来源：<a target="_blank" rel="noopener" href="https://github.com/0xgalz/Virtuailor/issues/8">https://github.com/0xgalz/Virtuailor/issues/8</a><br>在代码面前：<br>from idc_bc695 import *<br>即可。</p>
-<h2 id="方法2-一劳永逸版-："><a href="#方法2-一劳永逸版-：" class="headerlink" title="方法2(一劳永逸版)："></a><strong>方法2</strong>(一劳永逸版)：</h2><p>来源官方文档：<a target="_blank" rel="noopener" href="https://www.hex-rays.com/products/ida/support/ida74_idapython_no_bc695.shtml">https://www.hex-rays.com/products/ida/support/ida74_idapython_no_bc695.shtml</a><br>找到</p>
-<ul>
-<li>~&#x2F;.idapro&#x2F;cfg&#x2F;idapython.cfg (Linux)</li>
-<li>%APPDATA%\Hex-Rays\IDA Pro\cfg\idapython.cfg (Windows) (绿色版的话在程序目录下那个cfg文件夹里)</li>
-</ul>
-<p>把AUTOIMPORT_COMPAT_IDA695改为YES</p>
-<p>文章来源 <a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1403005-1-1.html">52pojie论坛用户神慯</a></p>
+                <h1 id="汇编-JCC指令表"><a href="#汇编-JCC指令表" class="headerlink" title="汇编 JCC指令表"></a>汇编 JCC指令表</h1><h3 id="JCC指条件跳转指令，CC就是指条件码。"><a href="#JCC指条件跳转指令，CC就是指条件码。" class="headerlink" title="JCC指条件跳转指令，CC就是指条件码。"></a>JCC指条件跳转指令，CC就是指条件码。</h3><table>
+<thead>
+<tr>
+<th>JCC指令</th>
+<th>中文含义</th>
+<th>英文原意</th>
+<th>检查符号位</th>
+<th>典型c应用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JZ&#x2F;JE</td>
+<td>若为0则跳转；若相等则跳转</td>
+<td>jump if zero;jump if equal</td>
+<td>ZF&#x3D;1</td>
+<td>if (i &#x3D;&#x3D; j);if (i &#x3D;&#x3D; 0);</td>
+</tr>
+<tr>
+<td>JNZ&#x2F;JNE</td>
+<td>若不为0则跳转；若不相等则跳转</td>
+<td>jump if not zero;jump if not equal</td>
+<td>ZF&#x3D;0</td>
+<td>if (i !&#x3D; j);if (i !&#x3D; 0);</td>
+</tr>
+<tr>
+<td>JS</td>
+<td>若为负则跳转</td>
+<td>jump if sign</td>
+<td>SF&#x3D;1</td>
+<td>if (i &lt; 0);</td>
+</tr>
+<tr>
+<td>JNS</td>
+<td>若为正则跳转</td>
+<td>jump if not sign</td>
+<td>SF&#x3D;0</td>
+<td>if (i &gt; 0);</td>
+</tr>
+<tr>
+<td>JP&#x2F;JPE</td>
+<td>若1出现次数为偶数则跳转</td>
+<td>jump if Parity (Even)</td>
+<td>PF&#x3D;1</td>
+<td>(null)</td>
+</tr>
+<tr>
+<td>JNP&#x2F;JPO</td>
+<td>若1出现次数为奇数则跳转</td>
+<td>jump if not parity (odd)</td>
+<td>PF&#x3D;0</td>
+<td>(null)</td>
+</tr>
+<tr>
+<td>JO</td>
+<td>若溢出则跳转</td>
+<td>jump if overflow</td>
+<td>OF&#x3D;1</td>
+<td>(null)</td>
+</tr>
+<tr>
+<td>JNO</td>
+<td>若无溢出则跳转</td>
+<td>jump if not overflow</td>
+<td>OF&#x3D;0</td>
+<td>(null)</td>
+</tr>
+<tr>
+<td>JC&#x2F;JB&#x2F;JNAE</td>
+<td>若进位则跳转；若低于则跳转；若不高于等于则跳转</td>
+<td>jump if carry;jump if below;jump if not above equal</td>
+<td>CF&#x3D;1</td>
+<td>if (i &lt; j);</td>
+</tr>
+<tr>
+<td>JNC&#x2F;JNB&#x2F;JAE</td>
+<td>若无进位则跳转；若不低于则跳转；若高于等于则跳转</td>
+<td>jump if not carry;jump if not below;jump if above equal</td>
+<td>CF&#x3D;0</td>
+<td>if (i &gt;&#x3D; j);</td>
+</tr>
+<tr>
+<td>JBE&#x2F;JNA</td>
+<td>若低于等于则跳转；若不高于则跳转</td>
+<td>jump if below equal;jump if not above</td>
+<td>ZF&#x3D;1或CF&#x3D;1</td>
+<td>if (i &lt;&#x3D; j);</td>
+</tr>
+<tr>
+<td>JNBE&#x2F;JA</td>
+<td>若不低于等于则跳转；若高于则跳转</td>
+<td>jump if not below equal;jump if above</td>
+<td>ZF&#x3D;0或CF&#x3D;0</td>
+<td>if (i &gt; j);</td>
+</tr>
+<tr>
+<td>JL&#x2F;JNGE</td>
+<td>若小于则跳转；若不大于等于则跳转</td>
+<td>jump if less;jump if not greater equal</td>
+<td>SF !&#x3D; OF</td>
+<td>if (si &lt; sj);</td>
+</tr>
+<tr>
+<td>JNL&#x2F;JGE</td>
+<td>若不小于则跳转；若大于等于则跳转</td>
+<td>jump if not less;jump if greater equal</td>
+<td>SF&#x3D;OF</td>
+<td>if (si &gt;&#x3D; sj);</td>
+</tr>
+<tr>
+<td>JLE&#x2F;JNG</td>
+<td>若小于等于则跳转；若不大于则跳转</td>
+<td>jump if less equal;jump if not greater</td>
+<td>ZF !&#x3D; OF 或 ZF&#x3D;1</td>
+<td>if (si &lt;&#x3D; sj);</td>
+</tr>
+<tr>
+<td>JNLE&#x2F;JG</td>
+<td>若不小于等于则跳转；若大于则跳转</td>
+<td>jump if not less equal;jump if greater</td>
+<td>SF&#x3D;OF 且 ZF&#x3D;0</td>
+<td>if(si&gt;sj)</td>
+</tr>
+</tbody></table>
 
                 
               </div>
@@ -358,7 +474,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%97%A5%E5%B8%B8%E5%B0%8F%E9%97%AE%E9%A2%98/" class="category-chain-item">日常小问题</a>
+  <a href="/categories/32%E4%BD%8D%E6%B1%87%E7%BC%96/" class="category-chain-item">32位汇编</a>
   
   
 
@@ -373,13 +489,19 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/idapro/" class="print-no-link">#idapro</a>
+        <a href="/tags/%E6%B1%87%E7%BC%96%E8%B7%B3%E8%BD%AC/" class="print-no-link">#汇编跳转</a>
       
-        <a href="/tags/ipython/" class="print-no-link">#ipython</a>
+        <a href="/tags/%E8%B7%B3%E8%BD%AC%E6%8C%87%E4%BB%A4/" class="print-no-link">#跳转指令</a>
       
-        <a href="/tags/ida%E8%84%9A%E6%9C%AC%E9%97%AE%E9%A2%98/" class="print-no-link">#ida脚本问题</a>
+        <a href="/tags/jcc/" class="print-no-link">#jcc</a>
       
-        <a href="/tags/%E6%97%A5%E5%B8%B8%E6%97%A5%E8%AE%B0/" class="print-no-link">#日常日记</a>
+        <a href="/tags/je/" class="print-no-link">#je</a>
+      
+        <a href="/tags/jc/" class="print-no-link">#jc</a>
+      
+        <a href="/tags/jb/" class="print-no-link">#jb</a>
+      
+        <a href="/tags/ja/" class="print-no-link">#ja</a>
       
     </div>
   
@@ -391,8 +513,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>ida pro 7.5 使用ipython Byte报错问题解决</div>
-      <div>https://huajien.gitee.io/34052/</div>
+      <div>汇编 JCC指令表</div>
+      <div>https://huajien.gitee.io/2022/21569/</div>
     </div>
     <div class="license-meta">
       
@@ -404,7 +526,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年11月13日</div>
+          <div>2022年8月2日</div>
         </div>
       
       
@@ -436,9 +558,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/31421/" title="buuctf&amp;&amp;RE&amp;&amp;前12道题">
+                      <a href="/2022/23913/" title="DASCTF X GFCTF 2022十月挑战赛！">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">buuctf&amp;&amp;RE&amp;&amp;前12道题</span>
+                        <span class="hidden-mobile">DASCTF X GFCTF 2022十月挑战赛！</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -446,8 +568,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/23913/" title="DASCTF X GFCTF 2022十月挑战赛！">
-                        <span class="hidden-mobile">DASCTF X GFCTF 2022十月挑战赛！</span>
+                      <a href="/2022/9843/" title="win_xp配置双机调试">
+                        <span class="hidden-mobile">win_xp配置双机调试</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
