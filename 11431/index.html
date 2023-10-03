@@ -1,0 +1,814 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="HUAJI">
+  <meta name="keywords" content="滑稽，滑稽的，滑稽的博客，这是一个滑稽的Blog，Funny The Bolg，Funny Bolg，">
+  
+    <meta name="description" content="write upreverseEz_ezEz_ez然后找ida64打开这个helloELF这个文件搜索ida工具使用教程然后按了f5答案就出来了 ez_asmez_asm 打开发现里面有H，H在计算机中表示16进制，让后尝试16进制转换为10进制让后换算出来ASCII 依次类推转换完就是pflag{Hello_Assembly} welcome_loginwelcome_login下载发现是一个可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第三届xcitc-ctf招新赛部分题解">
+<meta property="og:url" content="https://huajien.gitee.io/11431/index.html">
+<meta property="og:site_name" content="HUAJI">
+<meta property="og:description" content="write upreverseEz_ezEz_ez然后找ida64打开这个helloELF这个文件搜索ida工具使用教程然后按了f5答案就出来了 ez_asmez_asm 打开发现里面有H，H在计算机中表示16进制，让后尝试16进制转换为10进制让后换算出来ASCII 依次类推转换完就是pflag{Hello_Assembly} welcome_loginwelcome_login下载发现是一个可">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-10-13T02:03:00.000Z">
+<meta property="article:modified_time" content="2021-10-13T02:03:00.000Z">
+<meta property="article:author" content="HUAJI">
+<meta property="article:tag" content="ctf">
+<meta property="article:tag" content="xcitc">
+<meta property="article:tag" content="wp">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>第三届xcitc-ctf招新赛部分题解 - HUAJI</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"huajien.gitee.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"51252dd416f956c843ba6e0b0ced9711","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?51252dd416f956c843ba6e0b0ced9711";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>HUAJI - Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="第三届xcitc-ctf招新赛部分题解"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-10-13 10:03" pubdate>
+          2021年10月13日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          31 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">第三届xcitc-ctf招新赛部分题解</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="write-up"><a href="#write-up" class="headerlink" title="write up"></a>write up</h1><h2 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h2><h3 id="Ez-ez"><a href="#Ez-ez" class="headerlink" title="Ez_ez"></a>Ez_ez</h3><p>Ez_ez然后找ida64打开这个helloELF这个文件搜索ida工具使用教程然后按了f5答案就出来了</p>
+<h3 id="ez-asm"><a href="#ez-asm" class="headerlink" title="ez_asm"></a>ez_asm</h3><p>ez_asm 打开发现里面有H，H在计算机中表示16进制，让后尝试16进制转换为10进制让后换算出来ASCII</p>
+<p>依次类推转换完就是pflag{Hello_Assembly}</p>
+<h3 id="welcome-login"><a href="#welcome-login" class="headerlink" title="welcome_login"></a>welcome_login</h3><p>welcome_login下载发现是一个可执行文件然后使用ida64打开发现没有然后使用ida32位打开选中几个字段然后跳转到地址然后上下找发现分成三段然后一个一个复制让后就出来了答案</p>
+<h2 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h2><h3 id="欢迎欢迎"><a href="#欢迎欢迎" class="headerlink" title="欢迎欢迎"></a>欢迎欢迎</h3><p>欢迎欢迎题首先打开里面的连接，习惯性的按f12查看内存中的源代码发现里面又一行注释falg.txt让后在端口后面&#x2F;flag.txt发现flag{welcome_to_xcitc_21}</p>
+<h3 id="easyphp"><a href="#easyphp" class="headerlink" title="easyphp"></a>easyphp</h3><p>easyphp进入先看if 条件 发现是get传参数flag如果等于0就输出结果</p>
+<p>让后就开始做题端口后面加&#x2F;?flag[]&#x3D;0 结果就出来了flag{f97c5d29941bfb1b2fdab0874906ab82}</p>
+<h3 id="还不能相同？"><a href="#还不能相同？" class="headerlink" title="还不能相同？"></a>还不能相同？</h3><p>还不能相同？进入先看单行多if 条件 发现是get传参数username和password让后条件是</p>
+<p>username和password两个不能相同让后我们就在端口后面加&#x2F;?username[]&#x3D;huaji&amp;password[]&#x3D;zhien</p>
+<p>结果就出来了Flag: flag{1bc29b36f623ba82aaf6724fd3b16718}</p>
+<h3 id="大飞机，呼呼呼"><a href="#大飞机，呼呼呼" class="headerlink" title="大飞机，呼呼呼"></a>大飞机，呼呼呼</h3><p>大飞机，呼呼呼这个就不一样了一开始以为是账号密码破解试了好久不对，让后就闲着没事打开kali使用burp suite扫一下这个地址不扫不知道发现里面有flag: Wm14aFozdG9kSFJ3WDJobFlXUmxjbDlvYUdoOQ&#x3D;&#x3D;，看到后面有两个&#x3D;&#x3D;直接幻想base64</p>
+<p>然后网上搜索在线base64解密使用发现还是密文ZmxhZ3todHRwX2hlYWRlcl9oaGh9就在次复制上次解密一次的base64继续解密发现了flag让后结果就出来了flag{http_header_hhh}</p>
+<h2 id="一起打篮球吧。。。。"><a href="#一起打篮球吧。。。。" class="headerlink" title="一起打篮球吧。。。。"></a>一起打篮球吧。。。。</h2><p>一起打篮球吧。。。。打开题按f12查看内存中的源代码发现里面又一行注释robots.txt 让后&#x2F;robots.txt</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs arcade">User-agent: *<br>Disallow: <span class="hljs-regexp">/admin/</span><br>Disallow: <span class="hljs-regexp">/admin/</span>shell/<br>Disallow: <span class="hljs-regexp">/admin/</span>shell/flag.php<br></code></pre></td></tr></table></figure>
+
+<p>发现&#x2F;admin&#x2F;shell&#x2F;flag.php 访问发现啥也没有让后思考思考想不出来</p>
+<p>让后的有一个点击获取flag，点击之后发现&#x2F;?file&#x3D;hint.html 让后靠我的百度搜</p>
+<p>php有file漏洞</p>
+<p>就按照百度方法改改&#x2F;?file&#x3D;php:&#x2F;&#x2F;filter&#x2F;read&#x3D;convert.base64-encode&#x2F;resource&#x3D;admin&#x2F;shell&#x2F;flag.php</p>
+<p>让后发现是密文PD9waHAKJGZsYWcgPSAnZmxhZ3tMRklfMXNfZjRufSc7Ci8vIGVjaG8gJGZsYWc7Cj8+Cg&#x3D;&#x3D;</p>
+<p>让后找在线base64解密</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$flag</span> = <span class="hljs-string">&#x27;flag&#123;LFI_1s_f4n&#125;&#x27;</span>;<br><span class="hljs-comment">// echo $flag;</span><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>然后结果就出来了flag{LFI_1s_f4n}</p>
+<h2 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h2><h3 id="NC之光"><a href="#NC之光" class="headerlink" title="NC之光"></a>NC之光</h3><p>NC之光我先用kali 终端命令行输入nc 121.40.134.251:10000 让后提示地址不存在，让后进群划水得知去掉”:”让后nc 121.40.134.251 10000进入了发现有flag.txt 让后cat flag.txt</p>
+<p>让后结果就出来了flag{f3857b88-c92c-4426-89a6-ee94e4eac938}</p>
+<h2 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h2><h3 id="crypto-1"><a href="#crypto-1" class="headerlink" title="crypto"></a>crypto</h3><p>前十个都是浏览器搜索名称让后就出结果了等等等。。。。。。</p>
+<h3 id="asc"><a href="#asc" class="headerlink" title="asc"></a>asc</h3><p>asc打开是ASCII偏移根据提示偏移-4然后根据提示的ord和cha</p>
+<p>python写出如下脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">keys=<span class="hljs-string">&#x27;Iew&#125;cewgchigshi%%%&#x27;</span><br>flag=<span class="hljs-string">&quot;&quot;</span><br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> keys:<br>    flag+=<span class="hljs-built_in">chr</span>(<span class="hljs-built_in">ord</span>(i)-<span class="hljs-number">4</span>)<br><span class="hljs-built_in">print</span>(flag)<br></code></pre></td></tr></table></figure>
+
+<h3 id="Ez-xor"><a href="#Ez-xor" class="headerlink" title="Ez_xor"></a>Ez_xor</h3><p>看百度加谷歌加哔哩哔哩同时做出的题</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python">keys=<span class="hljs-string">&#x27;Qtwjqf~Tof3hfZwj\Wf6qlw\]4Wf\sf7zZFdp|\]3W&quot;$&quot;x&#x27;</span><br>flag=<span class="hljs-string">&quot;&quot;</span><br>ii = <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> keys: <br>  <span class="hljs-keyword">if</span> ii == <span class="hljs-number">0</span> :<br>​    flag+=<span class="hljs-built_in">chr</span>(<span class="hljs-built_in">ord</span>(i)^<span class="hljs-number">3</span>)<br>​    ii=ii+<span class="hljs-number">1</span><br>  <span class="hljs-keyword">else</span>:<br>​    flag+=<span class="hljs-built_in">chr</span>(<span class="hljs-built_in">ord</span>(i)^<span class="hljs-number">5</span>)<br>​    ii=ii-<span class="hljs-number">1</span><br><span class="hljs-built_in">print</span>(flag)<br></code></pre></td></tr></table></figure>
+
+<h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="flag好像要扫一扫"><a href="#flag好像要扫一扫" class="headerlink" title="flag好像要扫一扫"></a>flag好像要扫一扫</h3><p>flag好像要扫一扫打开压缩包提示密码使用PassperforZIP_v3.6.0.1工具按照题提示走的密码直接出密码为1234</p>
+<p>打开尽然是个微信二维码好友加好友就给我flag让后结果忘记了</p>
+<h3 id="大吉"><a href="#大吉" class="headerlink" title="大吉"></a>大吉</h3><p>大吉是一个pdf百度得知pdf在ctf中直接转换为word就可以弄出让后使用网页在线pdf转换word</p>
+<p>转换之后打开文件把照片移走就是答案了</p>
+<h3 id="乌贼乌贼"><a href="#乌贼乌贼" class="headerlink" title="乌贼乌贼"></a>乌贼乌贼</h3><p>乌贼乌贼是一个图片百度得知图片在ctf中用16进制打开就是答案让后我下载了hex工具打开之后从下往上在最后面看到flag让后就出来了</p>
+<h3 id="奇怪的压缩包"><a href="#奇怪的压缩包" class="headerlink" title="奇怪的压缩包"></a>奇怪的压缩包</h3><p>奇怪的压缩包直接打开压缩包让后打开里面word文件里面就是答案</p>
+<h3 id="Ez-png"><a href="#Ez-png" class="headerlink" title="Ez_png"></a>Ez_png</h3><p>Ez_png是一个压缩包里面有一个图片让后打开是一个500*500的图片让后百度搜索ctf图片隐写然后尝试使用010editor工具按照百度上面的改宽度高度都是600发现打不开然后改成1000还是打不开然后陷入思考在看题提示然后就尝试单独改高度改成600发现下面又flag然后就出来答案了</p>
+<h3 id="你知道GIF嘛"><a href="#你知道GIF嘛" class="headerlink" title="你知道GIF嘛"></a>你知道GIF嘛</h3><p>你知道GIF嘛是一个压缩包里面一个jpg图片然后一直找不到思路让后在群里面别人在了在了聊java环境和stegsolve然后我就在想这是那个题让后发现你知道GIF嘛这个题提示看到stegsolve然后在网上弄了工具打开然后一直切换颜色发现一直不出答案然后就靠百度搜索搜索stegsolve用法发现有analyse下面的frame browse 发现有三个图片然后切换发现答案</p>
+<h3 id="正经的jpg？"><a href="#正经的jpg？" class="headerlink" title="正经的jpg？"></a>正经的jpg？</h3><p>正经的jpg？根据Ez_png的那一题百度知道使用kali终端binwalk 命令</p>
+<p>然后binwalk cover.jpg</p>
+<p>└─$ binwalk cover.jpg</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs haskell"><span class="hljs-type">DECIMAL</span>       <span class="hljs-type">HEXADECIMAL</span>     <span class="hljs-type">DESCRIPTION</span>                                            <br><span class="hljs-comment">--------------------------------------------------------------------------------                                         </span><br><span class="hljs-number">0</span>             <span class="hljs-number">0x0</span>             <span class="hljs-type">JPEG</span> image <span class="hljs-class"><span class="hljs-keyword">data</span>, <span class="hljs-type">JFIF</span> standard 1.01                                          </span><br><span class="hljs-number">58499</span>         <span class="hljs-number">0xE483</span>          <span class="hljs-type">JPEG</span> image <span class="hljs-class"><span class="hljs-keyword">data</span>, <span class="hljs-type">EXIF</span> standard</span><br><span class="hljs-number">58511</span>         <span class="hljs-number">0xE48F</span>          <span class="hljs-type">TIFF</span> image <span class="hljs-class"><span class="hljs-keyword">data</span>, big-endian, offset of first image directory: 8</span><br></code></pre></td></tr></table></figure>
+
+<p>里面是两个文件让后尝试进入Windows把图片后缀改成zip然后打不开然后就继续百度使用</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros">dd <span class="hljs-attribute">if</span>=cover.jpg <span class="hljs-attribute">of</span>=2.jpg <span class="hljs-attribute">skip</span>=58499 <span class="hljs-attribute">bs</span>=1 <br>记录了882232+0 的读入                                     记录了882232+0 的写出                                     882232字节（882 kB，862 KiB）已复制，1.30735 s，675 kB/s <br></code></pre></td></tr></table></figure>
+
+<p>然后提示写入一个文件我让后在kali里面双击进入发现打不开然后陷入思考想不出来就把他拖拉到Windows里面想着备份然后拖拉过来之后发现可以打开然后就出来答案了</p>
+<h3 id="flag为flag-号码进行一次md5加密"><a href="#flag为flag-号码进行一次md5加密" class="headerlink" title="flag为flag{号码进行一次md5加密}"></a>flag为flag{号码进行一次md5加密}</h3><p>flag为flag{号码进行一次md5加密}打开发现是一个zip里面一个wav音频格式让后播放发现是声音还能播放然后百度得知可以使用工具audacity然后弄了很久还是没有弄出来可能是不会使用这个工具让后尝试使用手机的按键声音和ctf中的声音对比发现啥也听不过来让后在次使用百度搜索拨号码提取工具让后在GitHub中找到一款手机上面的一款DTMFdecodeer让后电脑播放音乐手机使用这个软件听出是783083491然后在百度中搜索md5加密让后转换提交发现不对然后看了还有其他的加密选项64位大写小写32位等然后一个一个尝试发现64位小数还是大写忘记了然后答案出来了</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/xcitc-wp/" class="category-chain-item">xcitc wp</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/ctf/" class="print-no-link">#ctf</a>
+      
+        <a href="/tags/xcitc/" class="print-no-link">#xcitc</a>
+      
+        <a href="/tags/wp/" class="print-no-link">#wp</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>第三届xcitc-ctf招新赛部分题解</div>
+      <div>https://huajien.gitee.io/11431/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>HUAJI</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年10月13日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/34732/" title="汇编语言中的标志位">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">汇编语言中的标志位</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/42437/" title="git的使用">
+                        <span class="hidden-mobile">git的使用</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"PV4cFjLDqRP85BMmqrxzifKk-gzGzoHsz","appKey":"nWF1CLMPaB4wcVwSVWqY4EQs","path":"window.location.pathname","placeholder":"都看完了不留个言！！！","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>基于Hex框架</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>主题来自Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
