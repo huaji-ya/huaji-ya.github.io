@@ -1,0 +1,858 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="HUAJI">
+  <meta name="keywords" content="滑稽，滑稽的，滑稽的博客，这是一个滑稽的Blog，Funny The Bolg，Funny Bolg，">
+  
+    <meta name="description" content="python  angr 模块安装 angrpip install angr ipython angr写法模板 12345678910111213141516171819202122232425262728#导入angr 模块import angr#新建一个工程p &#x3D; angr.Project(&quot;.&#x2F;00_angr_find&quot;)  #初始化 工程入口状态init_state &#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python_angr_模板">
+<meta property="og:url" content="https://huajien.gitee.io/2023/577f7508/index.html">
+<meta property="og:site_name" content="HUAJI">
+<meta property="og:description" content="python  angr 模块安装 angrpip install angr ipython angr写法模板 12345678910111213141516171819202122232425262728#导入angr 模块import angr#新建一个工程p &#x3D; angr.Project(&quot;.&#x2F;00_angr_find&quot;)  #初始化 工程入口状态init_state &#x3D;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/oHyoeh.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/oHy1Fr.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/oHy3nT.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/oHyEwo.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/oHylw9.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/oHyvDR.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/oHyN4A.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/oHyQ05.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/oHyr4K.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/oHyj9S.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/oHyhxD.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/ob519g.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/ob53kM.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/ob5xIn.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/ob5mAz.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/ob5tu5.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/ob5LOm.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/07/ob5MRT.png">
+<meta property="article:published_time" content="2023-10-07T08:36:18.000Z">
+<meta property="article:modified_time" content="2023-10-07T09:47:04.221Z">
+<meta property="article:author" content="HUAJI">
+<meta property="article:tag" content="学习angr">
+<meta property="article:tag" content="angr符号化模板">
+<meta property="article:tag" content="python模块学习">
+<meta property="article:tag" content="pyhton_angr">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://vip.helloimg.com/images/2023/10/07/oHyoeh.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>python_angr_模板 - HUAJI</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"huajien.gitee.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"51252dd416f956c843ba6e0b0ced9711","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?51252dd416f956c843ba6e0b0ced9711";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>HUAJI - Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="python_angr_模板"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-10-07 16:36" pubdate>
+          2023年10月7日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          15k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          128 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">python_angr_模板</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="python-angr-模块"><a href="#python-angr-模块" class="headerlink" title="python  angr 模块"></a>python  angr 模块</h2><h3 id="安装-angr"><a href="#安装-angr" class="headerlink" title="安装 angr"></a>安装 angr</h3><p><code>pip install angr</code></p>
+<h3 id="ipython-angr写法模板"><a href="#ipython-angr写法模板" class="headerlink" title="ipython angr写法模板"></a>ipython angr写法模板</h3><p><img src="https://vip.helloimg.com/images/2023/10/07/oHyoeh.png" srcset="/img/loading.gif" lazyload alt="image"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#导入angr 模块</span><br><span class="hljs-keyword">import</span> angr<br><br><span class="hljs-comment">#新建一个工程</span><br>p = angr.Project(<span class="hljs-string">&quot;./00_angr_find&quot;</span>)  <br><br><span class="hljs-comment">#初始化 工程入口状态</span><br>init_state = p.factory.entry_state()<br><br><span class="hljs-comment">#创建符号执行的模拟管理器</span><br>sm = p.factory.simulation_manager(init_state)<br><br><span class="hljs-comment"># 开始符号执行，探索满足条件的执行路径find 查找取得地方 avoid 不去的地方</span><br>sm.explore(find=<span class="hljs-number">0x08048678</span>)<br><span class="hljs-comment">#sm.explore(find=0x08048678,avoid=0x0804866B)</span><br><br><br><span class="hljs-comment">#获取找到的第一个满足条件的状态</span><br>sm.found[<span class="hljs-number">0</span>]  <span class="hljs-comment">#可省略</span><br><br><span class="hljs-comment">#获取找到的第一个满足条件的状态</span><br>found_state = sm.found[<span class="hljs-number">0</span>]<br><br><span class="hljs-comment"># 获取程序的输入数据</span><br>found_state.posix.dumps(<span class="hljs-number">0</span>)<br><span class="hljs-comment"># 获取程序的输出数据</span><br>found_state.posix.dumps(<span class="hljs-number">1</span>)<br><br></code></pre></td></tr></table></figure>
+
+
+<h3 id="字符串模板"><a href="#字符串模板" class="headerlink" title="字符串模板"></a>字符串模板</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> angr<br><span class="hljs-keyword">import</span> sys<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">argv</span>):<br>    bin_path = argv[<span class="hljs-number">1</span>]<br>    p = angr.Project(bin_path)<br>    init_state = p.factory.entry_state()<br>    sm = p.factory.simulation_manager(init_state)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_good</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Good Job&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_bad</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Try again&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br><br>    sm.explore(find=is_good, avoid=is_bad)<br>    <span class="hljs-keyword">if</span> sm.found:<br>        found_state = sm.found[<span class="hljs-number">0</span>]<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Solution: &#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(found_state.posix.dumps(<span class="hljs-number">0</span>)))<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main(sys.argv)<br><br><br></code></pre></td></tr></table></figure>
+
+<h3 id="03-angr-symbolic-registers-寄存器符号化"><a href="#03-angr-symbolic-registers-寄存器符号化" class="headerlink" title="03_angr_symbolic_registers 寄存器符号化"></a>03_angr_symbolic_registers 寄存器符号化</h3><p>起始地址跳过get_user_input的下一个地址</p>
+<p><img src="https://vip.helloimg.com/images/2023/10/07/oHy1Fr.png" srcset="/img/loading.gif" lazyload alt="image-20231007164157398"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> angr<br><span class="hljs-keyword">import</span> sys<br><span class="hljs-keyword">import</span> claripy<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">argv</span>):<br>    bin_path = argv[<span class="hljs-number">1</span>]<br>    p = angr.Project(bin_path)<br>    <span class="hljs-comment"># 创建一个angr项目，加载二进制文件</span><br><br>    start_addr = <span class="hljs-number">0x80488C7</span><br>    init_state = p.factory.blank_state(addr=start_addr)<br>    <span class="hljs-comment"># 在指定地址创建一个初始状态</span><br><br>    pass1 = claripy.BVS(<span class="hljs-string">&#x27;pass1&#x27;</span>, <span class="hljs-number">32</span>)<br>    pass2 = claripy.BVS(<span class="hljs-string">&#x27;pass2&#x27;</span>, <span class="hljs-number">32</span>)<br>    pass3 = claripy.BVS(<span class="hljs-string">&#x27;pass3&#x27;</span>, <span class="hljs-number">32</span>)<br>    <span class="hljs-comment"># 创建三个符号变量</span><br><br>    init_state.regs.eax = pass1<br>    init_state.regs.ebx = pass2<br>    init_state.regs.edx = pass3<br>    <span class="hljs-comment"># 将符号变量赋值给寄存器eax、ebx和edx</span><br><br>    sm = p.factory.simulation_manager(init_state)<br>    <span class="hljs-comment"># 创建一个符号执行管理器</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_good</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Good Job&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_bad</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Try again&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br>    <span class="hljs-comment"># 定义两个函数，用于判断状态是否为好的或坏的</span><br><br>    sm.explore(find=is_good, avoid=is_bad)<br>    <span class="hljs-comment"># 对符号执行管理器进行探索，寻找满足is_good条件且避免is_bad条件的路径</span><br><br>    <span class="hljs-keyword">if</span> sm.found:<br>        found_state = sm.found[<span class="hljs-number">0</span>]<br><br>        passwd1 = found_state.solver.<span class="hljs-built_in">eval</span>(pass1)<br>        passwd2 = found_state.solver.<span class="hljs-built_in">eval</span>(pass2)<br>        passwd3 = found_state.solver.<span class="hljs-built_in">eval</span>(pass3)<br>        <span class="hljs-comment"># 获取找到的状态中的符号变量的具体值</span><br><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Solution: &#123;:x&#125; &#123;:x&#125; &#123;:x&#125;&quot;</span>.<span class="hljs-built_in">format</span>(passwd1, passwd2, passwd3))<br>        <span class="hljs-comment"># 打印解决方案</span><br><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&#x27;Could not find the solution&#x27;</span>)<br>        <span class="hljs-comment"># 如果没有找到解决方案，则抛出异常</span><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main(sys.argv)<br><br></code></pre></td></tr></table></figure>
+
+<h4 id="04-angr-symbolic-stack-栈符号化"><a href="#04-angr-symbolic-stack-栈符号化" class="headerlink" title="04_angr_symbolic_stack 栈符号化"></a>04_angr_symbolic_stack 栈符号化</h4><p>起始地址跳过___isoc99_scanf的下一个地址</p>
+<p><code>add     esp, 10h</code>是恢复栈空间平衡</p>
+<p><img src="https://vip.helloimg.com/images/2023/10/07/oHy3nT.png" srcset="/img/loading.gif" lazyload alt="image-20231007164420424"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> angr<br><span class="hljs-keyword">import</span> sys<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">argv</span>):<br>    bin_path = argv[<span class="hljs-number">1</span>]<br>    p = angr.Project(bin_path)<br>    <span class="hljs-comment"># 创建一个angr项目，加载二进制文件</span><br><br>    start_addr = <span class="hljs-number">0x80486AE</span>  <span class="hljs-comment"># 地址</span><br>    init_state = p.factory.blank_state(addr=start_addr)<br>    <span class="hljs-comment"># 在指定地址创建一个初始状态</span><br><br>    padding_size = <span class="hljs-number">8</span><br>    init_state.stack_push(init_state.regs.ebp)<br>    init_state.regs.ebp = init_state.regs.esp<br>    init_state.regs.esp -= padding_size<br>    <span class="hljs-comment"># 配置堆栈框架</span><br><br>    pass1 = init_state.solver.BVS(<span class="hljs-string">&#x27;pass1&#x27;</span>, <span class="hljs-number">32</span>)<br>    pass2 = init_state.solver.BVS(<span class="hljs-string">&#x27;pass2&#x27;</span>, <span class="hljs-number">32</span>)<br>    <span class="hljs-comment"># 创建两个符号变量</span><br><br>    init_state.stack_push(pass1)<br>    init_state.stack_push(pass2)<br>    <span class="hljs-comment"># 将符号变量放到堆栈上</span><br><br>    sm = p.factory.simgr(init_state)<br>    <span class="hljs-comment"># 创建一个符号执行管理器</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_good</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Good Job&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_bad</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Try again&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br>    <span class="hljs-comment"># 定义两个函数，用于判断状态是否为好的或坏的</span><br><br>    sm.explore(find=is_good, avoid=is_bad)<br>    <span class="hljs-comment"># 对符号执行管理器进行探索，寻找满足is_good条件且避免is_bad条件的路径</span><br><br>    <span class="hljs-keyword">if</span> sm.found:<br>        found_state = sm.found[<span class="hljs-number">0</span>]<br>        passwd1 = found_state.solver.<span class="hljs-built_in">eval</span>(pass1)<br>        passwd2 = found_state.solver.<span class="hljs-built_in">eval</span>(pass2)<br>        <span class="hljs-comment"># 获取找到的状态中的符号变量的具体值</span><br><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Solution: &#123;:x&#125; &#123;:x&#125;&quot;</span>.<span class="hljs-built_in">format</span>(passwd1, passwd2))<br>        <span class="hljs-comment"># 打印解决方案</span><br><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;No Solution found&quot;</span>)<br>        <span class="hljs-comment"># 如果没有找到解决方案，则抛出异常</span><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main(sys.argv)<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="05-angr-symbolic-memory-内存符号化"><a href="#05-angr-symbolic-memory-内存符号化" class="headerlink" title="05_angr_symbolic_memory 内存符号化"></a>05_angr_symbolic_memory 内存符号化</h3><p>起始地址跳过___isoc99_scanf的下一个地址</p>
+<p><code>add     esp, 20h</code>是恢复栈空间平衡<br><img src="https://vip.helloimg.com/images/2023/10/07/oHyEwo.png" srcset="/img/loading.gif" lazyload alt="image-20231007164845370"></p>
+<p>让后程序是<code>__cdecl</code>  <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/cpp/cpp/cdecl?view=msvc-170">__cdecl | Microsoft Learn原理</a></p>
+<p>参数传递顺序 | 从右向左。</p>
+<p><img src="https://vip.helloimg.com/images/2023/10/07/oHylw9.png" srcset="/img/loading.gif" lazyload alt="image-20231007165314484"> </p>
+<p><img src="https://vip.helloimg.com/images/2023/10/07/oHyvDR.png" srcset="/img/loading.gif" lazyload alt="image-20231007165516873"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> angr<br><span class="hljs-keyword">import</span> sys<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">argv</span>):<br>    bin_path = argv[<span class="hljs-number">1</span>]<br>    p = angr.Project(bin_path)<br>    <span class="hljs-comment"># 创建一个angr项目，加载二进制文件</span><br><br>    start_addr = <span class="hljs-number">0x8048618</span>  <span class="hljs-comment"># 地址</span><br>    init_state = p.factory.blank_state(addr=start_addr)<br>    <span class="hljs-comment"># 在指定地址创建一个初始状态</span><br><br>    padding_size = <span class="hljs-number">8</span><br>    init_state.stack_push(init_state.regs.ebp)<br>    init_state.regs.ebp = init_state.regs.esp<br>    init_state.regs.esp -= padding_size<br>    <span class="hljs-comment"># 配置堆栈框架</span><br><br>    p1 = init_state.solver.BVS(<span class="hljs-string">&#x27;p1&#x27;</span>, <span class="hljs-number">64</span>)<br>    p2 = init_state.solver.BVS(<span class="hljs-string">&#x27;p2&#x27;</span>, <span class="hljs-number">64</span>)<br>    p3 = init_state.solver.BVS(<span class="hljs-string">&#x27;p3&#x27;</span>, <span class="hljs-number">64</span>)<br>    p4 = init_state.solver.BVS(<span class="hljs-string">&#x27;p4&#x27;</span>, <span class="hljs-number">64</span>)<br>    <span class="hljs-comment"># 创建符号变量</span><br><br>    p1_addr = <span class="hljs-number">0xAB232C0</span><br>    p2_addr = <span class="hljs-number">0xAB232C8</span><br>    p3_addr = <span class="hljs-number">0xAB232D0</span><br>    p4_addr = <span class="hljs-number">0xAB232D8</span><br>    <span class="hljs-comment"># 参数地址</span><br><br>    init_state.memory.store(p1_addr, p1)<br>    init_state.memory.store(p2_addr, p2)<br>    init_state.memory.store(p3_addr, p3)<br>    init_state.memory.store(p4_addr, p4)<br>    <span class="hljs-comment"># 将符号变量存储到内存中</span><br><br>    sm = p.factory.simgr(init_state)<br>    <span class="hljs-comment"># 创建一个符号执行管理器</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_good</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Good Job&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_bad</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Try again&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br>    <span class="hljs-comment"># 定义两个函数，用于判断状态是否为好的或坏的</span><br><br>    sm.explore(find=is_good, avoid=is_bad)<br>    <span class="hljs-comment"># 对符号执行管理器进行探索，寻找满足is_good条件且避免is_bad条件的路径</span><br><br>    <span class="hljs-keyword">if</span> sm.found:<br>        found_state = sm.found[<span class="hljs-number">0</span>]<br>        passwd1 = found_state.solver.<span class="hljs-built_in">eval</span>(p1, cast_to=<span class="hljs-built_in">bytes</span>)<br>        passwd2 = found_state.solver.<span class="hljs-built_in">eval</span>(p2, cast_to=<span class="hljs-built_in">bytes</span>)<br>        passwd3 = found_state.solver.<span class="hljs-built_in">eval</span>(p3, cast_to=<span class="hljs-built_in">bytes</span>)<br>        passwd4 = found_state.solver.<span class="hljs-built_in">eval</span>(p4, cast_to=<span class="hljs-built_in">bytes</span>)<br>        <span class="hljs-comment"># 获取找到的状态中的符号变量的具体值</span><br><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Solution: &#123;&#125; &#123;&#125; &#123;&#125; &#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(passwd1.decode(<span class="hljs-string">&quot;utf-8&quot;</span>), passwd2.decode(<span class="hljs-string">&quot;utf-8&quot;</span>), passwd3.decode(<span class="hljs-string">&quot;utf-8&quot;</span>), passwd4.decode(<span class="hljs-string">&quot;utf-8&quot;</span>)))<br>        <span class="hljs-comment"># 打印解决方案</span><br><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;No Solution found&quot;</span>)<br>        <span class="hljs-comment"># 如果没有找到解决方案，则抛出异常</span><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main(sys.argv)<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="06-angr-symbolic-dynamic-memory-动态内存地址"><a href="#06-angr-symbolic-dynamic-memory-动态内存地址" class="headerlink" title="06_angr_symbolic_dynamic_memory 动态内存地址"></a>06_angr_symbolic_dynamic_memory 动态内存地址</h3><p>起始地址跳过___isoc99_scanf的下一个地址</p>
+<p><code>add     esp, 10h</code>是恢复栈空间平衡</p>
+<p><img src="https://vip.helloimg.com/images/2023/10/07/oHyN4A.png" srcset="/img/loading.gif" lazyload alt="image-20231007165802494"></p>
+<p><img src="https://vip.helloimg.com/images/2023/10/07/oHyQ05.png" srcset="/img/loading.gif" lazyload alt="image-20231007165913264"></p>
+<p>在跳过输入后的angr 查看当前栈地址<code>print(&quot;ESP:&quot;,init_state.regs.esp)</code></p>
+<p>0x7fff0000</p>
+<p>尝试给buffer0偏移+0x100,buffer1+0x200</p>
+<p>在将原始的buffer0和buffer1的地址给到程序里面</p>
+<p><img src="https://vip.helloimg.com/images/2023/10/07/oHyr4K.png" srcset="/img/loading.gif" lazyload alt="image-20231007170259012"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> angr<br><span class="hljs-keyword">import</span> sys<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">argv</span>):<br>    bin_path = argv[<span class="hljs-number">1</span>]<br>    p = angr.Project(bin_path)<br>    <span class="hljs-comment"># 创建一个angr项目，加载二进制文件</span><br><br>    start_addr = <span class="hljs-number">0x80486AF</span>  <span class="hljs-comment"># 地址</span><br>    init_state = p.factory.blank_state(addr=start_addr)<br>    <span class="hljs-comment"># 在指定call scanf后的地址创建一个初始状态</span><br><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;ESP:&quot;</span>,init_state.regs.esp)<span class="hljs-comment">#0x7fff0000</span><br>    buffer0 = <span class="hljs-number">0x7fff0000</span> - <span class="hljs-number">0x100</span><br>    buffer1 = <span class="hljs-number">0x7fff0000</span> - <span class="hljs-number">0x200</span><br><br>    buffer0_addr = <span class="hljs-number">0xA2DEF74</span><br>    buffer1_addr = <span class="hljs-number">0xA2DEF7C</span><br><br>    init_state.memory.store(buffer0_addr, buffer0, endness=p.arch.memory_endness)<br>    init_state.memory.store(buffer1_addr, buffer1, endness=p.arch.memory_endness)<br>    <span class="hljs-comment"># 将buffer0和buffer1的地址存储到指定的地址中</span><br><br>    p1 = init_state.solver.BVS(<span class="hljs-string">&#x27;p1&#x27;</span>, <span class="hljs-number">64</span>)<br>    p2 = init_state.solver.BVS(<span class="hljs-string">&#x27;p2&#x27;</span>, <span class="hljs-number">64</span>)<br>    <span class="hljs-comment"># 创建两个64位的符号变量</span><br><br>    init_state.memory.store(buffer0, p1)<br>    init_state.memory.store(buffer1, p2)<br>    <span class="hljs-comment"># 将符号变量存储到buffer0和buffer1的地址中</span><br><br>    sm = p.factory.simgr(init_state)<br>    <span class="hljs-comment"># 创建一个符号执行管理器</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_good</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Good Job&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_bad</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Try again&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br>    <span class="hljs-comment"># 定义两个函数，用于判断状态是否为好的或坏的</span><br><br>    sm.explore(find=is_good, avoid=is_bad)<br>    <span class="hljs-comment"># 对符号执行管理器进行探索，寻找满足is_good条件且避免is_bad条件的路径</span><br><br>    <span class="hljs-keyword">if</span> sm.found:<br>        found_state = sm.found[<span class="hljs-number">0</span>]<br>        passwd1 = found_state.solver.<span class="hljs-built_in">eval</span>(p1, cast_to=<span class="hljs-built_in">bytes</span>).decode(<span class="hljs-string">&quot;utf-8&quot;</span>)<br>        passwd2 = found_state.solver.<span class="hljs-built_in">eval</span>(p2, cast_to=<span class="hljs-built_in">bytes</span>).decode(<span class="hljs-string">&quot;utf-8&quot;</span>)<br>        <span class="hljs-comment"># 获取找到的状态中的符号变量的具体值</span><br><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Solution: &#123;&#125; &#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(passwd1, passwd2))<br>        <span class="hljs-comment"># 打印解决方案</span><br><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;No Solution found&quot;</span>)<br>        <span class="hljs-comment"># 如果没有找到解决方案，则抛出异常</span><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main(sys.argv)<br><br><br></code></pre></td></tr></table></figure>
+
+<h3 id="07-angr-symbolic-file-文件符号化"><a href="#07-angr-symbolic-file-文件符号化" class="headerlink" title="07_angr_symbolic_file 文件符号化"></a>07_angr_symbolic_file 文件符号化</h3><p>起始地址跳过输入的下一个地址</p>
+<p><code>add     esp, 10h</code>是恢复栈空间平衡</p>
+<p><img src="https://vip.helloimg.com/images/2023/10/07/oHyj9S.png" srcset="/img/loading.gif" lazyload alt="image-20231007170652656"></p>
+<p>配置打开文件名称和文件大小</p>
+<p><img src="https://vip.helloimg.com/images/2023/10/07/oHyhxD.png" srcset="/img/loading.gif" lazyload alt="image-20231007170529406"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> angr<br><span class="hljs-keyword">import</span> sys<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">argv</span>):<br>    bin_path = argv[<span class="hljs-number">1</span>]<br>    p = angr.Project(bin_path)<br>    <span class="hljs-comment"># 创建一个angr项目，加载二进制文件</span><br><br>    start_addr = <span class="hljs-number">0x80488BC</span>  <span class="hljs-comment"># 地址</span><br>    init_state = p.factory.blank_state(addr=start_addr)<br>    <span class="hljs-comment"># 在指定call scanf后的地址创建一个初始状态</span><br><br>    FileName = <span class="hljs-string">&quot;FOQVSBZB.txt&quot;</span><br>    FileSize = <span class="hljs-number">0x40</span><br><br>    passwd = init_state.solver.BVS(<span class="hljs-string">&quot;passwd&quot;</span>,FileSize*<span class="hljs-number">8</span>)<br>    sim_file = angr.storage.SimFile(FileName,content=passwd,size = FileSize)<br>    init_state.fs.insert(FileName,sim_file)<br>    <span class="hljs-comment"># 插入一个符号化文件，将文件名设置为“FOQVSBZB.txt”，文件大小为64字节（0x40）。</span><br>    <span class="hljs-comment"># 该文件的内容为一个64位符号变量，名称为passwd。</span><br><br>    sm = p.factory.simulation_manager(init_state)  <br>    <span class="hljs-comment"># 创建一个符号执行管理器</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_good</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Good Job&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_bad</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Try again&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br>    <span class="hljs-comment"># 定义两个函数，用于判断状态是否为好的或坏的</span><br><br>    sm.explore(find=is_good, avoid=is_bad)<br>    <span class="hljs-comment"># 对符号执行管理器进行探索，寻找满足is_good条件且避免is_bad条件的路径</span><br><br>    <span class="hljs-keyword">if</span> sm.found:<br>        found_state = sm.found[<span class="hljs-number">0</span>]<br>        passwd1 = found_state.solver.<span class="hljs-built_in">eval</span>(passwd, cast_to=<span class="hljs-built_in">bytes</span>).decode(<span class="hljs-string">&quot;utf-8&quot;</span>)<br>        <span class="hljs-comment"># 获取找到的状态中的符号变量passwd的具体值</span><br><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Solution: &#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(passwd1))<br>        <span class="hljs-comment"># 打印解决方案</span><br><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;No Solution found&quot;</span>)<br>        <span class="hljs-comment"># 如果没有找到解决方案，则抛出异常</span><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main(sys.argv)<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="08-angr-constraints"><a href="#08-angr-constraints" class="headerlink" title="08_angr_constraints"></a>08_angr_constraints</h4><p>直接跳到buffer地址中执行</p>
+<p><img src="https://vip.helloimg.com/images/2023/10/07/ob519g.png" srcset="/img/loading.gif" lazyload alt="image-20231007170951294"></p>
+<p>检查地址</p>
+<p><img src="https://vip.helloimg.com/images/2023/10/07/ob53kM.png" srcset="/img/loading.gif" lazyload alt="image-20231007171124816"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> angr<br><span class="hljs-keyword">import</span> sys<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">argv</span>):<br>    bin_path = argv[<span class="hljs-number">1</span>]<br>    p = angr.Project(bin_path)<br>    <span class="hljs-comment"># 创建一个angr项目，加载二进制文件</span><br><br>    start_addr = <span class="hljs-number">0x0804863C</span>  <span class="hljs-comment"># 地址</span><br>    init_state = p.factory.blank_state(addr=start_addr)<br>    <span class="hljs-comment"># 在指定call scanf后的地址创建一个初始状态</span><br><br>    <br>    buffer_addr = <span class="hljs-number">0x804A040</span><br>    passwd = init_state.solver.BVS(<span class="hljs-string">&quot;passwd&quot;</span>, <span class="hljs-number">16</span>*<span class="hljs-number">8</span>)<br>    init_state.memory.store(buffer_addr, passwd)<br>    <span class="hljs-comment"># 设置缓冲区地址，并将16字节的符号变量passwd存储到该地址</span><br>    <br><br>    sm = p.factory.simgr(init_state)<br>    <span class="hljs-comment"># 创建一个符号执行管理器</span><br>    <br>    check_addr = <span class="hljs-number">0x804857C</span><br>    sm.explore(find=check_addr)<br>    <span class="hljs-comment"># 对符号执行管理器进行探索，寻找到达检查地址的路径</span><br><br>    <span class="hljs-keyword">if</span> sm.found:<br>        check_state = sm.found[<span class="hljs-number">0</span>]<br><br>        desired_string = <span class="hljs-string">&quot;AUPDNNPROEZRJWKB&quot;</span><br>        check_param1 = buffer_addr<br>        check_param2 = <span class="hljs-number">0x10</span><br>        <span class="hljs-comment"># 设置所需字符串、缓冲区地址和长度参数</span><br><br>        check_bvs = check_state.memory.load(check_param1, check_param2)<br>        <span class="hljs-comment"># 加载缓冲区内容</span><br><br>        check_constraint = desired_string == check_bvs<br>        check_state.add_constraints(check_constraint)<br>        <span class="hljs-comment"># 添加约束条件，要求缓冲区内容等于目标字符串</span><br><br>        passwd1 = check_state.solver.<span class="hljs-built_in">eval</span>(passwd, cast_to=<span class="hljs-built_in">bytes</span>).decode(<span class="hljs-string">&quot;utf-8&quot;</span>)<br>        <span class="hljs-comment"># 获取符号变量passwd的具体值</span><br><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Solution: &#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(passwd1))<br>        <span class="hljs-comment"># 打印解决方案</span><br><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;No Solution found&quot;</span>)<br>        <span class="hljs-comment"># 如果没有找到解决方案，则抛出异常</span><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main(sys.argv)<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="09-angr-hooks-hook"><a href="#09-angr-hooks-hook" class="headerlink" title="09_angr_hooks hook"></a>09_angr_hooks hook</h3><p>挂钩子</p>
+<p>call地址减去下面的地址就是跳过的长度</p>
+<p><img src="https://vip.helloimg.com/images/2023/10/07/ob5xIn.png" srcset="/img/loading.gif" lazyload alt="image-20231007171524832"></p>
+<p>这边输入存放的buffer地址</p>
+<p><img src="https://vip.helloimg.com/images/2023/10/07/ob5mAz.png" srcset="/img/loading.gif" lazyload alt="image-20231007171700841"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> angr<br><span class="hljs-keyword">import</span> sys<br><span class="hljs-keyword">import</span> claripy<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">argv</span>):<br>    bin_path = argv[<span class="hljs-number">1</span>]<br>    p = angr.Project(bin_path)<br><br>    init_state = p.factory.entry_state()<br>    <span class="hljs-comment"># 创建初始状态</span><br><br>    check_addr = <span class="hljs-number">0x80486CA</span><br>    check_skip_size = <span class="hljs-number">0x5</span><br>    <span class="hljs-comment"># 设置检查地址和长度</span><br><br><span class="hljs-meta">    @p.hook(<span class="hljs-params">check_addr, length=check_skip_size</span>)</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">check_hook</span>(<span class="hljs-params">state</span>):<br>        user_input_addr = <span class="hljs-number">0x804A044</span><br>        user_input_length = <span class="hljs-number">0x10</span><br>        <span class="hljs-comment"># 设置用户输入的地址和长度</span><br><br>        user_input_bvs = state.memory.load(user_input_addr, user_input_length)<br>        desired = <span class="hljs-string">&quot;OSIWHBXIFOQVSBZB&quot;</span><br>        <span class="hljs-comment"># 加载用户输入的内容和目标字符串</span><br><br>        state.regs.eax = claripy.If(desired == user_input_bvs,<br>                                    claripy.BVV(<span class="hljs-number">1</span>,<span class="hljs-number">32</span>),<br>                                    claripy.BVV(<span class="hljs-number">0</span>,<span class="hljs-number">32</span>))<br>        <span class="hljs-comment"># 根据用户输入内容是否等于目标字符串，设置eax寄存器的值为1或0</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_good</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Good Job&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br>    <span class="hljs-comment"># 定义一个判断状态是否正确的函数</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_bad</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Try again&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br>    <span class="hljs-comment"># 定义一个判断状态是否错误的函数</span><br><br>    sm = p.factory.simgr(init_state)<br>    <span class="hljs-comment"># 创建符号执行管理器</span><br><br>    sm.explore(find=is_good, avoid=is_bad)<br>    <span class="hljs-comment"># 对符号执行管理器进行探索，找到满足is_good条件且避免is_bad条件的路径</span><br><br>    <span class="hljs-keyword">if</span> sm.found:<br>        check_state = sm.found[<span class="hljs-number">0</span>]<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Solution: &#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(check_state.posix.dumps(<span class="hljs-number">0</span>)))<br>        <span class="hljs-comment"># 打印解决方案</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;No Solution found&quot;</span>)<br>        <span class="hljs-comment"># 如果没有找到解决方案，则抛出异常</span><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main(sys.argv)<br></code></pre></td></tr></table></figure>
+
+<h3 id="10-angr-simprocedures-hook-函数"><a href="#10-angr-simprocedures-hook-函数" class="headerlink" title="10_angr_simprocedures hook 函数"></a>10_angr_simprocedures hook 函数</h3><p>好多函数不能像上面上面写只能hook函数名称</p>
+<p><code>check_equals_OSIWHBXIFOQVSBZB</code></p>
+<p><img src="https://vip.helloimg.com/images/2023/10/07/ob5tu5.png" srcset="/img/loading.gif" lazyload alt="image-20231007172258702"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs python"><br><span class="hljs-keyword">import</span> angr<br><span class="hljs-keyword">import</span> sys<br><span class="hljs-keyword">import</span> claripy<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">argv</span>):<br>    bin_path = argv[<span class="hljs-number">1</span>]<br>    p = angr.Project(bin_path)<br><br>    init_state = p.factory.entry_state()<br><br>    <span class="hljs-comment"># 定义一个自定义的SimProcedure类来处理符号执行的逻辑</span><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">mySimPro</span>(angr.SimProcedure):<br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">run</span>(<span class="hljs-params">self, user_input_addr, user_input_length</span>):<br>            <span class="hljs-comment"># 从内存中加载用户输入的内容</span><br>            angr_bvs = self.state.memory.load(user_input_addr, user_input_length)<br>            desired = <span class="hljs-string">&quot;OSIWHBXIFOQVSBZB&quot;</span><br><br>            <span class="hljs-keyword">return</span> claripy.If(<br>                desired == angr_bvs,<br>                claripy.BVV(<span class="hljs-number">1</span>, <span class="hljs-number">32</span>),  <span class="hljs-comment"># 如果用户输入等于目标字符串，返回1</span><br>                claripy.BVV(<span class="hljs-number">0</span>, <span class="hljs-number">32</span>)   <span class="hljs-comment"># 否则返回0</span><br>            )<br><br>    check_symbol = <span class="hljs-string">&#x27;check_equals_OSIWHBXIFOQVSBZB&#x27;</span><br><br>    <span class="hljs-comment"># 将自定义的SimProcedure与指定的符号关联起来</span><br>    p.hook_symbol(check_symbol, mySimPro())<br><br>    sm = p.factory.simgr(init_state)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_good</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Good Job&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_bad</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Try again&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br><br>    <span class="hljs-comment"># 对符号执行管理器进行探索，找到满足is_good条件且避免is_bad条件的路径</span><br>    sm.explore(find=is_good, avoid=is_bad)<br><br>    <span class="hljs-keyword">if</span> sm.found:<br>        found_state = sm.found[<span class="hljs-number">0</span>]<br>        passwd = found_state.posix.dumps(<span class="hljs-number">0</span>)<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Solution: &#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(passwd.decode(<span class="hljs-string">&quot;utf-8&quot;</span>)))<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;No Solution found&quot;</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main(sys.argv)<br></code></pre></td></tr></table></figure>
+<h3 id="11-angr-sim-scanf-scanf-hook"><a href="#11-angr-sim-scanf-scanf-hook" class="headerlink" title="11_angr_sim_scanf scanf hook"></a>11_angr_sim_scanf scanf hook</h3><p><img src="https://vip.helloimg.com/images/2023/10/07/ob5LOm.png" srcset="/img/loading.gif" lazyload alt="image-20231007172515891"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> angr<br><span class="hljs-keyword">import</span> sys<br><span class="hljs-keyword">import</span> claripy<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">argv</span>):<br>    <span class="hljs-comment"># 从命令行参数获取二进制文件的路径</span><br>    bin_path = argv[<span class="hljs-number">1</span>]<br>    p = angr.Project(bin_path)<br><br>    <span class="hljs-comment"># 创建初始状态</span><br>    init_state = p.factory.entry_state()<br><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">mySimPro</span>(angr.SimProcedure):<br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">run</span>(<span class="hljs-params">self, string, scanf0_addr, scanf1_addr</span>):<br>            <span class="hljs-comment"># 创建两个符号变量用于存储用户输入</span><br>            scanf0 = claripy.BVS(<span class="hljs-string">&#x27;scanf0&#x27;</span>, <span class="hljs-number">32</span>)<br>            scanf1 = claripy.BVS(<span class="hljs-string">&#x27;scanf1&#x27;</span>, <span class="hljs-number">32</span>)<br><br>            <span class="hljs-comment"># 将符号变量存储到内存中</span><br>            self.state.memory.store(scanf0_addr, scanf0, endness=p.arch.memory_endness)<br>            self.state.memory.store(scanf1_addr, scanf1, endness=p.arch.memory_endness)<br><br>            <span class="hljs-comment"># 将符号变量保存到全局状态中，以便在后续的路径中可以访问</span><br>            self.state.<span class="hljs-built_in">globals</span>[<span class="hljs-string">&#x27;passwd0&#x27;</span>] = scanf0<br>            self.state.<span class="hljs-built_in">globals</span>[<span class="hljs-string">&#x27;passwd1&#x27;</span>] = scanf1<br><br>    scanf_symbol = <span class="hljs-string">&#x27;__isoc99_scanf&#x27;</span><br>    <span class="hljs-comment"># 钩子函数来替换原始的scanf函数</span><br>    p.hook_symbol(scanf_symbol, mySimPro())<br><br>    sm = p.factory.simgr(init_state)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_good</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Good Job&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_bad</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Try again&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br><br>    <span class="hljs-comment"># 使用符号执行探索程序路径</span><br>    sm.explore(find=is_good, avoid=is_bad)<br><br>    <span class="hljs-keyword">if</span> sm.found:<br>        found_state = sm.found[<span class="hljs-number">0</span>]<br>        pwd0 = found_state.<span class="hljs-built_in">globals</span>[<span class="hljs-string">&#x27;passwd0&#x27;</span>]<br>        pwd1 = found_state.<span class="hljs-built_in">globals</span>[<span class="hljs-string">&#x27;passwd1&#x27;</span>]<br><br>        <span class="hljs-comment"># 获取解决方案</span><br>        password0 = found_state.solver.<span class="hljs-built_in">eval</span>(pwd0)<br>        password1 = found_state.solver.<span class="hljs-built_in">eval</span>(pwd1)<br><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Solution: &#123;&#125; &#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(password0, password1))<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;No Solution found&quot;</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main(sys.argv)<br></code></pre></td></tr></table></figure>
+
+<h3 id="12-angr-veritesting-优化路径"><a href="#12-angr-veritesting-优化路径" class="headerlink" title="12_angr_veritesting 优化路径"></a>12_angr_veritesting 优化路径</h3><p>对比前面增加</p>
+<p>之前</p>
+<p>​    <code>sm = p.factory.simgr(init_state)</code> </p>
+<p>现在</p>
+<p>&#96;&#96;    sm &#x3D; p.factory.simgr(init_state, veritesting&#x3D;True)  &#96; </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> angr<br><span class="hljs-keyword">import</span> sys<br><span class="hljs-keyword">import</span> claripy<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">argv</span>):<br>    bin_path = argv[<span class="hljs-number">1</span>]        <span class="hljs-comment"># 获取命令行参数中指定的二进制文件路径</span><br>    p = angr.Project(bin_path)   <span class="hljs-comment"># 创建angr项目对象</span><br><br>    init_state = p.factory.entry_state()   <span class="hljs-comment"># 创建初始状态</span><br>    sm = p.factory.simgr(init_state, veritesting=<span class="hljs-literal">True</span>)   <span class="hljs-comment"># 创建符号执行管理器</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_good</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Good Job&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_bad</span>(<span class="hljs-params">state</span>): <br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Try again&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br><br>    sm.explore(find=is_good, avoid=is_bad)   <span class="hljs-comment"># 开始符号执行过程，指定找到目标状态和要避免的状态</span><br><br>    <span class="hljs-keyword">if</span> sm.found:               <span class="hljs-comment"># 如果找到目标状态</span><br>        found_state = sm.found[<span class="hljs-number">0</span>]    <span class="hljs-comment"># 获取找到的状态</span><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Solution: &#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(found_state.posix.dumps(<span class="hljs-number">0</span>)))   <span class="hljs-comment"># 打印解（状态的标准输入）</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;No Solution found&quot;</span>)   <br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main(sys.argv) <br><br></code></pre></td></tr></table></figure>
+
+<h3 id="13-angr-static-binary-静态符号化"><a href="#13-angr-static-binary-静态符号化" class="headerlink" title="13_angr_static_binary 静态符号化"></a>13_angr_static_binary 静态符号化</h3><p>把相应的给地址给angr</p>
+<p>如call printf 进入printf首地址</p>
+<p><img src="https://vip.helloimg.com/images/2023/10/07/ob5MRT.png" srcset="/img/loading.gif" lazyload alt="image-20231007172927800"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> angr<br><span class="hljs-keyword">import</span> sys<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">argv</span>):<br>    bin_path = argv[<span class="hljs-number">1</span>]<br>    p = angr.Project(bin_path)<br><br>    init_state = p.factory.entry_state()<br><br>    <span class="hljs-comment"># 钩住printf、scanf、puts和__libc_start_main函数，以避免其影响我们的符号执行</span><br>    p.hook(<span class="hljs-number">0x804fab0</span>, angr.SIM_PROCEDURES[<span class="hljs-string">&#x27;libc&#x27;</span>][<span class="hljs-string">&#x27;printf&#x27;</span>]())<br>    p.hook(<span class="hljs-number">0x804fb10</span>, angr.SIM_PROCEDURES[<span class="hljs-string">&#x27;libc&#x27;</span>][<span class="hljs-string">&#x27;scanf&#x27;</span>]())<br>    p.hook(<span class="hljs-number">0x80503f0</span>, angr.SIM_PROCEDURES[<span class="hljs-string">&#x27;libc&#x27;</span>][<span class="hljs-string">&#x27;puts&#x27;</span>]())<br>    p.hook(<span class="hljs-number">0x8048d60</span>, angr.SIM_PROCEDURES[<span class="hljs-string">&#x27;glibc&#x27;</span>][<span class="hljs-string">&#x27;__libc_start_main&#x27;</span>]())<br><br>    sm = p.factory.simgr(init_state, veritesting=<span class="hljs-literal">True</span>)<br>    <span class="hljs-comment"># 创建符号执行管理器,启用veritesting</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_good</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Good Job&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">is_bad</span>(<span class="hljs-params">state</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">b&#x27;Try again&#x27;</span> <span class="hljs-keyword">in</span> state.posix.dumps(<span class="hljs-number">1</span>)<br><br>    sm.explore(find=is_good, avoid=is_bad)<br><br>    <span class="hljs-keyword">if</span> sm.found:<br>        found_state = sm.found[<span class="hljs-number">0</span>]<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Solution: &#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(found_state.posix.dumps(<span class="hljs-number">0</span>)))<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;No Solution found&quot;</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main(sys.argv)<br></code></pre></td></tr></table></figure>
+
+
+<p>题目来自GitHub：<a target="_blank" rel="noopener" href="https://github.com/jakespringer/angr_ctf">点击下载angr_ctf题目</a></p>
+<p>我的文件链接:<br><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1mNExUpxts-NmkaMzVR__Hg?pwd=rshi">https://pan.baidu.com/s/1mNExUpxts-NmkaMzVR__Hg?pwd=rshi</a> 提取码: rshi 复制这段内容后打开百度网盘手机App，操作更方便哦</p>
+<p>参考b站up主<a target="_blank" rel="noopener" href="https://space.bilibili.com/386563875">mr_m0nst3r</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/angr%E5%AD%A6%E4%B9%A0%E6%A8%A1%E6%9D%BF/" class="category-chain-item">angr学习模板</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%AD%A6%E4%B9%A0angr/" class="print-no-link">#学习angr</a>
+      
+        <a href="/tags/angr%E7%AC%A6%E5%8F%B7%E5%8C%96%E6%A8%A1%E6%9D%BF/" class="print-no-link">#angr符号化模板</a>
+      
+        <a href="/tags/python%E6%A8%A1%E5%9D%97%E5%AD%A6%E4%B9%A0/" class="print-no-link">#python模块学习</a>
+      
+        <a href="/tags/pyhton-angr/" class="print-no-link">#pyhton_angr</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>python_angr_模板</div>
+      <div>https://huajien.gitee.io/2023/577f7508/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>HUAJI</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年10月7日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/6c15a38d/" title="阿里云盘dll劫持">
+                        <span class="hidden-mobile">阿里云盘dll劫持</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"PV4cFjLDqRP85BMmqrxzifKk-gzGzoHsz","appKey":"nWF1CLMPaB4wcVwSVWqY4EQs","path":"window.location.pathname","placeholder":"都看完了不留个言！！！","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>基于Hex框架</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>主题来自Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
