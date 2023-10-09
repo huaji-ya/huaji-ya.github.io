@@ -4,6 +4,41 @@
   
   
   <entry>
+    <title>记录adb和jeb动态调试实体机设备</title>
+    <link href="/2023/93ffd795/"/>
+    <url>/2023/93ffd795/</url>
+    
+    <content type="html"><![CDATA[<h1 id="ADB的常用命令"><a href="#ADB的常用命令" class="headerlink" title="ADB的常用命令"></a>ADB的常用命令</h1><h2 id="设备连接"><a href="#设备连接" class="headerlink" title="设备连接"></a>设备连接</h2><p><img src="https://vip.helloimg.com/images/2023/10/09/obM2iD.gif" alt="img"></p><ul><li>查看连接设备:<code>adb devices</code></li><li>TCP方式连接设备:<code>adb connect &lt;设备IP地址&gt;:端口号</code></li><li>USB方式连接设备:<code>adb USB</code></li><li>断开连接:<code>adb disconnect &lt;设备名称&gt;</code></li></ul><h2 id="应用管理"><a href="#应用管理" class="headerlink" title="应用管理"></a>应用管理</h2><ul><li>安装APK:<code>adb install &lt;apk文件路径&gt;</code></li><li>卸载APP:<code>adb uninstall &lt;包名&gt;</code></li><li>查看安装的应用:<code>adb shell pm list packages</code></li><li>清除APP数据:<code>adb shell pm clear &lt;包名&gt;</code></li></ul><h2 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h2><ul><li>推文件到设备:<code>adb push &lt;本地文件&gt; &lt;设备文件&gt;</code></li><li>拉文件从设备:<code>adb pull &lt;设备文件&gt; &lt;本地文件&gt;</code></li></ul><h2 id="模拟输入"><a href="#模拟输入" class="headerlink" title="模拟输入"></a>模拟输入</h2><ul><li>发送文本:<code>adb shell input text &lt;文本内容&gt;</code></li><li>点击事件:<code>adb shell input tap &lt;x坐标&gt; &lt;y坐标&gt;</code></li><li>发送按键事件:<code>adb shell input keyevent &lt;KEYCODE&gt;</code></li></ul><h2 id="屏幕截图"><a href="#屏幕截图" class="headerlink" title="屏幕截图"></a>屏幕截图</h2><ul><li>截图保存到电脑:<code>adb exec-out screencap -p &gt; sc.png</code></li><li>截图保存到设备:<code>adb shell screencap -p /sdcard/sc.png</code></li></ul><h2 id="日志查看"><a href="#日志查看" class="headerlink" title="日志查看"></a>日志查看</h2><ul><li>查看日志:<code>adb logcat</code></li><li>清空日志缓存:<code>adb logcat -c</code></li></ul><h2 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h2><ul><li>启动&#x2F;关闭服务:<code>adb shell service &lt;启动/关闭&gt; &lt;服务名&gt;</code></li><li>查看设备信息:<code>adb shell getprop</code></li><li>重启设备:<code>adb reboot</code></li><li>查看帮助:<code>adb --help</code></li></ul><h1 id="JEB调试Android应用"><a href="#JEB调试Android应用" class="headerlink" title="JEB调试Android应用"></a>JEB调试Android应用</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol><li>开启Android设备USB调试模式,连接PC</li><li>使设备与JEB在同一网络内,关闭任何可能拦截调试端口的防火墙</li><li>在设备上为调试打开端口,默认为8700</li><li>安装待调试的应用到设备上</li><li>并在手机上打开</li></ol><h2 id="JEB中设置"><a href="#JEB中设置" class="headerlink" title="JEB中设置"></a>JEB中设置</h2><ol><li><p>打开要调试的Android应用的apk文件</p></li><li><p>在关键代码位置下断点的行 <code>ctrl+B</code>下断点（<code>Smail</code>代码处）</p></li><li><p>配置调试连接参数:Debugger-&gt;Configure connections(附上)</p><p><img src="https://vip.helloimg.com/images/2023/10/09/obMne1.png" alt="image-20231009221155150"></p><ul><li>选择Android local debugger</li><li>设置设备IP地址和调试端口(默认8700)</li></ul></li><li><p>点击Debug按钮连接Android设备,选择进程</p><p>可以看到变量我的最爱<img src="https://vip.helloimg.com/images/2023/10/09/obMbKb.gif" alt="img"></p><p><img src="https://vip.helloimg.com/images/2023/10/09/obMH2K.png" alt="image-20231009221534594"></p></li></ol><h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><ol><li>在设备上启动目标应用进程</li><li>JEB中点击Resume按钮,程序会在断点处停止</li><li>可查看变量、调用栈、执行代码等</li><li>继续调试或跳过断点,结束后点击Disconnect断开连接</li></ol><p><img src="https://vip.helloimg.com/images/2023/10/09/obMMFo.png" alt="image-20231009221640250"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>adb</category>
+      
+      <category>jeb</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>adb常见命令</tag>
+      
+      <tag>日常</tag>
+      
+      <tag>随笔</tag>
+      
+      <tag>jeb配置断点调试</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>pythonz3学习</title>
     <link href="/2023/30bc1fee/"/>
     <url>/2023/30bc1fee/</url>
@@ -113,9 +148,9 @@
     
     <tags>
       
-      <tag>ida</tag>
-      
       <tag>idapro</tag>
+      
+      <tag>ida</tag>
       
       <tag>快捷键</tag>
       
