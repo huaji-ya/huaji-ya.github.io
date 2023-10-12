@@ -16,34 +16,35 @@
   <meta name="author" content="HUAJI">
   <meta name="keywords" content="滑稽，滑稽的，滑稽的博客，这是一个滑稽的Blog，Funny The Bolg，Funny Bolg，">
   
-    <meta name="description" content="ADB的常用命令设备连接  查看连接设备:adb devices TCP方式连接设备:adb connect &lt;设备IP地址&gt;:端口号 USB方式连接设备:adb USB 断开连接:adb disconnect &lt;设备名称&gt;  应用管理 安装APK:adb install &lt;apk文件路径&gt; 卸载APP:adb uninstall &lt;包名&gt; 查看安装">
+    <meta name="description" content="什么是SMCSMC，即Self Modifying Code，动态代码加密技术，指通过修改代码或数据，阻止别人直接静态分析，然后在动态运行程序时对代码进行解密，达到程序正常运行的效果，而计算机病毒通常也会采用SMC技术动态修改内存中的可执行代码来达到变形或对代码加密的目的，从而躲过杀毒软件的查杀或者迷惑反病毒工作者对代码进行分析。通常来说，SMC使用汇编去写会比较好，因为它涉及更改机器码，但SMC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记录adb和jeb动态调试实体机设备">
-<meta property="og:url" content="https://huajien.gitee.io/2023/93ffd795/index.html">
+<meta property="og:title" content="SMC技术">
+<meta property="og:url" content="https://huajien.gitee.io/2023/8a4de02f/index.html">
 <meta property="og:site_name" content="HUAJI">
-<meta property="og:description" content="ADB的常用命令设备连接  查看连接设备:adb devices TCP方式连接设备:adb connect &lt;设备IP地址&gt;:端口号 USB方式连接设备:adb USB 断开连接:adb disconnect &lt;设备名称&gt;  应用管理 安装APK:adb install &lt;apk文件路径&gt; 卸载APP:adb uninstall &lt;包名&gt; 查看安装">
+<meta property="og:description" content="什么是SMCSMC，即Self Modifying Code，动态代码加密技术，指通过修改代码或数据，阻止别人直接静态分析，然后在动态运行程序时对代码进行解密，达到程序正常运行的效果，而计算机病毒通常也会采用SMC技术动态修改内存中的可执行代码来达到变形或对代码加密的目的，从而躲过杀毒软件的查杀或者迷惑反病毒工作者对代码进行分析。通常来说，SMC使用汇编去写会比较好，因为它涉及更改机器码，但SMC">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/09/obM2iD.gif">
-<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/09/obMne1.png">
-<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/09/obMbKb.gif">
-<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/09/obMH2K.png">
-<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/09/obMMFo.png">
-<meta property="article:published_time" content="2023-10-09T13:56:24.000Z">
-<meta property="article:modified_time" content="2023-10-09T14:19:42.731Z">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/10/ob96IA.gif">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/10/obOBRb.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/10/ob9gNm.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/10/ob9fkr.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/10/ob9kjh.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/10/ob9YOq.png">
+<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/10/ob9VEc.png">
+<meta property="article:published_time" content="2023-10-10T04:47:27.000Z">
+<meta property="article:modified_time" content="2023-10-10T07:08:42.398Z">
 <meta property="article:author" content="HUAJI">
 <meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="RE">
+<meta property="article:tag" content="SMC">
 <meta property="article:tag" content="随笔">
-<meta property="article:tag" content="adb常见命令">
-<meta property="article:tag" content="日常">
-<meta property="article:tag" content="jeb配置断点调试">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://vip.helloimg.com/images/2023/10/09/obM2iD.gif">
+<meta name="twitter:image" content="https://vip.helloimg.com/images/2023/10/10/ob96IA.gif">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>记录adb和jeb动态调试实体机设备 - HUAJI</title>
+  <title>SMC技术 - HUAJI</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -261,7 +262,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="记录adb和jeb动态调试实体机设备"></span>
+            <span id="subtitle" data-typed-text="SMC技术"></span>
           
         </div>
 
@@ -277,8 +278,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-09 21:56" pubdate>
-          2023年10月9日 晚上
+        <time datetime="2023-10-10 12:47" pubdate>
+          2023年10月10日 下午
         </time>
       </span>
     
@@ -289,7 +290,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          2.6k 字
         
       </span>
     
@@ -300,7 +301,7 @@
         
         
         
-          9 分钟
+          22 分钟
         
       </span>
     
@@ -345,78 +346,43 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">记录adb和jeb动态调试实体机设备</h1>
+            <h1 id="seo-header">SMC技术</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="ADB的常用命令"><a href="#ADB的常用命令" class="headerlink" title="ADB的常用命令"></a>ADB的常用命令</h1><h2 id="设备连接"><a href="#设备连接" class="headerlink" title="设备连接"></a>设备连接</h2><p><img src="https://vip.helloimg.com/images/2023/10/09/obM2iD.gif" srcset="/img/loading.gif" lazyload alt="img"></p>
-<ul>
-<li>查看连接设备:<code>adb devices</code></li>
-<li>TCP方式连接设备:<code>adb connect &lt;设备IP地址&gt;:端口号</code></li>
-<li>USB方式连接设备:<code>adb USB</code></li>
-<li>断开连接:<code>adb disconnect &lt;设备名称&gt;</code></li>
-</ul>
-<h2 id="应用管理"><a href="#应用管理" class="headerlink" title="应用管理"></a>应用管理</h2><ul>
-<li>安装APK:<code>adb install &lt;apk文件路径&gt;</code></li>
-<li>卸载APP:<code>adb uninstall &lt;包名&gt;</code></li>
-<li>查看安装的应用:<code>adb shell pm list packages</code></li>
-<li>清除APP数据:<code>adb shell pm clear &lt;包名&gt;</code></li>
-</ul>
-<h2 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h2><ul>
-<li>推文件到设备:<code>adb push &lt;本地文件&gt; &lt;设备文件&gt;</code></li>
-<li>拉文件从设备:<code>adb pull &lt;设备文件&gt; &lt;本地文件&gt;</code></li>
-</ul>
-<h2 id="模拟输入"><a href="#模拟输入" class="headerlink" title="模拟输入"></a>模拟输入</h2><ul>
-<li>发送文本:<code>adb shell input text &lt;文本内容&gt;</code></li>
-<li>点击事件:<code>adb shell input tap &lt;x坐标&gt; &lt;y坐标&gt;</code></li>
-<li>发送按键事件:<code>adb shell input keyevent &lt;KEYCODE&gt;</code></li>
-</ul>
-<h2 id="屏幕截图"><a href="#屏幕截图" class="headerlink" title="屏幕截图"></a>屏幕截图</h2><ul>
-<li>截图保存到电脑:<code>adb exec-out screencap -p &gt; sc.png</code></li>
-<li>截图保存到设备:<code>adb shell screencap -p /sdcard/sc.png</code></li>
-</ul>
-<h2 id="日志查看"><a href="#日志查看" class="headerlink" title="日志查看"></a>日志查看</h2><ul>
-<li>查看日志:<code>adb logcat</code></li>
-<li>清空日志缓存:<code>adb logcat -c</code></li>
-</ul>
-<h2 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h2><ul>
-<li>启动&#x2F;关闭服务:<code>adb shell service &lt;启动/关闭&gt; &lt;服务名&gt;</code></li>
-<li>查看设备信息:<code>adb shell getprop</code></li>
-<li>重启设备:<code>adb reboot</code></li>
-<li>查看帮助:<code>adb --help</code></li>
-</ul>
-<h1 id="JEB调试Android应用"><a href="#JEB调试Android应用" class="headerlink" title="JEB调试Android应用"></a>JEB调试Android应用</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
-<li>开启Android设备USB调试模式,连接PC</li>
-<li>使设备与JEB在同一网络内,关闭任何可能拦截调试端口的防火墙</li>
-<li>在设备上为调试打开端口,默认为8700</li>
-<li>安装待调试的应用到设备上</li>
-<li>并在手机上打开</li>
-</ol>
-<h2 id="JEB中设置"><a href="#JEB中设置" class="headerlink" title="JEB中设置"></a>JEB中设置</h2><ol>
-<li><p>打开要调试的Android应用的apk文件</p>
-</li>
-<li><p>在关键代码位置下断点的行 <code>ctrl+B</code>下断点（<code>Smail</code>代码处）</p>
-</li>
-<li><p>配置调试连接参数:Debugger-&gt;Configure connections(附上)</p>
-<p><img src="https://vip.helloimg.com/images/2023/10/09/obMne1.png" srcset="/img/loading.gif" lazyload alt="image-20231009221155150"></p>
-<ul>
-<li>选择Android local debugger</li>
-<li>设置设备IP地址和调试端口(默认8700)</li>
-</ul>
-</li>
-<li><p>点击Debug按钮连接Android设备,选择进程</p>
-<p>可以看到变量我的最爱<img src="https://vip.helloimg.com/images/2023/10/09/obMbKb.gif" srcset="/img/loading.gif" lazyload alt="img"></p>
-<p><img src="https://vip.helloimg.com/images/2023/10/09/obMH2K.png" srcset="/img/loading.gif" lazyload alt="image-20231009221534594"></p>
-</li>
-</ol>
-<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><ol>
-<li>在设备上启动目标应用进程</li>
-<li>JEB中点击Resume按钮,程序会在断点处停止</li>
-<li>可查看变量、调用栈、执行代码等</li>
-<li>继续调试或跳过断点,结束后点击Disconnect断开连接</li>
-</ol>
-<p><img src="https://vip.helloimg.com/images/2023/10/09/obMMFo.png" srcset="/img/loading.gif" lazyload alt="image-20231009221640250"></p>
+                <h2 id="什么是SMC"><a href="#什么是SMC" class="headerlink" title="什么是SMC"></a>什么是SMC</h2><p>SMC，即Self Modifying Code，动态代码加密技术，指通过修改代码或数据，阻止别人直接静态分析，然后在动态运行程序时对代码进行解密，达到程序正常运行的效果，而计算机病毒通常也会采用SMC技术动态修改内存中的可执行代码来达到变形或对代码加密的目的，从而躲过杀毒软件的查杀或者迷惑反病毒工作者对代码进行分析。通常来说，SMC使用汇编去写会比较好，因为它涉及更改机器码，但SMC也可以直接通过C、C++来实现。</p>
+<p><strong>注意，如果使用VS20XX来实现SMC，需要将禁用优化，开启固定基址，关闭随机基址，关闭数据保护，并且选择release X64去编译</strong></p>
+<p>以下的伪代码演示了一种SMC技术的典型应用：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c">IF .运行条件满足<br>  CALL DecryptProc （Address of MyProc）;对某个函数代码解密<br>  ........<br>  CALL MyProc                           ;调用这个函数<br>  ........<br>  CALL EncryptProc （Address of MyProc）;再对代码进行加密，防止程序被Dump<br></code></pre></td></tr></table></figure>
+
+<h3 id="PE文件"><a href="#PE文件" class="headerlink" title="PE文件"></a>PE文件</h3><p>在程序中使用SMC最简单的方法就是修改（或加密）整个数据段或代码段，而想要修改段，我们就要了解PE文件结构， Microsoft为它的32位Windows系统设计了一种全新的可执行文件格式，被成为“Portable Executable”，也就是PE格式</p>
+<p><img src="https://vip.helloimg.com/images/2023/10/10/ob96IA.gif" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>位于文件最开始部位的是一个MS-DOS头部和一段DOS stub代码，在PE文件中保留这一部分是为了DOS和Windows系统共存那一段时期设计的，当程序运行在DOS系统时，DOS系统按照DOS可执行文件的格式调用DOS stub代码，一个典型的DOS stub代码就是在控制台上输出一行提示：“This program cannot be run in MS-DOS mode”，当然不同的编译器产生的DOS stub代码也各不相同。曾经有一段时间很流行一种既可以在DOS系统上运行，又可以在Windows上运行的程序，其原理就是人为地替换这段DOS stub代码。紧跟在DOS stub代码之后的就是PE文件的内容了，首先是一个PE文件标志，这个标志有4个字节，也就是“PE&#x2F;0&#x2F;0”。这之后紧接着PE文件头（PE Header）和可选头部（Optional Header，也可以理解为这个PE文件的一些选项和参数）,这两个头结构存放PE文件的很多重要信息，比如文件包含的段（Sections）数、时间戳、装入基址和程序入口点等信息。这些之后是所有的段头部，段头部之后跟随着所有的段实体。PE文件的尾部还可能包含其它一些混杂的信息，包括重分配信息、调试符号表信息、行号信息等等，这些信息并不是一个PE文件必须的部分，比如正常发布的Release版本的程序就没有调试符号表信息和行号信息。</p>
+<p>PE文件的段，是可以新增的，我们可以通过如下代码去新增一个段：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">pragma</span> code_seg(<span class="hljs-string">&quot;.ddd&quot;</span>)</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">abc</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;WIN&quot;</span>;<br>&#125;<br><span class="hljs-type">void</span> <span class="hljs-title function_">d</span><span class="hljs-params">()</span><br>&#123;<br>    ;<br>&#125;<br><span class="hljs-meta">#<span class="hljs-keyword">pragma</span> code_seg()</span><br><span class="hljs-meta">#<span class="hljs-keyword">pragma</span> comment(linker, <span class="hljs-string">&quot;/SECTION:.ddd,ERW&quot;</span>)</span><br></code></pre></td></tr></table></figure>
+
+<p>值得注意的是，段必须要设置成可读写的情况，这样我们才能去修改它</p>
+<p>在新增了一个段后，我们要想加密它，就得先找到它，即寻址，网上告诉了我们很多寻址操作，但最简单的莫过于直接指针赋值</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">char</span>* b1 = (<span class="hljs-type">char</span>*)abc;<br><span class="hljs-type">char</span>* c1 = (<span class="hljs-type">char</span>*)d;<br><span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> (; b1 &lt; c1; b1++)<br>&#123;<br>    i++;<br>&#125;<br><span class="hljs-type">void</span>* a1 = (<span class="hljs-type">char</span>*)abc;<br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">32</span>; i++)<br>&#123;<br>    *((BYTE*)a1 + i) ^= key;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>直接指针赋值可以找到它的地址，然后我这里的加密选择的是最简单无脑的异或，当我们异或后再跳转到该函数是，会发生报错</p>
+<p><img src="https://vip.helloimg.com/images/2023/10/10/obOBRb.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>我们可以查看一下为什么会有异常，分别将异或前和异或后的机器码输出出来看看，我们会发现：<img src="https://vip.helloimg.com/images/2023/10/10/ob9gNm.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>机器码发生了变化，这直接导致代码被改变，无法被识别而报错</p>
+<p>明白了这个，我们就可以去写一个简单的SMC了</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>直接上代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;Windows.h&gt;</span></span><br> <br>using namespace <span class="hljs-built_in">std</span>;<br> <br><span class="hljs-meta">#<span class="hljs-keyword">pragma</span> code_seg(<span class="hljs-string">&quot;.ddd&quot;</span>)</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">abc</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;WIN&quot;</span>;<br>&#125;<br><span class="hljs-type">void</span> <span class="hljs-title function_">d</span><span class="hljs-params">()</span><br>&#123;<br>    ;<br>&#125;<br><span class="hljs-meta">#<span class="hljs-keyword">pragma</span> code_seg()</span><br><span class="hljs-meta">#<span class="hljs-keyword">pragma</span> comment(linker, <span class="hljs-string">&quot;/SECTION:.ddd,ERW&quot;</span>)</span><br> <br> <br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">int</span> key;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;input you key:&quot;</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<br>    <span class="hljs-built_in">cin</span> &gt;&gt; key;<br>    <span class="hljs-type">char</span>* b1 = (<span class="hljs-type">char</span>*)abc;<br>    <span class="hljs-type">char</span>* c1 = (<span class="hljs-type">char</span>*)d;<br>    <span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (; b1 &lt; c1; b1++)<br>    &#123;<br>        i++;<br>    &#125;<br>    <span class="hljs-type">void</span>* a1 = (<span class="hljs-type">char</span>*)abc;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">32</span>; i++)<br>    &#123;<br>        *((BYTE*)a1 + i) ^= key;<br>    &#125;<br>    abc();<br>    system(<span class="hljs-string">&quot;PAUSE&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这个代码编译出来的程序，是还未经加密的，所以直接解密无法运行，我们要手改一下他的机器码，把他的机器码加密一下</p>
+<p>打开StudyPE+，查看段地址</p>
+<p><img src="https://vip.helloimg.com/images/2023/10/10/ob9fkr.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>然后在winhex中寻找到相应的地址，将机器码改掉，我这里选择的是与0x2D异或，这样，0x2D就是我的key</p>
+<p><img src="https://vip.helloimg.com/images/2023/10/10/ob9kjh.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="https://vip.helloimg.com/images/2023/10/10/ob9YOq.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>修改完数据后保存，打开程序，输入key，发现程序正常运行了</p>
+<p><img src="https://vip.helloimg.com/images/2023/10/10/ob9VEc.png" srcset="/img/loading.gif" lazyload alt="img"><br>整挺好</p>
+<p>本文始发于微信公众号（看雪学院）：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/b32h0PUgXKBATMWbPvdVgQ">SMC技术浅析</a></p>
 
                 
               </div>
@@ -435,15 +401,8 @@
     
       <span class="category-chain">
         
-  <a href="/categories/adb/" class="category-chain-item">adb</a>
+  <a href="/categories/SMC/" class="category-chain-item">SMC</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/adb/jeb/" class="category-chain-item">jeb</a>
-  
-  
-
   
 
       </span>
@@ -459,13 +418,11 @@
       
         <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="print-no-link">#学习笔记</a>
       
+        <a href="/tags/RE/" class="print-no-link">#RE</a>
+      
+        <a href="/tags/SMC/" class="print-no-link">#SMC</a>
+      
         <a href="/tags/%E9%9A%8F%E7%AC%94/" class="print-no-link">#随笔</a>
-      
-        <a href="/tags/adb%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" class="print-no-link">#adb常见命令</a>
-      
-        <a href="/tags/%E6%97%A5%E5%B8%B8/" class="print-no-link">#日常</a>
-      
-        <a href="/tags/jeb%E9%85%8D%E7%BD%AE%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95/" class="print-no-link">#jeb配置断点调试</a>
       
     </div>
   
@@ -477,8 +434,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>记录adb和jeb动态调试实体机设备</div>
-      <div>https://huajien.gitee.io/2023/93ffd795/</div>
+      <div>SMC技术</div>
+      <div>https://huajien.gitee.io/2023/8a4de02f/</div>
     </div>
     <div class="license-meta">
       
@@ -490,7 +447,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年10月9日</div>
+          <div>2023年10月10日</div>
         </div>
       
       
@@ -522,9 +479,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/8a4de02f/" title="SMC技术">
+                      <a href="/2023/77be028f/" title="国内企业SRC平台大全">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">SMC技术</span>
+                        <span class="hidden-mobile">国内企业SRC平台大全</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -532,8 +489,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/30bc1fee/" title="pythonz3学习">
-                        <span class="hidden-mobile">pythonz3学习</span>
+                      <a href="/2023/93ffd795/" title="记录adb和jeb动态调试实体机设备">
+                        <span class="hidden-mobile">记录adb和jeb动态调试实体机设备</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
