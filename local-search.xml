@@ -4,7 +4,7 @@
   
   
   <entry>
-    <title>记录adb和jeb动态调试实体机设备</title>
+    <title>安卓设置ro.debuggable==1</title>
     <link href="/2023/93ffd795/"/>
     <url>/2023/93ffd795/</url>
     
@@ -20,13 +20,13 @@
     
     <tags>
       
-      <tag>android调试</tag>
-      
-      <tag>日常配置</tag>
+      <tag>学习笔记</tag>
       
       <tag>随笔</tag>
       
-      <tag>学习笔记</tag>
+      <tag>android调试</tag>
+      
+      <tag>日常配置</tag>
       
     </tags>
     
@@ -72,13 +72,13 @@
     
     <tags>
       
-      <tag>随笔</tag>
-      
       <tag>学习笔记</tag>
       
       <tag>RE</tag>
       
       <tag>SMC</tag>
+      
+      <tag>随笔</tag>
       
     </tags>
     
@@ -105,9 +105,9 @@
     
     <tags>
       
-      <tag>随笔</tag>
-      
       <tag>学习笔记</tag>
+      
+      <tag>随笔</tag>
       
       <tag>adb常见命令</tag>
       
@@ -382,8 +382,6 @@
     
     <tags>
       
-      <tag>学习笔记</tag>
-      
       <tag>ctf</tag>
       
       <tag>逆向wp</tag>
@@ -391,6 +389,8 @@
       <tag>reverse</tag>
       
       <tag>buuctf</tag>
+      
+      <tag>学习笔记</tag>
       
     </tags>
     
