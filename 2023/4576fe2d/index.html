@@ -39,7 +39,7 @@
 <meta property="og:image" content="https://vip.helloimg.com/images/2023/10/16/o2qcnR.png">
 <meta property="og:image" content="https://vip.helloimg.com/images/2023/10/16/o2qWK6.png">
 <meta property="article:published_time" content="2023-10-01T13:48:59.000Z">
-<meta property="article:modified_time" content="2023-10-16T13:41:09.266Z">
+<meta property="article:modified_time" content="2023-10-17T04:17:48.299Z">
 <meta property="article:author" content="HUAJI">
 <meta property="article:tag" content="new star">
 <meta property="article:tag" content="ctf">
@@ -299,7 +299,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          3.5k 字
         
       </span>
     
@@ -310,7 +310,7 @@
         
         
         
-          17 分钟
+          30 分钟
         
       </span>
     
@@ -404,6 +404,17 @@
 <p>layout</p>
 <p><img src="https://vip.helloimg.com/images/2023/10/16/o2qWK6.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
 <p><strong>flag</strong> <code>flag&#123;Act1v1ty_!s_so00oo0o_Impor#an#&#125;</code></p>
+<h2 id="New-Star-Ctf-Week2-Re"><a href="#New-Star-Ctf-Week2-Re" class="headerlink" title="New Star Ctf Week2 Re"></a>New Star Ctf Week2 Re</h2><h3 id="PZthon"><a href="#PZthon" class="headerlink" title="PZthon"></a>PZthon</h3><p>是python打包的</p>
+<p>使用pyinstxtractor.py <a target="_blank" rel="noopener" href="https://github.com/extremecoders-re/pyinstxtractor/blob/master/pyinstxtractor.py">下载&#x2F;pyinstxtractor.py</a></p>
+<p><code>python pyinstxtractor.py 文件.exe</code></p>
+<p>会出来一个<code>文件.pyc</code> 使用pycdc 可以在<a target="_blank" rel="noopener" href="https://github.com/huajien/builds-pycdc/releases">下载pycdc</a></p>
+<p>反编译出来</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python">D:\Software\SoftwareFile\tool\Tools\Disassemblers\PZthon.exe_extracted&gt;pycdc.exe PZthon.pyc<br><span class="hljs-comment"># Source Generated with Decompyle++</span><br><span class="hljs-comment"># File: PZthon.pyc (Python 3.9)</span><br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">hello</span>():<br>    art = <span class="hljs-string">&#x27;\n              ___                                                                      \n    //   ) )     / /    //   ) )  // | |     / /        // | |  \\ / / \\    / /       \n   //___/ /     / /    //        //__| |    / /        //__| |   \\  /   \\  / /        \n  / ____ /     / /    //  ____  / ___  |   / /        / ___  |   / /     \\/ /         \n //           / /    //    / / //    | |  / /        //    | |  / /\\     / /          \n//           / /___ ((____/ / //     | | / /____/ / //     | | / /  \\   / /           \n                                                                                       \n     / /        //   / / ||   / / //   / /  / /       /__  ___/ ||   / |  / / //   ) ) \n    / /        //____    ||  / / //____    / /          / /     ||  /  | / / //   / /  \n   / /        / ____     || / / / ____    / /          / /      || / /||/ / //   / /   \n  / /        //          ||/ / //        / /          / /       ||/ / |  / //   / /    \n / /____/ / //____/ /    |  / //____/ / / /____/ /   / /        |  /  | / ((___/ /     \n&#x27;</span><br>    <span class="hljs-built_in">print</span>(art)<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">bytearray</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;Please give me the flag: &#x27;</span>).encode())<br><br>enc = [<span class="hljs-number">115</span>,<span class="hljs-number">121</span>,<span class="hljs-number">116</span>,<span class="hljs-number">114</span>,<span class="hljs-number">110</span>,<span class="hljs-number">76</span>,<span class="hljs-number">37</span>,<span class="hljs-number">96</span>,<span class="hljs-number">88</span>,<span class="hljs-number">116</span>,<span class="hljs-number">113</span>,<span class="hljs-number">112</span>,<span class="hljs-number">36</span>,<span class="hljs-number">97</span>,<span class="hljs-number">65</span>,<span class="hljs-number">125</span>,<span class="hljs-number">103</span>,<span class="hljs-number">37</span>,<span class="hljs-number">96</span>,<span class="hljs-number">114</span>,<span class="hljs-number">125</span>,<span class="hljs-number">65</span>,<span class="hljs-number">39</span>,<span class="hljs-number">112</span>,<span class="hljs-number">70</span>,<span class="hljs-number">112</span>,<span class="hljs-number">118</span>,<span class="hljs-number">37</span>,<span class="hljs-number">123</span>,<span class="hljs-number">113</span>,<span class="hljs-number">69</span>,<span class="hljs-number">79</span>,<span class="hljs-number">82</span>,<span class="hljs-number">84</span>,<span class="hljs-number">89</span>,<span class="hljs-number">84</span>,<span class="hljs-number">77</span>,<span class="hljs-number">76</span>,<span class="hljs-number">36</span>,<span class="hljs-number">112</span>,<span class="hljs-number">99</span>,<span class="hljs-number">112</span>,<span class="hljs-number">36</span>,<span class="hljs-number">65</span>,<span class="hljs-number">39</span>,<span class="hljs-number">116</span>,<span class="hljs-number">97</span>,<span class="hljs-number">36</span>,<span class="hljs-number">102</span>,<span class="hljs-number">86</span>,<span class="hljs-number">37</span>,<span class="hljs-number">37</span>,<span class="hljs-number">36</span>,<span class="hljs-number">104</span>]<br>data = hello()<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(data)):<br>    data[i] = data[i] ^ <span class="hljs-number">21</span><br><span class="hljs-keyword">if</span> <span class="hljs-built_in">bytearray</span>(enc) == data:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;WOW!!&#x27;</span>)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;I believe you can do it!&#x27;</span>)<br><span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;To be continue...&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>脚本</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs dns">enc = [<span class="hljs-number">115,121,116,114</span>,<span class="hljs-number">110,76,37,96</span>,<span class="hljs-number">88,116,113,112</span>,<span class="hljs-number">36,97,65,125</span>,<span class="hljs-number">103,37,96,114</span>,<span class="hljs-number">125,65,39,112</span>,<span class="hljs-number">70,112,118,37</span>,<span class="hljs-number">123,113,69,79</span>,<span class="hljs-number">82,84,89,84</span>,<span class="hljs-number">77,76,36,112</span>,<span class="hljs-number">99,112,36,65</span>,<span class="hljs-number">39,116,97,36</span>,<span class="hljs-number">102,86,37,37</span>,<span class="hljs-number">36</span>,<span class="hljs-number">104</span>]<br>data = [<span class="hljs-number">0</span>] * len(enc)<br>for i in range(len(enc)):<br>    data[i] = chr(enc[i] ^ <span class="hljs-number">21</span>)<br>print(&quot;&quot;.join(data))<br>#flag&#123;Y0uMade1tThr0ughT2eSec0ndPZGALAXY1eve1T2at1sC001&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="AndroGenshin"><a href="#AndroGenshin" class="headerlink" title="AndroGenshin"></a>AndroGenshin</h3><p>原神启动</p>
 <p>更新中！！！</p>
 
                 
