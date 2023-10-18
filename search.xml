@@ -231,9 +231,9 @@
       
         <tags>
             
-            <tag> idapro </tag>
-            
             <tag> ida </tag>
+            
+            <tag> idapro </tag>
             
             <tag> 快捷键 </tag>
             
@@ -382,13 +382,13 @@
       
         <tags>
             
+            <tag> 学习笔记 </tag>
+            
             <tag> ctf </tag>
             
             <tag> 逆向wp </tag>
             
             <tag> reverse </tag>
-            
-            <tag> 学习笔记 </tag>
             
             <tag> buuctf </tag>
             
