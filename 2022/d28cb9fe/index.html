@@ -16,34 +16,33 @@
   <meta name="author" content="HUAJI">
   <meta name="keywords" content="滑稽，滑稽的，滑稽的博客，这是一个滑稽的Blog，Funny The Bolg，Funny Bolg，">
   
-    <meta name="description" content="ADB的常用命令设备连接  查看连接设备:adb devices TCP方式连接设备:adb connect &lt;设备IP地址&gt;:端口号 USB方式连接设备:adb USB 断开连接:adb disconnect &lt;设备名称&gt;  应用管理 安装APK:adb install &lt;apk文件路径&gt; 卸载APP:adb uninstall &lt;包名&gt; 查看安装">
+    <meta name="description" content="x32汇编位运算 有符号数的乘法和除法可以用算术移位 无符号数的乘法和除法可以用逻辑移位  算数移位指令指令格式:ASL&#x2F;SAR Reg&#x2F;Mem, CL&#x2F;Lmm SAL(算数左移) 1234567891011SAL eax,1SAL ax,1SAL al,1;操作 eax寄存器操作修改al寄存器位0x81SAL al,10x8110000001 &lt;&lt; 1  &#x3D;&#x3D; 0000 0010">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记录adb和jeb动态调试实体机设备">
-<meta property="og:url" content="https://huajien.gitee.io/2023/93ffd795/index.html">
+<meta property="og:title" content="32汇编位运算">
+<meta property="og:url" content="https://huajien.gitee.io/2022/d28cb9fe/index.html">
 <meta property="og:site_name" content="HUAJI">
-<meta property="og:description" content="ADB的常用命令设备连接  查看连接设备:adb devices TCP方式连接设备:adb connect &lt;设备IP地址&gt;:端口号 USB方式连接设备:adb USB 断开连接:adb disconnect &lt;设备名称&gt;  应用管理 安装APK:adb install &lt;apk文件路径&gt; 卸载APP:adb uninstall &lt;包名&gt; 查看安装">
+<meta property="og:description" content="x32汇编位运算 有符号数的乘法和除法可以用算术移位 无符号数的乘法和除法可以用逻辑移位  算数移位指令指令格式:ASL&#x2F;SAR Reg&#x2F;Mem, CL&#x2F;Lmm SAL(算数左移) 1234567891011SAL eax,1SAL ax,1SAL al,1;操作 eax寄存器操作修改al寄存器位0x81SAL al,10x8110000001 &lt;&lt; 1  &#x3D;&#x3D; 0000 0010">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/09/obM2iD.gif">
-<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/09/obMne1.png">
-<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/09/obMbKb.gif">
-<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/09/obMH2K.png">
-<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/09/obMMFo.png">
-<meta property="article:published_time" content="2023-10-09T13:56:24.000Z">
-<meta property="article:modified_time" content="2023-10-09T14:19:42.731Z">
+<meta property="og:image" content="https://vip.helloimg.com/i/2023/10/30/653f2dfbe2ab7.png">
+<meta property="og:image" content="https://vip.helloimg.com/i/2023/10/30/653f2e038e55c.png">
+<meta property="og:image" content="https://vip.helloimg.com/i/2023/10/30/653f4345916f1.png">
+<meta property="og:image" content="https://vip.helloimg.com/i/2023/10/30/653f434c796ba.png">
+<meta property="og:image" content="https://vip.helloimg.com/i/2023/10/30/653f516634598.png">
+<meta property="og:image" content="https://vip.helloimg.com/i/2023/10/30/653f517160f61.png">
+<meta property="article:published_time" content="2022-05-16T00:03:00.000Z">
+<meta property="article:modified_time" content="2023-11-13T07:30:31.324Z">
 <meta property="article:author" content="HUAJI">
-<meta property="article:tag" content="学习笔记">
-<meta property="article:tag" content="随笔">
-<meta property="article:tag" content="adb常见命令">
-<meta property="article:tag" content="日常">
-<meta property="article:tag" content="jeb配置断点调试">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="位运算">
+<meta property="article:tag" content="汇编">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://vip.helloimg.com/images/2023/10/09/obM2iD.gif">
+<meta name="twitter:image" content="https://vip.helloimg.com/i/2023/10/30/653f2dfbe2ab7.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>记录adb和jeb动态调试实体机设备 - HUAJI</title>
+  <title>32汇编位运算 - HUAJI</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -261,7 +260,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="记录adb和jeb动态调试实体机设备"></span>
+            <span id="subtitle" data-typed-text="32汇编位运算"></span>
           
         </div>
 
@@ -277,8 +276,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-09 21:56" pubdate>
-          2023年10月9日 晚上
+        <time datetime="2022-05-16 08:03" pubdate>
+          2022年5月16日 早上
         </time>
       </span>
     
@@ -289,7 +288,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          1.2k 字
         
       </span>
     
@@ -300,7 +299,7 @@
         
         
         
-          9 分钟
+          10 分钟
         
       </span>
     
@@ -344,12 +343,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">记录adb和jeb动态调试实体机设备</h1>
+            <h1 id="seo-header">32汇编位运算</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年10月9日 晚上
+                    本文最后更新于：2023年11月13日 下午
                   
                 
               </p>
@@ -357,73 +356,49 @@
             
               <div class="markdown-body">
                 
-                <h1 id="ADB的常用命令"><a href="#ADB的常用命令" class="headerlink" title="ADB的常用命令"></a>ADB的常用命令</h1><h2 id="设备连接"><a href="#设备连接" class="headerlink" title="设备连接"></a>设备连接</h2><p><img src="https://vip.helloimg.com/images/2023/10/09/obM2iD.gif" srcset="/img/loading.gif" lazyload alt="img"></p>
-<ul>
-<li>查看连接设备:<code>adb devices</code></li>
-<li>TCP方式连接设备:<code>adb connect &lt;设备IP地址&gt;:端口号</code></li>
-<li>USB方式连接设备:<code>adb USB</code></li>
-<li>断开连接:<code>adb disconnect &lt;设备名称&gt;</code></li>
+                <h2 id="x32汇编位运算"><a href="#x32汇编位运算" class="headerlink" title="x32汇编位运算"></a>x32汇编位运算</h2><ul>
+<li><strong>有符号数的乘法和除法可以用算术移位</strong></li>
+<li><strong>无符号数的乘法和除法可以用逻辑移位</strong></li>
 </ul>
-<h2 id="应用管理"><a href="#应用管理" class="headerlink" title="应用管理"></a>应用管理</h2><ul>
-<li>安装APK:<code>adb install &lt;apk文件路径&gt;</code></li>
-<li>卸载APP:<code>adb uninstall &lt;包名&gt;</code></li>
-<li>查看安装的应用:<code>adb shell pm list packages</code></li>
-<li>清除APP数据:<code>adb shell pm clear &lt;包名&gt;</code></li>
-</ul>
-<h2 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h2><ul>
-<li>推文件到设备:<code>adb push &lt;本地文件&gt; &lt;设备文件&gt;</code></li>
-<li>拉文件从设备:<code>adb pull &lt;设备文件&gt; &lt;本地文件&gt;</code></li>
-</ul>
-<h2 id="模拟输入"><a href="#模拟输入" class="headerlink" title="模拟输入"></a>模拟输入</h2><ul>
-<li>发送文本:<code>adb shell input text &lt;文本内容&gt;</code></li>
-<li>点击事件:<code>adb shell input tap &lt;x坐标&gt; &lt;y坐标&gt;</code></li>
-<li>发送按键事件:<code>adb shell input keyevent &lt;KEYCODE&gt;</code></li>
-</ul>
-<h2 id="屏幕截图"><a href="#屏幕截图" class="headerlink" title="屏幕截图"></a>屏幕截图</h2><ul>
-<li>截图保存到电脑:<code>adb exec-out screencap -p &gt; sc.png</code></li>
-<li>截图保存到设备:<code>adb shell screencap -p /sdcard/sc.png</code></li>
-</ul>
-<h2 id="日志查看"><a href="#日志查看" class="headerlink" title="日志查看"></a>日志查看</h2><ul>
-<li>查看日志:<code>adb logcat</code></li>
-<li>清空日志缓存:<code>adb logcat -c</code></li>
-</ul>
-<h2 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h2><ul>
-<li>启动&#x2F;关闭服务:<code>adb shell service &lt;启动/关闭&gt; &lt;服务名&gt;</code></li>
-<li>查看设备信息:<code>adb shell getprop</code></li>
-<li>重启设备:<code>adb reboot</code></li>
-<li>查看帮助:<code>adb --help</code></li>
-</ul>
-<h1 id="JEB调试Android应用"><a href="#JEB调试Android应用" class="headerlink" title="JEB调试Android应用"></a>JEB调试Android应用</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
-<li>开启Android设备USB调试模式,连接PC</li>
-<li>使设备与JEB在同一网络内,关闭任何可能拦截调试端口的防火墙</li>
-<li>在设备上为调试打开端口,默认为8700</li>
-<li>安装待调试的应用到设备上</li>
-<li>并在手机上打开</li>
-</ol>
-<h2 id="JEB中设置"><a href="#JEB中设置" class="headerlink" title="JEB中设置"></a>JEB中设置</h2><ol>
-<li><p>打开要调试的Android应用的apk文件</p>
-</li>
-<li><p>在关键代码位置下断点的行 <code>ctrl+B</code>下断点（<code>Smail</code>代码处）</p>
-</li>
-<li><p>配置调试连接参数:Debugger-&gt;Configure connections(附上)</p>
-<p><img src="https://vip.helloimg.com/images/2023/10/09/obMne1.png" srcset="/img/loading.gif" lazyload alt="image-20231009221155150"></p>
-<ul>
-<li>选择Android local debugger</li>
-<li>设置设备IP地址和调试端口(默认8700)</li>
-</ul>
-</li>
-<li><p>点击Debug按钮连接Android设备,选择进程</p>
-<p>可以看到变量我的最爱<img src="https://vip.helloimg.com/images/2023/10/09/obMbKb.gif" srcset="/img/loading.gif" lazyload alt="img"></p>
-<p><img src="https://vip.helloimg.com/images/2023/10/09/obMH2K.png" srcset="/img/loading.gif" lazyload alt="image-20231009221534594"></p>
-</li>
-</ol>
-<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><ol>
-<li>在设备上启动目标应用进程</li>
-<li>JEB中点击Resume按钮,程序会在断点处停止</li>
-<li>可查看变量、调用栈、执行代码等</li>
-<li>继续调试或跳过断点,结束后点击Disconnect断开连接</li>
-</ol>
-<p><img src="https://vip.helloimg.com/images/2023/10/09/obMMFo.png" srcset="/img/loading.gif" lazyload alt="image-20231009221640250"></p>
+<h4 id="算数移位指令"><a href="#算数移位指令" class="headerlink" title="算数移位指令"></a>算数移位指令</h4><p>指令格式:<code>ASL/SAR Reg/Mem, CL/Lmm</code></p>
+<h5 id="SAL-算数左移"><a href="#SAL-算数左移" class="headerlink" title="SAL(算数左移)"></a><strong>SAL(算数左移)</strong></h5><p><img src="https://vip.helloimg.com/i/2023/10/30/653f2dfbe2ab7.png" srcset="/img/loading.gif" lazyload alt="image-20231030121701186"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs asm">SAL eax,1<br>SAL ax,1<br>SAL al,1<br><br>;操作 eax寄存器操作修改al寄存器位0x81<br>SAL al,1<br>0x81<br>10000001 &lt;&lt; 1  == 0000 0010<br>		<br>		<br>CF:1		0x02<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="SAR-算数右移"><a href="#SAR-算数右移" class="headerlink" title="SAR(算数右移)"></a><strong>SAR(算数右移)</strong></h5><p><img src="https://vip.helloimg.com/i/2023/10/30/653f2e038e55c.png" srcset="/img/loading.gif" lazyload alt="image-20231030121709987"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs asm">SAR eax,1<br>SAR ax,1<br>SAR al,1<br><br>;操作 eax寄存器操作修改al寄存器位0x81<br>SAR al,1<br>0x81<br>1000 0001  &gt;&gt; 1 ==  1100 0000<br>		<br>CF = 1		0xC0<br><br></code></pre></td></tr></table></figure>
+
+<h4 id="逻辑移位指令"><a href="#逻辑移位指令" class="headerlink" title="逻辑移位指令"></a>逻辑移位指令</h4><p>指令格式<code>SHL/SHR Reg/Mem, CL/Imm</code></p>
+<h5 id="SHL-逻辑左移"><a href="#SHL-逻辑左移" class="headerlink" title="SHL(逻辑左移)"></a><strong>SHL(逻辑左移)</strong></h5><p><img src="https://vip.helloimg.com/i/2023/10/30/653f4345916f1.png" srcset="/img/loading.gif" lazyload alt="image-20231030134752734"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs asm">SHL eax,1<br>SHL ax,1<br>SHL al,1<br><br>;操作 eax寄存器操作修改al寄存器位0x81<br>SHL al,1<br>0x81<br>1000 0001 &lt;&lt; 1 == 0000 0010<br><br><br>CF:1		0x02<br><br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="SHR-逻辑右移"><a href="#SHR-逻辑右移" class="headerlink" title="SHR(逻辑右移)"></a><strong>SHR(逻辑右移)</strong></h5><p><img src="https://vip.helloimg.com/i/2023/10/30/653f434c796ba.png" srcset="/img/loading.gif" lazyload alt="image-20231030134759638"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs asm">SHR eax,1<br>SHR ax,1<br>SHR al,1<br><br>;操作 eax寄存器操作修改al寄存器位0x81<br>SHR al,1<br>0x81<br>1000 0001 &gt;&gt; 1 == 0100 0000<br><br><br>CF:1		0x40<br><br></code></pre></td></tr></table></figure>
+
+<h4 id="循环移位指令"><a href="#循环移位指令" class="headerlink" title="循环移位指令"></a>循环移位指令</h4><p>指令格式<code>ROL r/m, i8  ROR r/m, CL</code></p>
+<h5 id="ROL-逻辑左移"><a href="#ROL-逻辑左移" class="headerlink" title="ROL(逻辑左移)"></a><strong>ROL(逻辑左移)</strong></h5><p><img src="https://vip.helloimg.com/i/2023/10/30/653f516634598.png" srcset="/img/loading.gif" lazyload alt="image-20231030144809729"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs asm">RCL eax,1<br>RCL ax,1<br>RCL al,1<br><br>;操作 eax寄存器操作修改al寄存器位0x81<br>RCR al,1<br>0x81<br>1000 0001 -&gt; 1 == 1100 0000<br><br><br>CF:1		0xC0<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="ROR-逻辑右移"><a href="#ROR-逻辑右移" class="headerlink" title="ROR(逻辑右移)"></a><strong>ROR(逻辑右移)</strong></h5><p><img src="https://vip.helloimg.com/i/2023/10/30/653f517160f61.png" srcset="/img/loading.gif" lazyload alt="image-20231030144820884"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs asm">ROL eax,1<br>ROL ax,1<br>ROL al,1<br><br>;操作 eax寄存器操作修改al寄存器位0x81<br>ROL al,1<br>0x81<br>1000 0001 -&gt; 1 == 1100 0000<br><br><br>CF:1		0xC0<br><br></code></pre></td></tr></table></figure>
+
+<h4 id="带进位的循环移位指令"><a href="#带进位的循环移位指令" class="headerlink" title="带进位的循环移位指令"></a>带进位的循环移位指令</h4><p>指令格式<code>RCL r/m, i8  RCR r/m, CL</code></p>
+<h5 id="RCL-带进位循环左移"><a href="#RCL-带进位循环左移" class="headerlink" title="RCL( 带进位循环左移)"></a><strong>RCL( 带进位循环左移)</strong></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs asm">RCL eax,1<br>RCL ax,1<br>RCL al,1<br><br>;操作 eax寄存器操作修改al寄存器位0x81<br>RCL al,1<br>0x81<br>1000 0001 &lt;-- 1 == 0000 0010<br><br><br>CF:1		0x02<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="RCR-带进位循环右移"><a href="#RCR-带进位循环右移" class="headerlink" title="RCR( 带进位循环右移)"></a><strong>RCR( 带进位循环右移)</strong></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs asm">RCR eax,1<br>RCR ax,1<br>RCR al,1<br><br>;操作 eax寄存器操作修改al寄存器位0x81<br>RCR al,1<br>0x81<br>1000 0001 --&gt; 1 == 0100 0000<br><br><br>CF:1		0x40<br><br></code></pre></td></tr></table></figure>
+
+<h4 id="练习1"><a href="#练习1" class="headerlink" title="练习1"></a>练习1</h4><p><strong>1、定义一个unsiged char 类型，通过程序为第3、5、7位赋值,赋值时不能影响到其它位原来的值.(使用位操作指令、比如：&amp; | ! ^ &lt;&lt; &gt;&gt;等)</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">unsigned</span> <span class="hljs-type">char</span> bit = <span class="hljs-number">0</span>;<br><br><br><br><br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -442,15 +417,8 @@
     
       <span class="category-chain">
         
-  <a href="/categories/adb/" class="category-chain-item">adb</a>
+  <a href="/categories/%E6%B1%87%E7%BC%96/" class="category-chain-item">汇编</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/adb/jeb/" class="category-chain-item">jeb</a>
-  
-  
-
   
 
       </span>
@@ -464,15 +432,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="print-no-link">#学习笔记</a>
+        <a href="/tags/%E5%AD%A6%E4%B9%A0/" class="print-no-link">#学习</a>
       
-        <a href="/tags/%E9%9A%8F%E7%AC%94/" class="print-no-link">#随笔</a>
+        <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" class="print-no-link">#位运算</a>
       
-        <a href="/tags/adb%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" class="print-no-link">#adb常见命令</a>
-      
-        <a href="/tags/%E6%97%A5%E5%B8%B8/" class="print-no-link">#日常</a>
-      
-        <a href="/tags/jeb%E9%85%8D%E7%BD%AE%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95/" class="print-no-link">#jeb配置断点调试</a>
+        <a href="/tags/%E6%B1%87%E7%BC%96/" class="print-no-link">#汇编</a>
       
     </div>
   
@@ -484,8 +448,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>记录adb和jeb动态调试实体机设备</div>
-      <div>https://huajien.gitee.io/2023/93ffd795/</div>
+      <div>32汇编位运算</div>
+      <div>https://huajien.gitee.io/2022/d28cb9fe/</div>
     </div>
     <div class="license-meta">
       
@@ -497,7 +461,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年10月9日</div>
+          <div>2022年5月16日</div>
         </div>
       
       
@@ -529,9 +493,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/8a4de02f/" title="SMC技术">
+                      <a href="/2022/21569/" title="汇编 JCC指令表">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">SMC技术</span>
+                        <span class="hidden-mobile">汇编 JCC指令表</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -539,8 +503,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/30bc1fee/" title="pythonz3学习">
-                        <span class="hidden-mobile">pythonz3学习</span>
+                      <a href="/2022/9843/" title="win_xp配置双机调试">
+                        <span class="hidden-mobile">win_xp配置双机调试</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

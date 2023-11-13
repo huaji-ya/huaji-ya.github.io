@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>010 Editor x64 14.0 破解思路</title>
+    <link href="/2023/ffc78274/"/>
+    <url>/2023/ffc78274/</url>
+    
+    <content type="html"><![CDATA[<p>仅供学习使用：<br>010 Editor启动时候，会检查注册状态，如果未注册，会提示是试用版，在这个提示处设断点，寻找破解线索。下图圆圈处就是启动时的试用版提示。</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d2d6abdba.png" alt="image1"></p><p>使用x64调试 加载主程序默认路径 <code>C:\Program Files\010 Editor\010Editor.exe</code>看到一堆jmp指令 <strong>OptionalHeader.AddressOfEntryPoint</strong>是程序入口</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d2fdb2a79.png" alt="image.png"></p><p><code>shift+d</code> 搜索当前模块字符串<code>Evaluation Version\n</code> 全部断下来<strong>f2</strong>下断点</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d31d59a0f.png" alt="image1"></p><p>回到<strong>CPU</strong>让后按<strong>f9</strong>会运行到刚刚下的断点地方<br>往上滑找到调用的地方</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d51bb1d19.png" alt="image"></p><p>或者<br><code>ctrl+shift+d</code>匹配特征 十六进制</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs hex">48 89 5C 24 08 48 89 74 24 18 48 89 54 24 10 55 57 41 56 48 8B EC 48 83 EC 40 49 8B F1<br></code></pre></td></tr></table></figure><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d5376ba6d.png" alt="image (1)"></p><p><code>g</code>转换流程图</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d55d9df9d.png" alt="image (2)"><br>按<code>g</code>转回来</p><p><strong>ctrl+r</strong>(查找引用)双击进去唯一的一个jmp进入之后又一大堆jmp指令<br><img src="https://vip.helloimg.com/i/2023/11/13/6551d57d4acd3.png" alt="image (3)"><br>在<strong>在ctrl+r</strong>(查找引用)<br><img src="https://vip.helloimg.com/i/2023/11/13/6551d59576e85.png" alt="image (4)"><br>这四个都是 验证<code>cmp ebp，0xDB</code>下面是**:”Licensed to:\n”**<br>确认了都是验证</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d5a96a9c0.png" alt="image (5)"></p><p>&#x20;去上面那个call看中间有个jmp直接进去</p><p>修改前</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d5cf3ab42.png" alt="image (6)"></p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d5e18d607.png" alt="image (7)"></p><p><strong>shift+p</strong>(打补丁)</p><p>··· ·· ·· ·· ·· ·· ·· ···</p><p>下载链接：<br><a href="https://download.sweetscape.com/010EditorWin64Installer14.0.exe">https://download.sweetscape.com/010EditorWin64Installer14.0.exe</a></p><p>SHA256: <code>9f926af3bc49df3ab3b2fa8e9cf97caf018081df277c25ee37fab8c2fdd974ba  010EditorWin64Installer14.0.exe</code></p><p>123盘 <a href="https://www.123pan.com/s/mCY8Vv-o6HWd.html%E6%8F%90%E5%8F%96%E7%A0%81:cqA6">https://www.123pan.com/s/mCY8Vv-o6HWd.html提取码:cqA6</a></p><p>思路来源：<br>感谢<a href="https://www.52pojie.cn/home.php?mod=space&uid=1288787">longs75</a>作者<br>原帖子地址<br><a href="https://www.52pojie.cn/thread-1695625-1-1.html"><code>https://www.52pojie.cn/thread-1695625-1-1.html</code></a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>逆向</category>
+      
+      <category>破解</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>010 Editor</tag>
+      
+      <tag>学习笔记</tag>
+      
+      <tag>破解软件</tag>
+      
+      <tag>x64dbg</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>安卓设置ro.debuggable==1</title>
     <link href="/2023/93ffd795/"/>
     <url>/2023/93ffd795/</url>
@@ -20,9 +53,9 @@
     
     <tags>
       
-      <tag>随笔</tag>
-      
       <tag>学习笔记</tag>
+      
+      <tag>随笔</tag>
       
       <tag>android调试</tag>
       
@@ -72,13 +105,13 @@
     
     <tags>
       
+      <tag>学习笔记</tag>
+      
       <tag>RE</tag>
       
       <tag>SMC</tag>
       
       <tag>随笔</tag>
-      
-      <tag>学习笔记</tag>
       
     </tags>
     
@@ -105,9 +138,9 @@
     
     <tags>
       
-      <tag>随笔</tag>
-      
       <tag>学习笔记</tag>
+      
+      <tag>随笔</tag>
       
       <tag>adb常见命令</tag>
       
@@ -231,9 +264,9 @@
     
     <tags>
       
-      <tag>ida</tag>
-      
       <tag>idapro</tag>
+      
+      <tag>ida</tag>
       
       <tag>快捷键</tag>
       
@@ -260,15 +293,15 @@
     
     <tags>
       
+      <tag>new star</tag>
+      
       <tag>ctf</tag>
       
       <tag>逆向wp</tag>
       
-      <tag>reverse</tag>
-      
-      <tag>new star</tag>
-      
       <tag>比赛</tag>
+      
+      <tag>reverse</tag>
       
     </tags>
     
@@ -353,9 +386,9 @@
       
       <tag>逆向wp</tag>
       
-      <tag>reverse</tag>
-      
       <tag>比赛</tag>
+      
+      <tag>reverse</tag>
       
       <tag>iscc_2023</tag>
       
@@ -384,13 +417,13 @@
       
       <tag>学习笔记</tag>
       
-      <tag>buuctf</tag>
-      
       <tag>ctf</tag>
       
       <tag>逆向wp</tag>
       
       <tag>reverse</tag>
+      
+      <tag>buuctf</tag>
       
     </tags>
     
@@ -519,6 +552,35 @@
       <tag>jb</tag>
       
       <tag>ja</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>32汇编位运算</title>
+    <link href="/2022/d28cb9fe/"/>
+    <url>/2022/d28cb9fe/</url>
+    
+    <content type="html"><![CDATA[<h2 id="x32汇编位运算"><a href="#x32汇编位运算" class="headerlink" title="x32汇编位运算"></a>x32汇编位运算</h2><ul><li><strong>有符号数的乘法和除法可以用算术移位</strong></li><li><strong>无符号数的乘法和除法可以用逻辑移位</strong></li></ul><h4 id="算数移位指令"><a href="#算数移位指令" class="headerlink" title="算数移位指令"></a>算数移位指令</h4><p>指令格式:<code>ASL/SAR Reg/Mem, CL/Lmm</code></p><h5 id="SAL-算数左移"><a href="#SAL-算数左移" class="headerlink" title="SAL(算数左移)"></a><strong>SAL(算数左移)</strong></h5><p><img src="https://vip.helloimg.com/i/2023/10/30/653f2dfbe2ab7.png" alt="image-20231030121701186"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs asm">SAL eax,1<br>SAL ax,1<br>SAL al,1<br><br>;操作 eax寄存器操作修改al寄存器位0x81<br>SAL al,1<br>0x81<br>10000001 &lt;&lt; 1  == 0000 0010<br><br><br>CF:10x02<br></code></pre></td></tr></table></figure><h5 id="SAR-算数右移"><a href="#SAR-算数右移" class="headerlink" title="SAR(算数右移)"></a><strong>SAR(算数右移)</strong></h5><p><img src="https://vip.helloimg.com/i/2023/10/30/653f2e038e55c.png" alt="image-20231030121709987"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs asm">SAR eax,1<br>SAR ax,1<br>SAR al,1<br><br>;操作 eax寄存器操作修改al寄存器位0x81<br>SAR al,1<br>0x81<br>1000 0001  &gt;&gt; 1 ==  1100 0000<br><br>CF = 10xC0<br><br></code></pre></td></tr></table></figure><h4 id="逻辑移位指令"><a href="#逻辑移位指令" class="headerlink" title="逻辑移位指令"></a>逻辑移位指令</h4><p>指令格式<code>SHL/SHR Reg/Mem, CL/Imm</code></p><h5 id="SHL-逻辑左移"><a href="#SHL-逻辑左移" class="headerlink" title="SHL(逻辑左移)"></a><strong>SHL(逻辑左移)</strong></h5><p><img src="https://vip.helloimg.com/i/2023/10/30/653f4345916f1.png" alt="image-20231030134752734"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs asm">SHL eax,1<br>SHL ax,1<br>SHL al,1<br><br>;操作 eax寄存器操作修改al寄存器位0x81<br>SHL al,1<br>0x81<br>1000 0001 &lt;&lt; 1 == 0000 0010<br><br><br>CF:10x02<br><br></code></pre></td></tr></table></figure><h5 id="SHR-逻辑右移"><a href="#SHR-逻辑右移" class="headerlink" title="SHR(逻辑右移)"></a><strong>SHR(逻辑右移)</strong></h5><p><img src="https://vip.helloimg.com/i/2023/10/30/653f434c796ba.png" alt="image-20231030134759638"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs asm">SHR eax,1<br>SHR ax,1<br>SHR al,1<br><br>;操作 eax寄存器操作修改al寄存器位0x81<br>SHR al,1<br>0x81<br>1000 0001 &gt;&gt; 1 == 0100 0000<br><br><br>CF:10x40<br><br></code></pre></td></tr></table></figure><h4 id="循环移位指令"><a href="#循环移位指令" class="headerlink" title="循环移位指令"></a>循环移位指令</h4><p>指令格式<code>ROL r/m, i8  ROR r/m, CL</code></p><h5 id="ROL-逻辑左移"><a href="#ROL-逻辑左移" class="headerlink" title="ROL(逻辑左移)"></a><strong>ROL(逻辑左移)</strong></h5><p><img src="https://vip.helloimg.com/i/2023/10/30/653f516634598.png" alt="image-20231030144809729"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs asm">RCL eax,1<br>RCL ax,1<br>RCL al,1<br><br>;操作 eax寄存器操作修改al寄存器位0x81<br>RCR al,1<br>0x81<br>1000 0001 -&gt; 1 == 1100 0000<br><br><br>CF:10xC0<br><br></code></pre></td></tr></table></figure><h5 id="ROR-逻辑右移"><a href="#ROR-逻辑右移" class="headerlink" title="ROR(逻辑右移)"></a><strong>ROR(逻辑右移)</strong></h5><p><img src="https://vip.helloimg.com/i/2023/10/30/653f517160f61.png" alt="image-20231030144820884"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs asm">ROL eax,1<br>ROL ax,1<br>ROL al,1<br><br>;操作 eax寄存器操作修改al寄存器位0x81<br>ROL al,1<br>0x81<br>1000 0001 -&gt; 1 == 1100 0000<br><br><br>CF:10xC0<br><br></code></pre></td></tr></table></figure><h4 id="带进位的循环移位指令"><a href="#带进位的循环移位指令" class="headerlink" title="带进位的循环移位指令"></a>带进位的循环移位指令</h4><p>指令格式<code>RCL r/m, i8  RCR r/m, CL</code></p><h5 id="RCL-带进位循环左移"><a href="#RCL-带进位循环左移" class="headerlink" title="RCL( 带进位循环左移)"></a><strong>RCL( 带进位循环左移)</strong></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs asm">RCL eax,1<br>RCL ax,1<br>RCL al,1<br><br>;操作 eax寄存器操作修改al寄存器位0x81<br>RCL al,1<br>0x81<br>1000 0001 &lt;-- 1 == 0000 0010<br><br><br>CF:10x02<br><br></code></pre></td></tr></table></figure><h5 id="RCR-带进位循环右移"><a href="#RCR-带进位循环右移" class="headerlink" title="RCR( 带进位循环右移)"></a><strong>RCR( 带进位循环右移)</strong></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs asm">RCR eax,1<br>RCR ax,1<br>RCR al,1<br><br>;操作 eax寄存器操作修改al寄存器位0x81<br>RCR al,1<br>0x81<br>1000 0001 --&gt; 1 == 0100 0000<br><br><br>CF:10x40<br><br></code></pre></td></tr></table></figure><h4 id="练习1"><a href="#练习1" class="headerlink" title="练习1"></a>练习1</h4><p><strong>1、定义一个unsiged char 类型，通过程序为第3、5、7位赋值,赋值时不能影响到其它位原来的值.(使用位操作指令、比如：&amp; | ! ^ &lt;&lt; &gt;&gt;等)</strong></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">unsigned</span> <span class="hljs-type">char</span> bit = <span class="hljs-number">0</span>;<br><br><br><br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>汇编</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>学习</tag>
+      
+      <tag>位运算</tag>
+      
+      <tag>汇编</tag>
       
     </tags>
     

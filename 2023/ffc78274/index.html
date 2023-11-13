@@ -16,34 +16,39 @@
   <meta name="author" content="HUAJI">
   <meta name="keywords" content="滑稽，滑稽的，滑稽的博客，这是一个滑稽的Blog，Funny The Bolg，Funny Bolg，">
   
-    <meta name="description" content="ADB的常用命令设备连接  查看连接设备:adb devices TCP方式连接设备:adb connect &lt;设备IP地址&gt;:端口号 USB方式连接设备:adb USB 断开连接:adb disconnect &lt;设备名称&gt;  应用管理 安装APK:adb install &lt;apk文件路径&gt; 卸载APP:adb uninstall &lt;包名&gt; 查看安装">
+    <meta name="description" content="仅供学习使用：010 Editor启动时候，会检查注册状态，如果未注册，会提示是试用版，在这个提示处设断点，寻找破解线索。下图圆圈处就是启动时的试用版提示。  使用x64调试 加载主程序默认路径 C:\Program Files\010 Editor\010Editor.exe看到一堆jmp指令 OptionalHeader.AddressOfEntryPoint是程序入口  shift+d 搜索">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记录adb和jeb动态调试实体机设备">
-<meta property="og:url" content="https://huajien.gitee.io/2023/93ffd795/index.html">
+<meta property="og:title" content="010 Editor x64 14.0 破解思路">
+<meta property="og:url" content="https://huajien.gitee.io/2023/ffc78274/index.html">
 <meta property="og:site_name" content="HUAJI">
-<meta property="og:description" content="ADB的常用命令设备连接  查看连接设备:adb devices TCP方式连接设备:adb connect &lt;设备IP地址&gt;:端口号 USB方式连接设备:adb USB 断开连接:adb disconnect &lt;设备名称&gt;  应用管理 安装APK:adb install &lt;apk文件路径&gt; 卸载APP:adb uninstall &lt;包名&gt; 查看安装">
+<meta property="og:description" content="仅供学习使用：010 Editor启动时候，会检查注册状态，如果未注册，会提示是试用版，在这个提示处设断点，寻找破解线索。下图圆圈处就是启动时的试用版提示。  使用x64调试 加载主程序默认路径 C:\Program Files\010 Editor\010Editor.exe看到一堆jmp指令 OptionalHeader.AddressOfEntryPoint是程序入口  shift+d 搜索">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/09/obM2iD.gif">
-<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/09/obMne1.png">
-<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/09/obMbKb.gif">
-<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/09/obMH2K.png">
-<meta property="og:image" content="https://vip.helloimg.com/images/2023/10/09/obMMFo.png">
-<meta property="article:published_time" content="2023-10-09T13:56:24.000Z">
-<meta property="article:modified_time" content="2023-10-09T14:19:42.731Z">
+<meta property="og:image" content="https://vip.helloimg.com/i/2023/11/13/6551d2d6abdba.png">
+<meta property="og:image" content="https://vip.helloimg.com/i/2023/11/13/6551d2fdb2a79.png">
+<meta property="og:image" content="https://vip.helloimg.com/i/2023/11/13/6551d31d59a0f.png">
+<meta property="og:image" content="https://vip.helloimg.com/i/2023/11/13/6551d51bb1d19.png">
+<meta property="og:image" content="https://vip.helloimg.com/i/2023/11/13/6551d5376ba6d.png">
+<meta property="og:image" content="https://vip.helloimg.com/i/2023/11/13/6551d55d9df9d.png">
+<meta property="og:image" content="https://vip.helloimg.com/i/2023/11/13/6551d57d4acd3.png">
+<meta property="og:image" content="https://vip.helloimg.com/i/2023/11/13/6551d59576e85.png">
+<meta property="og:image" content="https://vip.helloimg.com/i/2023/11/13/6551d5a96a9c0.png">
+<meta property="og:image" content="https://vip.helloimg.com/i/2023/11/13/6551d5cf3ab42.png">
+<meta property="og:image" content="https://vip.helloimg.com/i/2023/11/13/6551d5e18d607.png">
+<meta property="article:published_time" content="2023-11-13T07:31:07.000Z">
+<meta property="article:modified_time" content="2023-11-13T07:53:33.943Z">
 <meta property="article:author" content="HUAJI">
+<meta property="article:tag" content="010 Editor">
 <meta property="article:tag" content="学习笔记">
-<meta property="article:tag" content="随笔">
-<meta property="article:tag" content="adb常见命令">
-<meta property="article:tag" content="日常">
-<meta property="article:tag" content="jeb配置断点调试">
+<meta property="article:tag" content="破解软件">
+<meta property="article:tag" content="x64dbg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://vip.helloimg.com/images/2023/10/09/obM2iD.gif">
+<meta name="twitter:image" content="https://vip.helloimg.com/i/2023/11/13/6551d2d6abdba.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>记录adb和jeb动态调试实体机设备 - HUAJI</title>
+  <title>010 Editor x64 14.0 破解思路 - HUAJI</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -261,7 +266,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="记录adb和jeb动态调试实体机设备"></span>
+            <span id="subtitle" data-typed-text="010 Editor x64 14.0 破解思路"></span>
           
         </div>
 
@@ -277,8 +282,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-09 21:56" pubdate>
-          2023年10月9日 晚上
+        <time datetime="2023-11-13 15:31" pubdate>
+          2023年11月13日 下午
         </time>
       </span>
     
@@ -289,7 +294,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          799 字
         
       </span>
     
@@ -300,7 +305,7 @@
         
         
         
-          9 分钟
+          7 分钟
         
       </span>
     
@@ -344,12 +349,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">记录adb和jeb动态调试实体机设备</h1>
+            <h1 id="seo-header">010 Editor x64 14.0 破解思路</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年10月9日 晚上
+                    本文最后更新于：2023年11月13日 下午
                   
                 
               </p>
@@ -357,73 +362,32 @@
             
               <div class="markdown-body">
                 
-                <h1 id="ADB的常用命令"><a href="#ADB的常用命令" class="headerlink" title="ADB的常用命令"></a>ADB的常用命令</h1><h2 id="设备连接"><a href="#设备连接" class="headerlink" title="设备连接"></a>设备连接</h2><p><img src="https://vip.helloimg.com/images/2023/10/09/obM2iD.gif" srcset="/img/loading.gif" lazyload alt="img"></p>
-<ul>
-<li>查看连接设备:<code>adb devices</code></li>
-<li>TCP方式连接设备:<code>adb connect &lt;设备IP地址&gt;:端口号</code></li>
-<li>USB方式连接设备:<code>adb USB</code></li>
-<li>断开连接:<code>adb disconnect &lt;设备名称&gt;</code></li>
-</ul>
-<h2 id="应用管理"><a href="#应用管理" class="headerlink" title="应用管理"></a>应用管理</h2><ul>
-<li>安装APK:<code>adb install &lt;apk文件路径&gt;</code></li>
-<li>卸载APP:<code>adb uninstall &lt;包名&gt;</code></li>
-<li>查看安装的应用:<code>adb shell pm list packages</code></li>
-<li>清除APP数据:<code>adb shell pm clear &lt;包名&gt;</code></li>
-</ul>
-<h2 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h2><ul>
-<li>推文件到设备:<code>adb push &lt;本地文件&gt; &lt;设备文件&gt;</code></li>
-<li>拉文件从设备:<code>adb pull &lt;设备文件&gt; &lt;本地文件&gt;</code></li>
-</ul>
-<h2 id="模拟输入"><a href="#模拟输入" class="headerlink" title="模拟输入"></a>模拟输入</h2><ul>
-<li>发送文本:<code>adb shell input text &lt;文本内容&gt;</code></li>
-<li>点击事件:<code>adb shell input tap &lt;x坐标&gt; &lt;y坐标&gt;</code></li>
-<li>发送按键事件:<code>adb shell input keyevent &lt;KEYCODE&gt;</code></li>
-</ul>
-<h2 id="屏幕截图"><a href="#屏幕截图" class="headerlink" title="屏幕截图"></a>屏幕截图</h2><ul>
-<li>截图保存到电脑:<code>adb exec-out screencap -p &gt; sc.png</code></li>
-<li>截图保存到设备:<code>adb shell screencap -p /sdcard/sc.png</code></li>
-</ul>
-<h2 id="日志查看"><a href="#日志查看" class="headerlink" title="日志查看"></a>日志查看</h2><ul>
-<li>查看日志:<code>adb logcat</code></li>
-<li>清空日志缓存:<code>adb logcat -c</code></li>
-</ul>
-<h2 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h2><ul>
-<li>启动&#x2F;关闭服务:<code>adb shell service &lt;启动/关闭&gt; &lt;服务名&gt;</code></li>
-<li>查看设备信息:<code>adb shell getprop</code></li>
-<li>重启设备:<code>adb reboot</code></li>
-<li>查看帮助:<code>adb --help</code></li>
-</ul>
-<h1 id="JEB调试Android应用"><a href="#JEB调试Android应用" class="headerlink" title="JEB调试Android应用"></a>JEB调试Android应用</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
-<li>开启Android设备USB调试模式,连接PC</li>
-<li>使设备与JEB在同一网络内,关闭任何可能拦截调试端口的防火墙</li>
-<li>在设备上为调试打开端口,默认为8700</li>
-<li>安装待调试的应用到设备上</li>
-<li>并在手机上打开</li>
-</ol>
-<h2 id="JEB中设置"><a href="#JEB中设置" class="headerlink" title="JEB中设置"></a>JEB中设置</h2><ol>
-<li><p>打开要调试的Android应用的apk文件</p>
-</li>
-<li><p>在关键代码位置下断点的行 <code>ctrl+B</code>下断点（<code>Smail</code>代码处）</p>
-</li>
-<li><p>配置调试连接参数:Debugger-&gt;Configure connections(附上)</p>
-<p><img src="https://vip.helloimg.com/images/2023/10/09/obMne1.png" srcset="/img/loading.gif" lazyload alt="image-20231009221155150"></p>
-<ul>
-<li>选择Android local debugger</li>
-<li>设置设备IP地址和调试端口(默认8700)</li>
-</ul>
-</li>
-<li><p>点击Debug按钮连接Android设备,选择进程</p>
-<p>可以看到变量我的最爱<img src="https://vip.helloimg.com/images/2023/10/09/obMbKb.gif" srcset="/img/loading.gif" lazyload alt="img"></p>
-<p><img src="https://vip.helloimg.com/images/2023/10/09/obMH2K.png" srcset="/img/loading.gif" lazyload alt="image-20231009221534594"></p>
-</li>
-</ol>
-<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><ol>
-<li>在设备上启动目标应用进程</li>
-<li>JEB中点击Resume按钮,程序会在断点处停止</li>
-<li>可查看变量、调用栈、执行代码等</li>
-<li>继续调试或跳过断点,结束后点击Disconnect断开连接</li>
-</ol>
-<p><img src="https://vip.helloimg.com/images/2023/10/09/obMMFo.png" srcset="/img/loading.gif" lazyload alt="image-20231009221640250"></p>
+                <p>仅供学习使用：<br>010 Editor启动时候，会检查注册状态，如果未注册，会提示是试用版，在这个提示处设断点，寻找破解线索。下图圆圈处就是启动时的试用版提示。</p>
+<p><img src="https://vip.helloimg.com/i/2023/11/13/6551d2d6abdba.png" srcset="/img/loading.gif" lazyload alt="image1"></p>
+<p>使用x64调试 加载主程序默认路径 <code>C:\Program Files\010 Editor\010Editor.exe</code>看到一堆jmp指令 <strong>OptionalHeader.AddressOfEntryPoint</strong>是程序入口</p>
+<p><img src="https://vip.helloimg.com/i/2023/11/13/6551d2fdb2a79.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p><code>shift+d</code> 搜索当前模块字符串<code>Evaluation Version\n</code> 全部断下来<strong>f2</strong>下断点</p>
+<p><img src="https://vip.helloimg.com/i/2023/11/13/6551d31d59a0f.png" srcset="/img/loading.gif" lazyload alt="image1"></p>
+<p>回到<strong>CPU</strong>让后按<strong>f9</strong>会运行到刚刚下的断点地方<br>往上滑找到调用的地方</p>
+<p><img src="https://vip.helloimg.com/i/2023/11/13/6551d51bb1d19.png" srcset="/img/loading.gif" lazyload alt="image"></p>
+<p>或者<br><code>ctrl+shift+d</code>匹配特征 十六进制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs hex">48 89 5C 24 08 48 89 74 24 18 48 89 54 24 10 55 57 41 56 48 8B EC 48 83 EC 40 49 8B F1<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://vip.helloimg.com/i/2023/11/13/6551d5376ba6d.png" srcset="/img/loading.gif" lazyload alt="image (1)"></p>
+<p><code>g</code>转换流程图</p>
+<p><img src="https://vip.helloimg.com/i/2023/11/13/6551d55d9df9d.png" srcset="/img/loading.gif" lazyload alt="image (2)"><br>按<code>g</code>转回来</p>
+<p><strong>ctrl+r</strong>(查找引用)双击进去唯一的一个jmp进入之后又一大堆jmp指令<br><img src="https://vip.helloimg.com/i/2023/11/13/6551d57d4acd3.png" srcset="/img/loading.gif" lazyload alt="image (3)"><br>在<strong>在ctrl+r</strong>(查找引用)<br><img src="https://vip.helloimg.com/i/2023/11/13/6551d59576e85.png" srcset="/img/loading.gif" lazyload alt="image (4)"><br>这四个都是 验证<code>cmp ebp，0xDB</code>下面是**:”Licensed to:\n”**<br>确认了都是验证</p>
+<p><img src="https://vip.helloimg.com/i/2023/11/13/6551d5a96a9c0.png" srcset="/img/loading.gif" lazyload alt="image (5)"></p>
+<p>&#x20;去上面那个call看中间有个jmp直接进去</p>
+<p>修改前</p>
+<p><img src="https://vip.helloimg.com/i/2023/11/13/6551d5cf3ab42.png" srcset="/img/loading.gif" lazyload alt="image (6)"></p>
+<p><img src="https://vip.helloimg.com/i/2023/11/13/6551d5e18d607.png" srcset="/img/loading.gif" lazyload alt="image (7)"></p>
+<p><strong>shift+p</strong>(打补丁)</p>
+<p>··· ·· ·· ·· ·· ·· ·· ···</p>
+<p>下载链接：<br><a target="_blank" rel="noopener" href="https://download.sweetscape.com/010EditorWin64Installer14.0.exe">https://download.sweetscape.com/010EditorWin64Installer14.0.exe</a></p>
+<p>SHA256: <code>9f926af3bc49df3ab3b2fa8e9cf97caf018081df277c25ee37fab8c2fdd974ba  010EditorWin64Installer14.0.exe</code></p>
+<p>123盘 <a target="_blank" rel="noopener" href="https://www.123pan.com/s/mCY8Vv-o6HWd.html%E6%8F%90%E5%8F%96%E7%A0%81:cqA6">https://www.123pan.com/s/mCY8Vv-o6HWd.html提取码:cqA6</a></p>
+<p>思路来源：<br>感谢<a target="_blank" rel="noopener" href="https://www.52pojie.cn/home.php?mod=space&uid=1288787">longs75</a>作者<br>原帖子地址<br><a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1695625-1-1.html"><code>https://www.52pojie.cn/thread-1695625-1-1.html</code></a></p>
 
                 
               </div>
@@ -442,12 +406,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/adb/" class="category-chain-item">adb</a>
+  <a href="/categories/%E9%80%86%E5%90%91/" class="category-chain-item">逆向</a>
   
   
     <span>></span>
     
-  <a href="/categories/adb/jeb/" class="category-chain-item">jeb</a>
+  <a href="/categories/%E9%80%86%E5%90%91/%E7%A0%B4%E8%A7%A3/" class="category-chain-item">破解</a>
   
   
 
@@ -464,15 +428,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/010-Editor/" class="print-no-link">#010 Editor</a>
+      
         <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="print-no-link">#学习笔记</a>
       
-        <a href="/tags/%E9%9A%8F%E7%AC%94/" class="print-no-link">#随笔</a>
+        <a href="/tags/%E7%A0%B4%E8%A7%A3%E8%BD%AF%E4%BB%B6/" class="print-no-link">#破解软件</a>
       
-        <a href="/tags/adb%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" class="print-no-link">#adb常见命令</a>
-      
-        <a href="/tags/%E6%97%A5%E5%B8%B8/" class="print-no-link">#日常</a>
-      
-        <a href="/tags/jeb%E9%85%8D%E7%BD%AE%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95/" class="print-no-link">#jeb配置断点调试</a>
+        <a href="/tags/x64dbg/" class="print-no-link">#x64dbg</a>
       
     </div>
   
@@ -484,8 +446,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>记录adb和jeb动态调试实体机设备</div>
-      <div>https://huajien.gitee.io/2023/93ffd795/</div>
+      <div>010 Editor x64 14.0 破解思路</div>
+      <div>https://huajien.gitee.io/2023/ffc78274/</div>
     </div>
     <div class="license-meta">
       
@@ -497,7 +459,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年10月9日</div>
+          <div>2023年11月13日</div>
         </div>
       
       
@@ -529,18 +491,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/8a4de02f/" title="SMC技术">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">SMC技术</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/30bc1fee/" title="pythonz3学习">
-                        <span class="hidden-mobile">pythonz3学习</span>
+                      <a href="/2023/93ffd795/" title="安卓设置ro.debuggable==1">
+                        <span class="hidden-mobile">安卓设置ro.debuggable==1</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
