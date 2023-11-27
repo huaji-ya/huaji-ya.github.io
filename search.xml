@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>IDAPro8.3插件集合分享</title>
+      <link href="/2023/9a65b97e/"/>
+      <url>/2023/9a65b97e/</url>
+      
+        <content type="html"><![CDATA[<h1 id="IDA-Pro-8-3-插件集合"><a href="#IDA-Pro-8-3-插件集合" class="headerlink" title="IDA Pro 8.3 插件集合"></a>IDA Pro 8.3 插件集合</h1><p>这个项目是一个集合，包含了一系列强大的IDA Pro插件，用于在逆向工程过程中提供各种功能和工具。</p><h2 id="IDAGolangHelper"><a href="#IDAGolangHelper" class="headerlink" title="IDAGolangHelper"></a><a href="https://github.com/IchildYu/IDAGolangHelper">IDAGolangHelper</a></h2><p>或者</p><h2 id="IDAGolangHelper-1"><a href="#IDAGolangHelper-1" class="headerlink" title="IDAGolangHelper"></a><a href="https://github.com/IchildYu/IDAGolangHelper">IDAGolangHelper</a></h2><p>这是一个专为Go语言二进制逆向工程而设计的插件，提供了一些实用的功能，方便分析Go语言程序。</p><h2 id="WPeChatGPT"><a href="#WPeChatGPT" class="headerlink" title="WPeChatGPT"></a><a href="https://github.com/WPeace-HcH/WPeChatGPT">WPeChatGPT</a></h2><p>将ChatGPT整合到IDA Pro中，为逆向工程提供智能文本生成和分析支持。</p><h2 id="findcrypt-yara"><a href="#findcrypt-yara" class="headerlink" title="findcrypt-yara"></a><a href="https://github.com/polymorf/findcrypt-yara">findcrypt-yara</a></h2><p>这个插件使用YARA规则来查找二进制文件中的加密特征，帮助分析加密算法和识别加密代码段。</p><h2 id="auto-re"><a href="#auto-re" class="headerlink" title="auto_re"></a><a href="https://github.com/a1ext/auto_re">auto_re</a></h2><p>自动逆向工程工具，通过使用静态和动态分析技术，自动化部分逆向工程过程，提高效率。</p><h2 id="keypatch"><a href="#keypatch" class="headerlink" title="keypatch"></a><a href="https://github.com/keystone-engine/keypatch">keypatch</a></h2><p>一个功能强大的IDA Pro插件，用于修改二进制文件，支持各种二进制修改需求。</p><h2 id="patching"><a href="#patching" class="headerlink" title="patching"></a><a href="https://github.com/gaasedelen/patching">patching</a></h2><p>一个备用的IDA Pro插件，用于在逆向工程过程中进行二进制文件的修改和补丁。</p><h2 id="LazyIDA"><a href="#LazyIDA" class="headerlink" title="LazyIDA"></a><a href="https://github.com/P4nda0s/LazyIDA">LazyIDA</a></h2><p>LazyIDA旨在帮助提取二进制文件中的字符串，简化逆向工程分析。</p><h2 id="ida-qscripts"><a href="#ida-qscripts" class="headerlink" title="ida-qscripts"></a><a href="https://github.com/0xeb/ida-qscripts">ida-qscripts</a></h2><p>一个实用的脚本管理工具，用于在IDA Pro中组织和运行各种脚本。</p><p><code>更新中</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IDAPro插件分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IDA Pro 8.3 </tag>
+            
+            <tag> IDA插件 </tag>
+            
+            <tag> 分享 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>010 Editor x64 14.0 破解思路</title>
       <link href="/2023/ffc78274/"/>
       <url>/2023/ffc78274/</url>
