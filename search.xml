@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>typora最新版手动破解教程</title>
+      <link href="/2024/229d69d3/"/>
+      <url>/2024/229d69d3/</url>
+      
+        <content type="html"><![CDATA[<h3 id="下载旧版Typora"><a href="#下载旧版Typora" class="headerlink" title="下载旧版Typora"></a>下载旧版Typora</h3><p>懒人方式用开发版 0.11.18<br><a href="https://typora.io/windows/dev_release.html">跳转到最后开发版</a></p><h3 id="下载新版本Typora"><a href="#下载新版本Typora" class="headerlink" title="下载新版本Typora"></a>下载新版本Typora</h3><p><a href="https://typora.io/releases/all">点击跳转</a></p><h3 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h3><p>本文章测试版本<br><code>版本1.8.10 (7132)</code></p><p>正常安装后，退出软件防止文件被占用</p><h4 id="解锁Typora"><a href="#解锁Typora" class="headerlink" title="解锁Typora"></a>解锁Typora</h4><p>Windows版本：<code>进入Typora安装目录下的\resources\page-dist\static\js</code></p><p>Mac OS版本：<code>/Applications/Typora.app/Contents/Resources/TypeMark/page-dist/static/js</code></p><p>找到 <code>LicenseIndex.180dd4c7.6d698c41.chunk.js</code> 文件<br>搜索<code>hasActivated=&quot;true&quot;</code><br><img src="https://vip.helloimg.com/i/2024/05/17/6646bafb834da.png" alt="image-20240517100625354"><br>看到 <code>hasActivated=&quot;true&quot;==e.hasActivated</code><br>改为<code>hasActivated=&quot;true&quot;== &quot;true&quot;</code><br><img src="https://vip.helloimg.com/i/2024/05/17/6646bab6973de.png" alt="image-20240517100516352"></p><p>保存即可打开即可提示已经激活</p><h4 id="关闭激活弹窗"><a href="#关闭激活弹窗" class="headerlink" title="关闭激活弹窗"></a>关闭激活弹窗</h4><p>关闭经常乱提示的激活成功<br>Windows版本：<code>进入Typora安装目录下的\resources\page-dist\</code></p><p>Mac OS版本：<code>/Applications/Typora.app/Contents/Resources/TypeMark/page-dist/</code></p><p>找到<code>license.html</code></p><p>在最后<code>&lt;/html&gt;</code><br>添加</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;script&gt; <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123; <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">close</span>(); &#125;, <span class="hljs-number">10</span>); &lt;/script&gt;<br></code></pre></td></tr></table></figure><p><img src="https://vip.helloimg.com/i/2024/05/17/6646bea274bf5.png" alt="image-20240517102204227"></p><p>再打开就没有激活成功视图了</p><h4 id="左下角未激活按钮"><a href="#左下角未激活按钮" class="headerlink" title="左下角未激活按钮"></a>左下角未激活按钮</h4><p>这个根据你语言改例如我中文在zh</p><p><code>zh-Hans.lproj</code></p><p>Windows版本：<code>进入Typora安装目录下的\resources\locales\zh-Hans.lproj\Panel.json</code></p><p>Mac OS版本：<code>/Applications/Typora.app/Contents/Resources/zh-Hans.lproj/Panel.strings</code></p><p><img src="https://vip.helloimg.com/i/2024/05/17/6646e0968f890.png" alt="image-20240517110932752.png"></p><p>搜索 <code>&quot;UNREGISTERED&quot;</code> 将后面的 未激活删除或者改成自己ID</p><p>完结撒花<br><img src="https://vip.helloimg.com/i/2024/05/17/6646e2988560b.png" alt="image-20240517125430307.png"></p><h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><p>⚠️ 该破解补丁仅限用于学习和研究目的<br>您必须在下载后的 24 个小时之内，从您的电脑中彻底删除上述内容。如果您喜欢该程序，请支持正版软件，购买注册，得到更好的正版服务。</p><p>禁止用于商业或者非法用途，且不得将该软件对大众进行传播，否则，一切后果自负。</p><p>如果您使用本软件和技术用于商业化而产生任何损失、风险或法律纠纷，作者将不承担任何责任。</p><p>作者不保证本软件和技术的完整性、准确性、可靠性、适用性或及时性。使用本软件和技术产生的任何后果，作者将不承担任何责任。</p><p>本软件和技术中的任何意见、建议或信息，均不构成作者或作者所在组织的任何形式的保证或担保。</p><p>任何人不得对本软件和技术进行反向工程、破解或其他非法行为。</p><p>任何未经作者或作者所在组织授权的行为，均可能构成侵权或违法行为，一经发现作者将保留追究其法律责任的权利。</p><p>使用本软件和技术将被视为您已经完全接受本免责声明的所有条款和条件。如果您不同意本免责声明的任何部分，请勿使用本软件和技术。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 逆向 </category>
+          
+          <category> 破解 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习笔记 </tag>
+            
+            <tag> 破解软件 </tag>
+            
+            <tag> Typora </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>IDAPro8.3头文件</title>
       <link href="/2023/8d4c384b/"/>
       <url>/2023/8d4c384b/</url>
@@ -68,7 +99,7 @@
       <link href="/2023/ffc78274/"/>
       <url>/2023/ffc78274/</url>
       
-        <content type="html"><![CDATA[<p>仅供学习使用：<br>010 Editor启动时候，会检查注册状态，如果未注册，会提示是试用版，在这个提示处设断点，寻找破解线索。下图圆圈处就是启动时的试用版提示。</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d2d6abdba.png" alt="image1"></p><p>使用x64调试 加载主程序默认路径 <code>C:\Program Files\010 Editor\010Editor.exe</code>看到一堆jmp指令 <strong>OptionalHeader.AddressOfEntryPoint</strong>是程序入口</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d2fdb2a79.png" alt="image.png"></p><p><code>shift+d</code> 搜索当前模块字符串<code>Evaluation Version\n</code> 全部断下来<strong>f2</strong>下断点</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d31d59a0f.png" alt="image1"></p><p>回到<strong>CPU</strong>让后按<strong>f9</strong>会运行到刚刚下的断点地方<br>往上滑找到调用的地方</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d51bb1d19.png" alt="image"></p><p>或者<br><code>ctrl+shift+d</code>匹配特征 十六进制</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs hex">48 89 5C 24 08 48 89 74 24 18 48 89 54 24 10 55 57 41 56 48 8B EC 48 83 EC 40 49 8B F1<br></code></pre></td></tr></table></figure><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d5376ba6d.png" alt="image (1)"></p><p><code>g</code>转换流程图</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d55d9df9d.png" alt="image (2)"><br>按<code>g</code>转回来</p><p><strong>ctrl+r</strong>(查找引用)双击进去唯一的一个jmp进入之后又一大堆jmp指令<br><img src="https://vip.helloimg.com/i/2023/11/13/6551d57d4acd3.png" alt="image (3)"><br>在<strong>在ctrl+r</strong>(查找引用)<br><img src="https://vip.helloimg.com/i/2023/11/13/6551d59576e85.png" alt="image (4)"><br>这四个都是 验证<code>cmp ebp，0xDB</code>下面是**:”Licensed to:\n”**<br>确认了都是验证</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d5a96a9c0.png" alt="image (5)"></p><p>&#x20;去上面那个call看中间有个jmp直接进去</p><p>修改前</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d5cf3ab42.png" alt="image (6)"></p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d5e18d607.png" alt="image (7)"></p><p><strong>shift+p</strong>(打补丁)</p><p>··· ·· ·· ·· ·· ·· ·· ···</p><p>下载链接：<br><a href="https://download.sweetscape.com/010EditorWin64Installer14.0.exe">https://download.sweetscape.com/010EditorWin64Installer14.0.exe</a></p><p>SHA256: <code>9f926af3bc49df3ab3b2fa8e9cf97caf018081df277c25ee37fab8c2fdd974ba  010EditorWin64Installer14.0.exe</code></p><p>123盘 <a href="https://www.123pan.com/s/mCY8Vv-o6HWd.html%E6%8F%90%E5%8F%96%E7%A0%81:cqA6">https://www.123pan.com/s/mCY8Vv-o6HWd.html提取码:cqA6</a></p><p>思路来源：<br>感谢<a href="https://www.52pojie.cn/home.php?mod=space&uid=1288787">longs75</a>作者<br>原帖子地址<br><a href="https://www.52pojie.cn/thread-1695625-1-1.html"><code>https://www.52pojie.cn/thread-1695625-1-1.html</code></a></p>]]></content>
+        <content type="html"><![CDATA[<p>仅供学习使用：<br>010 Editor启动时候，会检查注册状态，如果未注册，会提示是试用版，在这个提示处设断点，寻找破解线索。下图圆圈处就是启动时的试用版提示。</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d2d6abdba.png" alt="image1"></p><p>使用x64调试 加载主程序默认路径 <code>C:\Program Files\010 Editor\010Editor.exe</code>看到一堆jmp指令 <strong>OptionalHeader.AddressOfEntryPoint</strong>是程序入口</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d2fdb2a79.png" alt="image.png"></p><p><code>shift+d</code> 搜索当前模块字符串<code>Evaluation Version\n</code> 全部断下来<strong>f2</strong>下断点</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d31d59a0f.png" alt="image1"></p><p>回到<strong>CPU</strong>让后按<strong>f9</strong>会运行到刚刚下的断点地方<br>往上滑找到调用的地方</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d51bb1d19.png" alt="image"></p><p>或者<br><code>ctrl+shift+d</code>匹配特征 十六进制</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs hex">48 89 5C 24 08 48 89 74 24 18 48 89 54 24 10 55 57 41 56 48 8B EC 48 83 EC 40 49 8B F1<br></code></pre></td></tr></table></figure><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d5376ba6d.png" alt="image (1)"></p><p><code>g</code>转换流程图</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d55d9df9d.png" alt="image (2)"><br>按<code>g</code>转回来</p><p><strong>ctrl+r</strong>(查找引用)双击进去唯一的一个jmp进入之后又一大堆jmp指令<br><img src="https://vip.helloimg.com/i/2023/11/13/6551d57d4acd3.png" alt="image (3)"><br>在<strong>在ctrl+r</strong>(查找引用)<br><img src="https://vip.helloimg.com/i/2023/11/13/6551d59576e85.png" alt="image (4)"><br>这四个都是 验证<code>cmp ebp，0xDB</code>下面是**:”Licensed to:\n”**<br>确认了都是验证</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d5a96a9c0.png" alt="image (5)"></p><p>&#x20;去上面那个call看中间有个jmp直接进去</p><p>修改前</p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d5cf3ab42.png" alt="image (6)"></p><p><img src="https://vip.helloimg.com/i/2023/11/13/6551d5e18d607.png" alt="image (7)"></p><p><strong>shift+p</strong>(打补丁)</p><p>··· ·· ·· ·· ·· ·· ·· ···</p><p>下载链接：<br><a href="https://download.sweetscape.com/010EditorWin64Installer14.0.exe">https://download.sweetscape.com/010EditorWin64Installer14.0.exe</a></p><p>SHA256: <code>9f926af3bc49df3ab3b2fa8e9cf97caf018081df277c25ee37fab8c2fdd974ba  010EditorWin64Installer14.0.exe</code></p><p>123盘 <a href="https://www.123pan.com/s/mCY8Vv-o6HWd.html%E6%8F%90%E5%8F%96%E7%A0%81:cqA6">https://www.123pan.com/s/mCY8Vv-o6HWd.html提取码:cqA6</a></p><p>思路来源：<br>感谢<a href="https://www.52pojie.cn/home.php?mod=space&uid=1288787">longs75</a>作者<br>原帖子地址<br><a href="https://www.52pojie.cn/thread-1695625-1-1.html"><code>https://www.52pojie.cn/thread-1695625-1-1.html</code></a></p><p>免责声明</p><p>⚠️ 该破解补丁仅限用于学习和研究目的<br>您必须在下载后的 24 个小时之内，从您的电脑中彻底删除上述内容。如果您喜欢该程序，请支持正版软件，购买注册，得到更好的正版服务。</p><p>禁止用于商业或者非法用途，且不得将该软件对大众进行传播，否则，一切后果自负。</p><p>如果您使用本软件和技术用于商业化而产生任何损失、风险或法律纠纷，作者将不承担任何责任。</p><p>作者不保证本软件和技术的完整性、准确性、可靠性、适用性或及时性。使用本软件和技术产生的任何后果，作者将不承担任何责任。</p><p>本软件和技术中的任何意见、建议或信息，均不构成作者或作者所在组织的任何形式的保证或担保。</p><p>任何人不得对本软件和技术进行反向工程、破解或其他非法行为。</p><p>任何未经作者或作者所在组织授权的行为，均可能构成侵权或违法行为，一经发现作者将保留追究其法律责任的权利。</p><p>使用本软件和技术将被视为您已经完全接受本免责声明的所有条款和条件。如果您不同意本免责声明的任何部分，请勿使用本软件和技术。</p>]]></content>
       
       
       <categories>
@@ -324,9 +355,9 @@
       
         <tags>
             
-            <tag> ida </tag>
-            
             <tag> idapro </tag>
+            
+            <tag> ida </tag>
             
             <tag> 快捷键 </tag>
             
